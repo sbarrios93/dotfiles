@@ -29,3 +29,5 @@ export MACPREFS_BACKUP_DIR="$CORE/macprefs"
 # Notes
 export notes="$HOME/notes"
 
+# Starship Config File
+export STARSHIP_CONFIG="$CORE/starship.toml"
