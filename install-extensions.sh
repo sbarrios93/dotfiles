@@ -30,6 +30,7 @@ code --install-extension ronnidc.nunjucks --force &
 code --install-extension rpinski.shebang-snippets --force &
 code --install-extension shakram02.bash-beautify --force &
 code --install-extension Shan.code-settings-sync --force &
+code --install-extension sleistner.vscode-fileutils --force &
 code --install-extension streetsidesoftware.code-spell-checker --force &
 code --install-extension VisualStudioExptTeam.vscodeintellicode --force &
 code --install-extension wholroyd.jinja --force &
