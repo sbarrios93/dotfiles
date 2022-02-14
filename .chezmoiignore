@@ -4,3 +4,5 @@ node_modules
 .vscode/extensions
 .DS_Store
 **/.DS_Store
+.vscode/extensions
+.vscode/extensions/**/*

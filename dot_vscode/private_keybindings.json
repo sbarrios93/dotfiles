@@ -1,0 +1,247 @@
+[
+	{
+		"key": "escape",
+		"command": "notebook.cell.quitEdit",
+		"when": "inputFocus && notebookEditorFocused && !editorHasSelection && !editorHoverVisible && neovim.init && neovim.mode == 'normal'"
+	},
+	{
+		"key": "cmd+; ;",
+		"command": "workbench.action.toggleSidebarVisibility"
+	},
+	{
+		"key": "cmd+b",
+		"command": "-workbench.action.toggleSidebarVisibility"
+	},
+	{
+		"key": "cmd+h",
+		"command": "editor.action.triggerSuggest",
+		"when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+	},
+	{
+		"key": "cmd+i",
+		"command": "-editor.action.triggerSuggest",
+		"when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+	},
+	{
+		"key": "cmd+h",
+		"command": "toggleSuggestionDetails",
+		"when": "suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "cmd+i",
+		"command": "-toggleSuggestionDetails",
+		"when": "suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "cmd+b",
+		"command": "md-shortcut.toggleBold",
+		"when": "editorTextFocus && markdownShortcuts:enabled"
+	},
+	{
+		"key": "ctrl+b",
+		"command": "-md-shortcut.toggleBold",
+		"when": "editorTextFocus && markdownShortcuts:enabled"
+	},
+	{
+		"key": "cmd+m cmd+b",
+		"command": "md-shortcut.toggleBullets",
+		"when": "editorTextFocus && markdownShortcuts:enabled"
+	},
+	{
+		"key": "ctrl+m ctrl+b",
+		"command": "-md-shortcut.toggleBullets",
+		"when": "editorTextFocus && markdownShortcuts:enabled"
+	},
+	{
+		"key": "cmd+m cmd+x",
+		"command": "md-shortcut.toggleCheckboxes",
+		"when": "editorTextFocus && markdownShortcuts:enabled"
+	},
+	{
+		"key": "ctrl+m ctrl+x",
+		"command": "-md-shortcut.toggleCheckboxes",
+		"when": "editorTextFocus && markdownShortcuts:enabled"
+	},
+	{
+		"key": "cmd+m cmd+c",
+		"command": "md-shortcut.toggleCodeBlock",
+		"when": "editorTextFocus && markdownShortcuts:enabled"
+	},
+	{
+		"key": "ctrl+m ctrl+c",
+		"command": "-md-shortcut.toggleCodeBlock",
+		"when": "editorTextFocus && markdownShortcuts:enabled"
+	},
+	{
+		"key": "cmd+i",
+		"command": "md-shortcut.toggleItalic",
+		"when": "editorTextFocus && markdownShortcuts:enabled"
+	},
+	{
+		"key": "ctrl+i",
+		"command": "-md-shortcut.toggleItalic",
+		"when": "editorTextFocus && markdownShortcuts:enabled"
+	},
+	{
+		"key": "cmd+; t",
+		"command": "toggle-tabout"
+	},
+	{
+		"key": "cmd+\\",
+		"command": "-workbench.action.terminal.split",
+		"when": "terminalFocus && terminalProcessSupported"
+	},
+	{
+		"key": "cmd+\\",
+		"command": "-workbench.action.splitEditor"
+	},
+	{
+		"key": "cmd+\\",
+		"command": "-workbench.action.terminal.splitInstance",
+		"when": "terminalProcessSupported && terminalTabsFocus"
+	},
+	{
+		"key": "cmd+; v",
+		"command": "markdown-preview-enhanced.openPreviewToTheSide",
+		"when": "editorLangId == 'markdown'"
+	},
+	{
+		"key": "cmd+k v",
+		"command": "-markdown-preview-enhanced.openPreviewToTheSide",
+		"when": "editorLangId == 'markdown'"
+	},
+	{
+		"key": "ctrl+;",
+		"command": "workbench.action.quickSwitchWindow"
+	},
+	{
+		"key": "ctrl+shift+cmd+f",
+		"command": "editor.action.formatDocument.multiple"
+	},
+	{
+		"key": "ctrl+alt+enter",
+		"command": "github.copilot.generate",
+		"when": "editorTextFocus && github.copilot.activated"
+	},
+	{
+		"key": "ctrl+enter",
+		"command": "-github.copilot.generate",
+		"when": "editorTextFocus && github.copilot.activated"
+	},
+	{
+		"key": "tab",
+		"command": "acceptSelectedSuggestion",
+		"when": "editorLangId != 'markdown' && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "tab",
+		"command": "-acceptSelectedSuggestion",
+		"when": "suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "enter",
+		"command": "acceptSelectedSuggestion",
+		"when": "acceptSuggestionOnEnter && editorLangId != 'markdown' && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
+	},
+	{
+		"key": "enter",
+		"command": "-acceptSelectedSuggestion",
+		"when": "acceptSuggestionOnEnter && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
+	},
+	// markdown trigger suggestion
+	{
+		"key": "enter",
+		"command": "acceptSelectedSuggestion",
+		"when": "editorLangId == 'markdown' && acceptSuggestionOnEnter && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
+	},
+	{
+		"key": "tab",
+		"command": "acceptSelectedSuggestion",
+		"when": "editorLangId == 'markdown' && acceptSuggestionOnEnter && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
+	},
+	{
+		"key": "ctrl+shift+alt+cmd+numpad1",
+		"command": "github.copilot.showActivationErrors"
+	},
+	{
+		"key": "escape",
+		"command": "extension.vim_escape",
+		"when": "editorTextFocus && vim.active && !inDebugRepl"
+	},
+	{
+		"key": "escape",
+		"command": "-extension.vim_escape",
+		"when": "editorTextFocus && vim.active && !inDebugRepl"
+	},
+	{
+		"key": "ctrl+shift+alt+cmd+\\",
+		"command": "editor.action.inlineSuggest.trigger",
+		"when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
+	},
+	{
+		"key": "alt+\\",
+		"command": "-editor.action.inlineSuggest.trigger",
+		"when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
+	},
+	{
+		"key": "ctrl+shift+alt+cmd+]",
+		"command": "editor.action.inlineSuggest.showNext",
+		"when": "inlineSuggestionVisible && !editorReadonly"
+	},
+	{
+		"key": "alt+]",
+		"command": "-editor.action.inlineSuggest.showNext",
+		"when": "inlineSuggestionVisible && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+alt+cmd+[",
+		"command": "editor.action.inlineSuggest.showPrevious",
+		"when": "inlineSuggestionVisible && !editorReadonly"
+	},
+	{
+		"key": "alt+[",
+		"command": "-editor.action.inlineSuggest.showPrevious",
+		"when": "inlineSuggestionVisible && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+alt+cmd+backspace",
+		"command": "editor.action.inlineSuggest.hide",
+		"when": "inlineSuggestionVisible"
+	},
+	{
+		"key": "escape",
+		"command": "-editor.action.inlineSuggest.hide",
+		"when": "inlineSuggestionVisible"
+	},
+	// end markdown trigger suggestion
+	{
+		"key": "ctrl+shift+alt+cmd+v",
+		"command": "pasteURL.PasteURL",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+alt+]",
+		"command": "markdown.extension.onTabKey",
+		"when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus && !hasOtherSuggestions && !hasSnippetCompletions && !inSnippetMode && !inlineSuggestionVisible && !suggestWidgetVisible && editorLangId == 'markdown'"
+	},
+	{
+		"key": "tab",
+		"command": "-markdown.extension.onTabKey",
+		"when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus && !hasOtherSuggestions && !hasSnippetCompletions && !inSnippetMode && !suggestWidgetVisible && editorLangId == 'markdown'"
+	},
+	// {
+	// 	"key": "tab",
+	// 	"command": "-tab",
+	// 	"when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+	// },
+	{
+		"key": "shift+tab",
+		"command": "editor.emmet.action.expandAbbreviation",
+		"when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+	},
+	{
+		"key": "tab",
+		"command": "-editor.emmet.action.expandAbbreviation",
+		"when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+	}
+]

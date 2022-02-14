@@ -1,0 +1,310 @@
+{
+	"editor.language.colorizedBracketPairs": [
+		["{", "}"],
+		["[", "]"],
+		["(", ")"],
+		["\\[", "\\]"],
+		["\\(", "\\)"]
+	],
+	"[html]": {
+		"editor.defaultFormatter": "vscode.html-language-features"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[latex]": {
+		"editor.defaultFormatter": "James-Yu.latex-workshop"
+	},
+	"[markdown]": {
+		"editor.quickSuggestions": true,
+		"editor.quickSuggestionsDelay": 1000000,
+		"editor.snippetSuggestions": "top",
+		"editor.suggest.showSnippets": true,
+		"editor.suggestOnTriggerCharacters": true,
+		"editor.wordBasedSuggestions": false
+	},
+	"[nunjucks]": {
+		"editor.defaultFormatter": "okitavera.vscode-nunjucks-formatter"
+	},
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.python",
+		"editor.formatOnSave": true,
+		"editor.snippetSuggestions": "bottom"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"[xml]": {
+		"editor.defaultFormatter": "DotJoshJohnson.xml"
+	},
+	"[yaml]": {
+		"editor.defaultFormatter": "redhat.vscode-yaml"
+	},
+	"diffEditor.codeLens": true,
+	"editor.accessibilitySupport": "off",
+	"editor.bracketPairColorization.enabled": true,
+	"editor.cursorBlinking": "phase",
+	"editor.cursorSmoothCaretAnimation": true,
+	"editor.cursorSurroundingLines": 20,
+	"editor.find.autoFindInSelection": "multiline",
+	"editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
+	"editor.fontLigatures": true,
+	"editor.fontSize": 14,
+	"editor.formatOnSave": true,
+	"editor.inlineSuggest.enabled": true,
+	"editor.largeFileOptimizations": false,
+	"editor.minimap.enabled": false,
+	"editor.multiCursorModifier": "ctrlCmd",
+	"editor.padding.bottom": 40,
+	"editor.padding.top": 20,
+	"editor.renderLineHighlight": "all",
+	"editor.renderWhitespace": "boundary",
+	"editor.scrollbar.verticalScrollbarSize": 8,
+	"editor.semanticHighlighting.enabled": true,
+	"editor.showFoldingControls": "always",
+	"editor.semanticTokenColorCustomizations": {
+		"enabled": true
+	},
+	"editor.smoothScrolling": true,
+	"editor.suggest.snippetsPreventQuickSuggestions": false,
+	"editor.suggestSelection": "first",
+	"editor.tabCompletion": "onlySnippets",
+	"editor.tokenColorCustomizations": {
+		"[Monokai Pro New]": {
+			"textMateRules": [
+				{
+					"scope": "string.quoted.docstring.multi.python",
+					"settings": {
+						"foreground": "#8a8a8a"
+					}
+				}
+			]
+		}
+	},
+	"editor.wordWrap": "bounded",
+	"editor.wordWrapColumn": 120,
+	"emmet.includeLanguages": {
+		"Nunjucks": "html",
+		"njk": "html",
+		"nunjucks": "html"
+	},
+	"emmet.triggerExpansionOnTab": true,
+	"explorer.autoReveal": true,
+	"explorer.confirmDelete": false,
+	"files.associations": {
+		"*.html": "html",
+		"*.njk": "html",
+		"*.rmd": "markdown",
+		"*.tmpl": "shellscript"
+	},
+	"files.autoSave": "onFocusChange",
+	"files.trimTrailingWhitespace": true,
+	"git.autofetch": true,
+	"git.confirmSync": false,
+	"git.enableSmartCommit": true,
+	"github.copilot.advanced": {
+		"inlineSuggestCount": 5,
+		"temperature": "0.4"
+	},
+	"github.copilot.enable": {
+		"*": true,
+		"markdown": true,
+		"plaintext": false,
+		"python": true,
+		"yaml": true
+	},
+	"hediet.vscode-drawio.codeLinkActivated": true,
+	"hediet.vscode-drawio.offline": true,
+	"html.format.templating": true,
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"jupyter.askForKernelRestart": false,
+	"jupyter.changeDirOnImportExport": true,
+	"jupyter.generateSVGPlots": true,
+	"jupyter.interactiveWindowMode": "perFile",
+	"jupyter.jupyterServerType": "local",
+	"jupyter.pylanceHandlesNotebooks": true,
+	"jupyter.sendSelectionToInteractiveWindow": true,
+	"jupyter.useDefaultConfigForJupyter": false,
+	"jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
+	"latex-workshop.chktex.enabled": true,
+	"latex-workshop.intellisense.unimathsymbols.enabled": true,
+	"latex-workshop.latex.magic.args": [
+		"-synctex=1",
+		"-interaction=nonstopmode",
+		"-file-line-error",
+		"%DOC%"
+	],
+	"latex-workshop.latex.recipe.default": "latexmk (pdflatex)",
+	"latex-workshop.latex.recipes": [
+		{
+			"name": "latexmk (pdflatex)",
+			"tools": ["pdflatex"]
+		},
+		{
+			"name": "latexmk (xelatex)",
+			"tools": ["xelatexmk"]
+		}
+	],
+	"latex-workshop.latex.tools": [
+		{
+			"args": [
+				"--shell-escape", // if you want to have the shell-escape flag
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"%DOC%"
+			],
+			"command": "pdflatex",
+			"name": "pdflatex"
+		},
+		{
+			"args": [
+				"--shell-escape",
+				"-xelatex",
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"%DOC%"
+			],
+			"command": "latexmk",
+			"name": "xelatexmk"
+		}
+	],
+	"latex-workshop.synctex.afterBuild.enabled": true,
+	"latex-workshop.view.autoFocus.enabled": false,
+	"latex-workshop.view.pdf.viewer": "tab",
+	"markdown-preview-enhanced.breakOnSingleNewLine": true,
+	"markdown-preview-enhanced.enableExtendedTableSyntax": true,
+	"markdown-preview-enhanced.enableTypographer": true,
+	"markdown-preview-enhanced.frontMatterRenderingOption": "code block",
+	"markdown-preview-enhanced.imageFolderPath": "/images",
+	"markdown-preview-enhanced.latexEngine": "pdflatex",
+	"markdown-preview-enhanced.liveUpdate": true,
+	"markdown-preview-enhanced.mathBlockDelimiters": [
+		["$$", "$$"],
+		["\\[", "\\]"]
+	],
+	"markdown-preview-enhanced.mathInlineDelimiters": [
+		["$", "$"],
+		["\\(", "\\)"]
+	],
+	"markdown-preview-enhanced.mathRenderingOption": "MathJax",
+	"markdown-preview-enhanced.previewTheme": "atom-dark.css",
+	"markdown-preview-enhanced.singlePreview": true,
+	"markdown-preview-enhanced.usePandocParser": true,
+	"markdownShiki.theme": "Material-Theme-Ocean-High-Contrast",
+	"markdownlint.focusMode": true,
+	"materialTheme.accent": "Indigo",
+	"notebook.cellFocusIndicator": "border",
+	"notebook.cellToolbarLocation": {
+		"default": "right",
+		"jupyter-notebook": "left"
+	},
+	"notebook.compactView": false,
+	"notebook.displayOrder": ["text/html", "image/png"],
+	"notebook.showFoldingControls": "always",
+	"pasteImage.filePathConfirmInputBoxMode": "onlyName",
+	"pasteImage.path": "${currentFileDir}/assets/images",
+	"pasteImage.prefix": "",
+	"pasteImage.showFilePathConfirmInputBox": true,
+	"peacock.affectSashHover": false,
+	"peacock.affectStatusBar": false,
+	"peacock.favoriteColors": [
+		{
+			"name": "Angular Red",
+			"value": "#dd0531"
+		},
+		{
+			"name": "Azure Blue",
+			"value": "#007fff"
+		},
+		{
+			"name": "JavaScript Yellow",
+			"value": "#f9e64f"
+		},
+		{
+			"name": "Mandalorian Blue",
+			"value": "#1857a4"
+		},
+		{
+			"name": "Node Green",
+			"value": "#215732"
+		},
+		{
+			"name": "React Blue",
+			"value": "#61dafb"
+		},
+		{
+			"name": "Something Different",
+			"value": "#832561"
+		},
+		{
+			"name": "Svelte Orange",
+			"value": "#ff3d00"
+		},
+		{
+			"name": "Vue Green",
+			"value": "#42b883"
+		}
+	],
+	"prettier.tabWidth": 4,
+	"prettier.useTabs": true,
+	"projectManager.git.baseFolders": ["/Users/seba/projects"],
+	"projectManager.ignoreProjectsWithinProjects": true,
+	"python.analysis.completeFunctionParens": true,
+	"python.condaPath": "/Users/seba/miniforge3/condabin/conda",
+	"python.formatting.blackArgs": ["--line-length", "120"],
+	"python.insidersChannel": "weekly",
+	"python.linting.enabled": true,
+	"python.linting.pylamaArgs": ["--max-line-length=120"],
+	"python.linting.pylamaEnabled": true,
+	"python.terminal.activateEnvInCurrentTerminal": true,
+	"python.terminal.activateEnvironment": true,
+	"security.workspace.trust.untrustedFiles": "open",
+	"sonarlint.rules": {
+		"python:S117": {
+			"level": "off"
+		}
+	},
+	"sync.gist": "fbe45ded8939dc7ba24e96c2cda07c4d",
+	"sync.quietSync": true,
+	"tailwindCSS.emmetCompletions": true,
+	"tailwindCSS.includeLanguages": {
+		"liquid": "html",
+		"njk": "html",
+		"nunjucks": "html"
+	},
+	"terminal.integrated.env.osx": {
+		"FIG_NEW_SESSION": "1"
+	},
+	"terminal.integrated.inheritEnv": false,
+	"trailing-spaces.liveMatching": false,
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"vim.highlightedyank.enable": true,
+	"vim.hlsearch": true,
+	"vim.overrideCopy": false,
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"window.openFilesInNewWindow": "on",
+	"workbench.colorTheme": "Monokai Pro (Filter Octagon)",
+	"workbench.editorAssociations": {
+		"*.ipynb": "jupyter-notebook",
+		"*.pdf": "latex-workshop-pdf-hook"
+	},
+	"workbench.iconTheme": "material-icon-theme",
+	"workbench.tree.indent": 20,
+	"python.analysis.autoImportCompletions": false,
+	"python.analysis.typeCheckingMode": "basic",
+	"markdown.extension.tableFormatter.normalizeIndentation": true,
+	"prettier.proseWrap": "never",
+	"editor.guides.bracketPairsHorizontal": true,
+	"editor.guides.bracketPairs": "active",
+	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+	"markdown.trace": "verbose",
+	"python.formatting.provider": "black"
+}
