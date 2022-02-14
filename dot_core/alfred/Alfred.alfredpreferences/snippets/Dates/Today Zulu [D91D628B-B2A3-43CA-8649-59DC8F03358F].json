@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "{date:yyyy-MM-dd'T'HH:mm:ssZZZZZ}",
+    "uid" : "D91D628B-B2A3-43CA-8649-59DC8F03358F",
+    "name" : "Today Zulu",
+    "keyword" : "ztd"
+  }
+}

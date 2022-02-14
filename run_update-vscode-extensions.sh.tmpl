@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+# -*- coding: utf-8 -*-
+
+
+# export VSCode extension list to executable ready to install
+# echo comment
+echo "export VSCode extensions to executable"
+code --list-extensions | xargs -L 1 echo code --install-extension | sed 's/$/ --force/' | sed '$!s/$/ \&/' > {{ .chezmoi.sourceDir }}/install-extensions.sh
+
+chmod +x {{ .chezmoi.sourceDir }}/install-extensions.sh
+
+echo "export VSCode extensions to executable: done"
+# update brew brewfile
+
+echo "update brew brewfile"
+brew bundle dump --file=~/.core/brew/Brewfile --force --describe --tap --mas --formula --cask --cleanup --debug
+echo "update brew brewfile: done"

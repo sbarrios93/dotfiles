@@ -1,0 +1,97 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'json'
+require 'open3'
+require 'pathname'
+
+# Helpers
+def get_env(env_variable:, default:, as_bool: false, as_pathname: false, match_list: [])
+  # If boolean, return early
+  if as_bool
+    case env_variable
+    when true, 'true', 'yes', 1, '1' then return true
+    when false, 'false', 'no', 0, '0', nil, '' then return false
+    else raise ArgumentError, "Invalid value: #{env_variable.inspect}"
+    end
+  end
+
+  # Extract string
+  var_as_string = lambda {
+    return default if env_variable.nil? || env_variable.empty?
+    return env_variable if match_list.empty? || match_list.include?(env_variable)
+
+    default
+  }.call
+
+  # If pathname, make it now
+  return Pathname.new(var_as_string).expand_path if as_pathname
+
+  var_as_string
+end
+
+def by_added(dir, entries)
+  Open3.capture2(
+    'mdls',
+    '-name', 'kMDItemFSName',
+    '-name', 'kMDItemDateAdded',
+    '-raw',
+    *entries.map(&:to_path)
+  )
+  .first
+  .split("\0")
+  .each_slice(2)
+  .sort
+  .map { |p| dir.join(p[1]) }
+end
+
+# Constants
+Order = ARGV[0] # modified, modified_reverse, added, added_reverse, rebuild_added_cache
+Added_cache_file = Pathname.new(ENV['alfred_workflow_cache']).join('added_cache.txt')
+
+Downloads_dir = get_env(
+  env_variable: ENV['downloads_dir'],
+  default: Pathname.new(ENV['HOME']).join('Downloads').to_path,
+  as_pathname: true
+)
+
+# Main
+All_entries = Downloads_dir.children.reject { |p| p.basename.to_path.start_with?('.') }
+
+# If rebuilding cache, exit when done
+if Order == 'rebuild_added_cache'
+  Added_cache_file.dirname.mkpath
+  Added_cache_file.write("#{by_added(Downloads_dir, All_entries).join("\n")}\n")
+  exit 0
+end
+
+# Show results
+Entries_default = lambda {
+  # If non-existing order
+  abort 'Unrecognised order type.' unless Order =~ /(modified|added).*/
+
+  # If ordered by modified
+  return All_entries.sort_by(&:mtime) if Order =~ /modified.*/
+
+  # If ordered by added
+  return by_added(Downloads_dir, All_entries) unless Added_cache_file.exist?
+
+  Added_cache_file.readlines.map { |p| Pathname.new(p.strip) }
+}.call
+
+Entries = Order =~ /.+_reverse/ ? Entries_default.reverse : Entries_default
+
+Script_filter_items = Entries.each_with_object([]) { |entry, items|
+  name = entry.directory? ? entry.basename.to_path : entry.basename(entry.extname).to_path
+
+  items.push(
+    uid: entry,
+    type: 'file',
+    title: name,
+    subtitle: entry,
+    icon: { path: entry, type: 'fileicon' },
+    arg: entry
+  )
+}
+
+puts({ rerun: 2, items: Script_filter_items }.to_json)

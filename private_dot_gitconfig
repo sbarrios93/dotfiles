@@ -1,0 +1,15 @@
+[user]
+	name = sbarrios93
+	email = sbarrios93@gmail.com
+[color]
+	ui = true
+[core]
+	editor = emacs
+	excludesfile = /Users/seba/.gitignore_global
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
