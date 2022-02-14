@@ -15,3 +15,6 @@ alias vc='nvim $XDG_CONFIG_HOME/nvim/init.vim'
 
 # Draw.io
 alias draw.io='/Applications/draw.io.app/Contents/MacOS/draw.io'
+
+# replace common `rm` command for trash (https://github.com/changkun/rmtrash)
+alias rm='trash'

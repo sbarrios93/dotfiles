@@ -1,4 +1,5 @@
 code --install-extension almenon.arepl --force &
+code --install-extension be5invis.toml --force &
 code --install-extension BRBoer.vsc-conceal --force &
 code --install-extension bungcip.better-toml --force &
 code --install-extension christian-kohler.path-intellisense --force &
