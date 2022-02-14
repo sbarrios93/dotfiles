@@ -1,0 +1,26 @@
+[".oh-my-zsh"]
+refreshPeriod = "168h"
+stripComponents = 1
+type = "archive"
+url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
+[".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+exact = true
+refreshPeriod = "168h"
+stripComponents = 1
+type = "archive"
+url = "https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.gz"
+[".oh-my-zsh/custom/themes/powerlevel10k"]
+exact = true
+stripComponents = 1
+type = "archive"
+url = "https://github.com/romkatv/powerlevel10k/archive/v1.15.0.tar.gz"
+[".oh-my-zsh/custom/plugins/conda-zsh-completion"]
+exact = true
+stripComponents = 1
+type = "archive"
+url = "https://github.com/esc/conda-zsh-completion/archive/master.tar.gz"
+[".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+exact = true
+stripComponents = 1
+type = "archive"
+url = "https://github.com/zsh-users/zsh-autosuggestions/archive/master.tar.gz"

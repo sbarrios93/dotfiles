@@ -6,3 +6,7 @@ node_modules
 **/.DS_Store
 .vscode/extensions
 .vscode/extensions/**/*
+.oh-my-zsh/custom/plugins
+.oh-my-zsh/custom/plugins/**
+.oh-my-zsh/**/*example*
+.oh-my-zsh/custom/themes
