@@ -306,5 +306,6 @@
 	"editor.guides.bracketPairs": "active",
 	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
 	"markdown.trace": "verbose",
-	"python.formatting.provider": "black"
+	"python.formatting.provider": "black",
+	"tabnine.experimentalAutoImports": true
 }

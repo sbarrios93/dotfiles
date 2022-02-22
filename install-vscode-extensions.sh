@@ -1,10 +1,13 @@
 code --install-extension almenon.arepl --force &
+code --install-extension batisteo.vscode-django --force &
 code --install-extension be5invis.toml --force &
 code --install-extension BRBoer.vsc-conceal --force &
 code --install-extension bungcip.better-toml --force &
 code --install-extension christian-kohler.path-intellisense --force &
 code --install-extension codezombiech.gitignore --force &
 code --install-extension DavidAnson.vscode-markdownlint --force &
+code --install-extension donjayamanne.python-environment-manager --force &
+code --install-extension donjayamanne.python-extension-pack --force &
 code --install-extension eamodio.gitlens --force &
 code --install-extension esbenp.prettier-vscode --force &
 code --install-extension ExodiusStudios.comment-anchors --force &
@@ -12,6 +15,7 @@ code --install-extension GitHub.copilot --force &
 code --install-extension IBM.output-colorizer --force &
 code --install-extension James-Yu.latex-workshop --force &
 code --install-extension johnpapa.vscode-peacock --force &
+code --install-extension KevinRose.vsc-python-indent --force &
 code --install-extension magicstack.MagicPython --force &
 code --install-extension mikestead.dotenv --force &
 code --install-extension monokai.theme-monokai-pro-vscode --force &
@@ -33,6 +37,9 @@ code --install-extension shakram02.bash-beautify --force &
 code --install-extension Shan.code-settings-sync --force &
 code --install-extension sleistner.vscode-fileutils --force &
 code --install-extension streetsidesoftware.code-spell-checker --force &
+code --install-extension TabNine.tabnine-vscode --force &
+code --install-extension tht13.python --force &
 code --install-extension VisualStudioExptTeam.vscodeintellicode --force &
 code --install-extension wholroyd.jinja --force &
+code --install-extension withfig.fig --force &
 code --install-extension yzhang.markdown-all-in-one --force
