@@ -1,10 +1,5 @@
 [
 	{
-		"key": "escape",
-		"command": "notebook.cell.quitEdit",
-		"when": "inputFocus && notebookEditorFocused && !editorHasSelection && !editorHoverVisible && neovim.init && neovim.mode == 'normal'"
-	},
-	{
 		"key": "cmd+; ;",
 		"command": "workbench.action.toggleSidebarVisibility"
 	},
@@ -166,7 +161,7 @@
 	{
 		"key": "escape",
 		"command": "extension.vim_escape",
-		"when": "editorTextFocus && vim.active && !inDebugRepl"
+		"when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Normal'"
 	},
 	{
 		"key": "escape",
@@ -243,5 +238,15 @@
 		"key": "tab",
 		"command": "-editor.emmet.action.expandAbbreviation",
 		"when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+	},
+	{
+		"key": "enter",
+		"command": "notebook.cell.edit",
+		"when": "notebookCellListFocused && notebookEditable && !inputFocus"
+	},
+	{
+		"key": "enter",
+		"command": "-notebook.cell.edit",
+		"when": "notebookCellListFocused && notebookEditable && !inputFocus"
 	}
 ]

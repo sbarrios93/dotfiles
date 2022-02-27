@@ -29,13 +29,10 @@
 		"editor.suggestOnTriggerCharacters": true,
 		"editor.wordBasedSuggestions": false
 	},
-	"[nunjucks]": {
-		"editor.defaultFormatter": "okitavera.vscode-nunjucks-formatter"
-	},
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.python",
-		"editor.formatOnSave": true,
-		"editor.snippetSuggestions": "bottom"
+		"editor.formatOnSave": true
+		// "editor.snippetSuggestions": "bottom"
 	},
 	"[typescript]": {
 		"editor.defaultFormatter": "vscode.typescript-language-features"
@@ -72,9 +69,6 @@
 		"enabled": true
 	},
 	"editor.smoothScrolling": true,
-	"editor.suggest.snippetsPreventQuickSuggestions": false,
-	"editor.suggestSelection": "first",
-	"editor.tabCompletion": "onlySnippets",
 	"editor.tokenColorCustomizations": {
 		"[Monokai Pro New]": {
 			"textMateRules": [
@@ -89,12 +83,6 @@
 	},
 	"editor.wordWrap": "bounded",
 	"editor.wordWrapColumn": 120,
-	"emmet.includeLanguages": {
-		"Nunjucks": "html",
-		"njk": "html",
-		"nunjucks": "html"
-	},
-	"emmet.triggerExpansionOnTab": true,
 	"explorer.autoReveal": true,
 	"explorer.confirmDelete": false,
 	"files.associations": {
@@ -119,12 +107,9 @@
 		"python": true,
 		"yaml": true
 	},
-	"hediet.vscode-drawio.codeLinkActivated": true,
-	"hediet.vscode-drawio.offline": true,
 	"html.format.templating": true,
 	"javascript.updateImportsOnFileMove.enabled": "always",
 	"jupyter.askForKernelRestart": false,
-	"jupyter.changeDirOnImportExport": true,
 	"jupyter.generateSVGPlots": true,
 	"jupyter.interactiveWindowMode": "perFile",
 	"jupyter.jupyterServerType": "local",
@@ -194,13 +179,8 @@
 		["$", "$"],
 		["\\(", "\\)"]
 	],
-	"markdown-preview-enhanced.mathRenderingOption": "MathJax",
-	"markdown-preview-enhanced.previewTheme": "atom-dark.css",
-	"markdown-preview-enhanced.singlePreview": true,
-	"markdown-preview-enhanced.usePandocParser": true,
 	"markdownShiki.theme": "Material-Theme-Ocean-High-Contrast",
 	"markdownlint.focusMode": true,
-	"materialTheme.accent": "Indigo",
 	"notebook.cellFocusIndicator": "border",
 	"notebook.cellToolbarLocation": {
 		"default": "right",
@@ -258,7 +238,6 @@
 	"projectManager.git.baseFolders": ["/Users/seba/projects"],
 	"projectManager.ignoreProjectsWithinProjects": true,
 	"python.analysis.completeFunctionParens": true,
-	"python.condaPath": "/Users/seba/miniforge3/condabin/conda",
 	"python.formatting.blackArgs": ["--line-length", "120"],
 	"python.insidersChannel": "weekly",
 	"python.linting.enabled": true,
@@ -267,31 +246,18 @@
 	"python.terminal.activateEnvInCurrentTerminal": true,
 	"python.terminal.activateEnvironment": true,
 	"security.workspace.trust.untrustedFiles": "open",
-	"sonarlint.rules": {
-		"python:S117": {
-			"level": "off"
-		}
-	},
 	"sync.gist": "fbe45ded8939dc7ba24e96c2cda07c4d",
 	"sync.quietSync": true,
-	"tailwindCSS.emmetCompletions": true,
-	"tailwindCSS.includeLanguages": {
-		"liquid": "html",
-		"njk": "html",
-		"nunjucks": "html"
-	},
 	"terminal.integrated.env.osx": {
 		"FIG_NEW_SESSION": "1"
 	},
 	"terminal.integrated.inheritEnv": false,
-	"trailing-spaces.liveMatching": false,
 	"typescript.updateImportsOnFileMove.enabled": "always",
 	"vim.highlightedyank.enable": true,
 	"vim.hlsearch": true,
 	"vim.overrideCopy": false,
-	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 	"window.openFilesInNewWindow": "on",
-	"workbench.colorTheme": "Monokai Pro (Filter Octagon)",
+	"workbench.colorTheme": "Night Owl Light",
 	"workbench.editorAssociations": {
 		"*.ipynb": "jupyter-notebook",
 		"*.pdf": "latex-workshop-pdf-hook"
@@ -307,5 +273,7 @@
 	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
 	"markdown.trace": "verbose",
 	"python.formatting.provider": "black",
-	"tabnine.experimentalAutoImports": true
+	"workbench.fontAliasing": "antialiased",
+	"sync.autoUpload": true,
+	"sync.autoDownload": true
 }

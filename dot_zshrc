@@ -82,7 +82,7 @@ plugins=(git
     zsh-autosuggestions
     zsh-syntax-highlighting
     conda-zsh-completion
-vscode)
+vscode poetry)
 
 source $ZSH/oh-my-zsh.sh
 # User configuration

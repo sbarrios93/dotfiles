@@ -54,8 +54,6 @@ brew "glog"
 brew "openblas"
 # Compression/decompression library aiming for high speed
 brew "snappy"
-# Play, record, convert, and stream audio and video
-brew "ffmpeg"
 # Implementation of extended-Rice lossless compression algorithm
 brew "szip"
 # File format designed to store large amounts of data
@@ -90,6 +88,8 @@ brew "node"
 brew "eleventy"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Interpreter for PostScript and PDF
@@ -120,6 +120,8 @@ brew "imagemagick"
 brew "iproute2mac"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Linear Algebra PACKage
+brew "lapack"
 # Implementations for atomic memory update operations
 brew "libatomic_ops"
 # Implementation of the file(1) command
@@ -144,8 +146,12 @@ brew "nvm"
 brew "pandoc"
 # Render and include figures in Pandoc documents using many plotting toolkits
 brew "pandoc-plot"
-# Python package management tool
-brew "poetry"
+# Modern Python package manager with PEP 582 support
+brew "pdm"
+# Python version management
+brew "pyenv"
+# Pyenv plugin to manage virtualenv
+brew "pyenv-virtualenv"
 # Software environment for statistical computing
 brew "r"
 # File browser
@@ -233,16 +239,20 @@ cask "font-fira-code-nerd-font"
 # Typeface made for developers
 cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
+cask "font-noto-serif-cjk-jp"
+cask "font-noto-serif-cjk-kr"
+cask "font-noto-serif-cjk-sc"
+cask "font-noto-serif-cjk-tc"
 # Vector graphics editor
 cask "inkscape"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Keyboard customizer
 cask "karabiner-elements"
+# Software for Logitech devices
+cask "logitech-options"
 # Full TeX Live distribution with GUI applications
 cask "mactex"
-# Text editor
-cask "macvim"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
 # Office suite
@@ -251,6 +261,8 @@ cask "microsoft-office"
 cask "numi"
 # Environment for statistical computing and graphics
 cask "r"
+# Collection of apps available by subscription
+cask "setapp"
 # Workstation to streamline your accounts, apps, and workflows
 cask "shift"
 # PDF reader and note-taking application
@@ -273,7 +285,6 @@ mas "Notability", id: 360593530
 mas "Save to Raindrop.io", id: 1549370672
 mas "Spark", id: 1176895641
 mas "Speedtest", id: 1153157709
-mas "Taio", id: 1527036273
 mas "Things", id: 904280696
 mas "Twitter", id: 1482454543
 mas "WhatsApp", id: 1147396723
