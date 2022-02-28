@@ -10,7 +10,7 @@ SCRIPTS_DIR := dot_core/scripts
 all: install deploy
 
 .PHONY: install
-install: xcode brew oh-my-zsh poetry-init crontab-ui
+install: xcode brew-core oh-my-zsh poetry-init crontab-ui brew-install-all
 
 .PHONY: deploy
 deploy:
@@ -23,11 +23,15 @@ xcode: ## Install xcode unix tools
 	xcode-select --install || True
 
 # Homebrew
-.PHONY: brew
-brew: brew-init ## Install homebrew packages
+.PHONY: brew-install-all
+brew-install-all: brew-init
 	eval "$$(/opt/homebrew/bin/brew shellenv)"; \
 	brew bundle --file=dot_core/brew/Brewfile
 
+.PHONY: brew-core
+brew-core: brew-init
+	eval "$$(/opt/homebrew/bin/brew shellenv)"; \
+	brew install python@3.9 node chezmoi pyenv pyenv-virtualwrapper
 
 .PHONY: brew-init
 brew-init: ## Initialize homebrew
@@ -55,7 +59,7 @@ poetry-remove:
 
 .PHONY: crontab-ui
 crontab-ui:
-	/opt/homebrew/opt/npm install -g crontab-ui
+	/opt/homebrew/bin/npm install -g crontab-ui
 
 .PHONY: chezmoi
 chezmoi:
