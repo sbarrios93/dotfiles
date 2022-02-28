@@ -32,9 +32,8 @@ brew: brew-init ## Install homebrew packages
 
 .PHONY: brew-init
 brew-init: ## Initialize homebrew
-	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	if [ ! -e /opt/homebrew ]; then
-		ln -s /usr/local /opt/homebrew
+	if [[ ! -f "/usr/local/bin/brew" ]]; then \
+		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; \
 	fi
 
 
