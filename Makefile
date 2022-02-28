@@ -48,7 +48,7 @@ brew-formulas:
 brew-casks:
 	@echo "Installing homebrew casks"
 	eval "$$(/opt/homebrew/bin/brew shellenv)"; \
-	cat dot_core/brew/Brewfile |  grep '^[cask]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' | xargs -n 1 -0 brew cask install
+	cat dot_core/brew/Brewfile |  grep '^[cask]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' | xargs -n 1 -0 brew install --cask
 
 
 .PHONY: brew-init
@@ -61,7 +61,7 @@ brew-init: ## Initialize homebrew
 brew-mas: ## Install Mac App Store apps
 	@echo "Installing Mac App Store apps"
 	eval "$$(/opt/homebrew/bin/brew shellenv)"; \
-	cat dot_core/brew/Brewfile |  grep '^[mas]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' | xargs -n 1 -0 mas install
+	cat dot_core/brew/Brewfile |  grep '^[mas]' | grep -o '\d*$' | tr '\n' '\0' | xargs -n 1 -0 mas install
 
 .PHONY: nvm-init
 nvm-init: ## Initialize nvm
