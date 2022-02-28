@@ -146,8 +146,6 @@ brew "nvm"
 brew "pandoc"
 # Render and include figures in Pandoc documents using many plotting toolkits
 brew "pandoc-plot"
-# Modern Python package manager with PEP 582 support
-brew "pdm"
 # Python version management
 brew "pyenv"
 # Pyenv plugin to manage virtualenv

@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin"
+
+# load environmental variables
+source ~/.oh-my-zsh/custom/_paths.zsh
+
+BREWFILE="${core}/brew/Brewfile"
+
+# set self path
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+
+# brew bundle dump
+brew bundle dump --file=$BREWFILE --force --describe --tap --mas --formula --cask --cleanup
+
+# update chezmoi brewfile
+chezmoi re-add ${BREWFILE}

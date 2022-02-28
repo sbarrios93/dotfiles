@@ -257,7 +257,7 @@
 	"vim.hlsearch": true,
 	"vim.overrideCopy": false,
 	"window.openFilesInNewWindow": "on",
-	"workbench.colorTheme": "Night Owl Light",
+	"workbench.colorTheme": "Monokai Pro (Filter Machine)",
 	"workbench.editorAssociations": {
 		"*.ipynb": "jupyter-notebook",
 		"*.pdf": "latex-workshop-pdf-hook"
@@ -275,5 +275,8 @@
 	"python.formatting.provider": "black",
 	"workbench.fontAliasing": "antialiased",
 	"sync.autoUpload": true,
-	"sync.autoDownload": true
+	"sync.autoDownload": true,
+	"[shellscript]": {
+		"editor.defaultFormatter": "foxundermoon.shell-format"
+	}
 }

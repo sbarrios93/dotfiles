@@ -36,7 +36,6 @@ code --install-extension OrangeX4.hsnips --force &
 code --install-extension redhat.vscode-yaml --force &
 code --install-extension ronnidc.nunjucks --force &
 code --install-extension sdras.night-owl --force &
-code --install-extension Shan.code-settings-sync --force &
 code --install-extension tht13.python --force &
 code --install-extension VisualStudioExptTeam.vscodeintellicode --force &
 code --install-extension vscodevim.vim --force &

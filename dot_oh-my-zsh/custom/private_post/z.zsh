@@ -1,1 +1,1 @@
-. $CORE/bin/z/z.sh
+. $core/bin/z/z.sh
