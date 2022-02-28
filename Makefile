@@ -31,7 +31,7 @@ brew-install-all: brew-init
 .PHONY: brew-core
 brew-core: brew-init
 	eval "$$(/opt/homebrew/bin/brew shellenv)"; \
-	brew install python@3.9 node chezmoi pyenv pyenv-virtualenv; \
+	brew install python@3.9 node nvm chezmoi pyenv pyenv-virtualenv; \
 	brew postinstall node; \
 	brew link node; \
 
