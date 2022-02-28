@@ -33,7 +33,7 @@ brew-core: brew-init
 	brew link node; \
 
 .PHONY: brew-tap
-brew-tap
+brew-tap:
 	@echo "Tapping homebrew taps"
 	eval "$$(/opt/homebrew/bin/brew shellenv)"; \
 	cat dot_core/brew/Brewfile |  grep '^[tap]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' | xargs -n 1 -0 brew tap
