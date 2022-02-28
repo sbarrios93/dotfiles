@@ -10,21 +10,33 @@ SCRIPTS_DIR := dot_core/scripts
 all: install deploy
 
 .PHONY: install
-install: brew oh-my-zsh poetry-init crontab-ui
+install: xcode brew oh-my-zsh poetry-init crontab-ui
 
 .PHONY: deploy
 deploy:
 	chezmoi code-extensions macos-defaults
 
-# Homebrew
-.PHONY: brew-init
-brew-init:
-	xcode-select --install 2>/dev/null;
-	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
 
+.PHONY: xcode
+xcode: ## Install xcode unix tools
+	@echo "Installing xcode cli tools";
+	xcode-select --install || True
+
+# Homebrew
 .PHONY: brew
-brew: brew-init
-	brew bundle --file=dot_core/brew/Brewfile
+brew: brew-init ## Install homebrew packages
+	eval "$$(/opt/homebrew/bin/brew shellenv)"; \
+	brew bundle --file=dot_core/brew/Brewfile 2>&1 \
+	|awk '/has failed!/{print $$2}' |xargs brew reinstall -f;
+
+
+.PHONY: brew-init
+brew-init: ## Initialize homebrew
+	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	if [ ! -e /opt/homebrew ]; then
+		ln -s /usr/local /opt/homebrew
+	fi
+
 
 
 .PHONY: oh-my-zsh
