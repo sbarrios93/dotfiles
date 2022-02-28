@@ -31,7 +31,7 @@ brew-install-all: brew-init
 .PHONY: brew-core
 brew-core: brew-init
 	eval "$$(/opt/homebrew/bin/brew shellenv)"; \
-	brew install python@3.9 node chezmoi pyenv pyenv-virtualwrapper
+	brew install python@3.9 node chezmoi pyenv pyenv-virtualenv
 
 .PHONY: brew-init
 brew-init: ## Initialize homebrew
