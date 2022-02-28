@@ -10,7 +10,7 @@ BREWFILE="${core}/brew/Brewfile"
 # SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 
 # brew bundle dump
-brew bundle dump --file=$BREWFILE --force --describe --tap --mas --formula --cask --cleanup
+brew bundle dump --file=$BREWFILE --force --describe --tap --formula --cask --cleanup
 
 # update chezmoi brewfile
 chezmoi re-add ${BREWFILE}

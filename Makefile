@@ -10,7 +10,7 @@ SCRIPTS_DIR := dot_core/scripts
 all: install deploy
 
 .PHONY: install
-install: xcode brew-core nvm-init oh-my-zsh poetry-init crontab-ui brew-install-all
+install: xcode brew-tap brew-core brew-formulas nvm-init oh-my-zsh poetry-init brew-casks crontab-ui brew-mas
 
 .PHONY: deploy
 deploy:
@@ -24,23 +24,44 @@ xcode: ## Install xcode unix tools
 	xcode-select --install || True
 
 # Homebrew
-.PHONY: brew-install-all
-brew-install-all: brew-init
-	eval "$$(/opt/homebrew/bin/brew shellenv)"; \
-	brew bundle --file=dot_core/brew/Brewfile
-
 .PHONY: brew-core
 brew-core: brew-init
+	@echo "Installing Homebrew core";
 	eval "$$(/opt/homebrew/bin/brew shellenv)"; \
 	brew install python@3.9 node nvm cmake chezmoi pyenv pyenv-virtualenv; \
 	brew postinstall node; \
 	brew link node; \
+
+.PHONY: brew-tap
+brew-tap
+	@echo "Tapping homebrew taps"
+	eval "$$(/opt/homebrew/bin/brew shellenv)"; \
+	cat dot_core/brew/Brewfile |  grep '^[tap]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' | xargs -n 1 -0 brew tap
+
+.PHONY: brew-formulas
+brew-formulas:
+	@echo "Installing homebrew formulas"
+	eval "$$(/opt/homebrew/bin/brew shellenv)"; \
+	cat dot_core/brew/Brewfile |  grep '^[brew]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' | xargs -n 1 -0 brew install
+
+.PHONY: brew-casks
+brew-casks:
+	@echo "Installing homebrew casks"
+	eval "$$(/opt/homebrew/bin/brew shellenv)"; \
+	cat dot_core/brew/Brewfile |  grep '^[cask]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' | xargs -n 1 -0 brew cask install
+
 
 .PHONY: brew-init
 brew-init: ## Initialize homebrew
 	if [[ ! -f "/usr/local/bin/brew" ]]; then \
 		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; \
 	fi
+
+.PHONY: brew-mas
+brew-mas: ## Install Mac App Store apps
+	@echo "Installing Mac App Store apps"
+	eval "$$(/opt/homebrew/bin/brew shellenv)"; \
+	cat dot_core/brew/Brewfile |  grep '^[mas]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' | xargs -n 1 -0 mas install
 
 .PHONY: nvm-init
 nvm-init: ## Initialize nvm

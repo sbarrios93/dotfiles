@@ -128,8 +128,6 @@ brew "lapack"
 brew "libatomic_ops"
 # Implementation of the file(1) command
 brew "libmagic"
-# Keep your Mac's application settings in sync
-brew "mackup"
 # Utility for directing compilation
 brew "make"
 # Mac App Store command-line interface
@@ -172,8 +170,6 @@ brew "sk"
 brew "speedtest-cli"
 # Tool to create intelligent and beautiful documentation
 brew "sphinx-doc"
-# Organize software neatly under a single directory tree (e.g. /usr/local)
-brew "stow"
 # Modernized, complete, self-contained TeX/LaTeX engine
 brew "tectonic"
 # Official documentation format of the GNU project
@@ -205,16 +201,12 @@ brew "jez/formulae/pandoc-sidenote"
 brew "xwmx/taps/nb"
 # karabiner configurator
 brew "yqrashawn/goku/goku"
-brew "zegervdv/zathura/zathura"
-brew "zegervdv/zathura/zathura-pdf-poppler"
 # Command-line helper for the 1Password password manager
 cask "1password-cli"
 # Collection of apps and services for photography, design, video, web, and UX
 cask "adobe-creative-cloud"
 # Application uninstaller
 cask "appcleaner"
-# 3D creation suite
-cask "blender"
 # Free and open-source web browser
 cask "chromium"
 # Family of tools to build, test and package software
@@ -259,16 +251,10 @@ cask "mactex"
 cask "microsoft-auto-update"
 # Office suite
 cask "microsoft-office"
-# Calculator and converter application
-cask "numi"
 # Environment for statistical computing and graphics
 cask "r"
 # Collection of apps available by subscription
 cask "setapp"
-# Workstation to streamline your accounts, apps, and workflows
-cask "shift"
-# PDF reader and note-taking application
-cask "skim"
 # Team communication and collaboration software
 cask "slack"
 # Music streaming service

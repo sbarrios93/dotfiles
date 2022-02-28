@@ -43,5 +43,6 @@ code --install-extension tht13.python --force &
 code --install-extension VisualStudioExptTeam.vscodeintellicode --force &
 code --install-extension vscodevim.vim --force &
 code --install-extension wholroyd.jinja --force &
+code --install-extension withfig.fig --force &
 code --install-extension yy0931.mplstyle --force &
 code --install-extension yzhang.markdown-all-in-one --force
