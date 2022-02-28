@@ -48,7 +48,7 @@ oh-my-zsh:
 # poetry
 .PHONY: poetry-init
 poetry-init:
-	curl -sSL https://install.python-poetry.org | POETRY_HOME=${POETRY_HOME} python3 -
+	curl -sSL https://install.python-poetry.org | POETRY_HOME=${POETRY_HOME} /opt/homebrew/bin/python3 -
 # append line if it does not exist
 	mkdir -p ${ZSH_CUSTOM}/plugins/poetry
 	${HOME}/.core/poetry/bin/poetry completions zsh > ${ZSH_CUSTOM}/plugins/poetry/_poetry
