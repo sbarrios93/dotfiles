@@ -20,8 +20,7 @@ deploy:
 .PHONY: brew-init
 brew-init:
 	xcode-select --install 2>/dev/null;
-	chmod +x ${SCRIPTS_DIR}/brew-init
-	./${SCRIPTS_DIR}/brew-init
+	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
 
 .PHONY: brew
 brew: brew-init
