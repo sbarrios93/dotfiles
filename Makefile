@@ -10,7 +10,7 @@ SCRIPTS_DIR := dot_core/scripts
 all: install deploy
 
 .PHONY: install
-install: xcode brew-core oh-my-zsh poetry-init crontab-ui brew-install-all
+install: xcode brew-core nvm oh-my-zsh poetry-init crontab-ui brew-install-all
 
 .PHONY: deploy
 deploy:
@@ -41,6 +41,11 @@ brew-init: ## Initialize homebrew
 		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; \
 	fi
 
+.PHONY: nvm-init
+nvm-init: ## Initialize nvm
+	source $(HOME)/.nvm/nvm.sh ;\
+	nvm install 17.6;\
+	nvm alias default 17.6;\
 
 
 .PHONY: oh-my-zsh
@@ -60,8 +65,8 @@ poetry-remove:
 	curl -sSL https://install.python-poetry.org | POETRY_HOME=${POETRY_HOME} POETRY_UNINSTALL=1 python3 -
 
 .PHONY: crontab-ui
-crontab-ui:
-	/opt/homebrew/bin/npm install -g crontab-ui
+crontab-ui: nvm-init
+	npm install -g crontab-ui
 
 .PHONY: chezmoi
 chezmoi:
