@@ -65,7 +65,7 @@ poetry-remove:
 	curl -sSL https://install.python-poetry.org | POETRY_HOME=${POETRY_HOME} POETRY_UNINSTALL=1 python3 -
 
 .PHONY: crontab-ui
-crontab-ui: nvm-init
+crontab-ui: source $(HOME)/.nvm/nvm.sh ;\
 	npm install -g crontab-ui
 
 .PHONY: chezmoi
