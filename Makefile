@@ -26,8 +26,7 @@ xcode: ## Install xcode unix tools
 .PHONY: brew
 brew: brew-init ## Install homebrew packages
 	eval "$$(/opt/homebrew/bin/brew shellenv)"; \
-	brew bundle --file=dot_core/brew/Brewfile 2>&1 \
-	|awk '/has failed!/{print $$2}' |xargs brew reinstall -f;
+	brew bundle --file=dot_core/brew/Brewfile
 
 
 .PHONY: brew-init
@@ -56,11 +55,11 @@ poetry-remove:
 
 .PHONY: crontab-ui
 crontab-ui:
-	npm install -g crontab-ui
+	/opt/homebrew/opt/npm install -g crontab-ui
 
 .PHONY: chezmoi
 chezmoi:
-	chezmoi init --apply
+	/opt/homebrew/bin/chezmoi init --apply
 
 .PHONY: code-extensions
 code-extensions:
