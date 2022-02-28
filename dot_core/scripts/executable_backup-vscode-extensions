@@ -4,9 +4,11 @@ PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/bin:/usr/local/bin:/usr
 # load environmental variables
 source ${HOME}/.core/zsh/_paths.zsh
 
-CHEZMOI_DIR=$(chezmoi source-path)
+# CHEZMOI_DIR=$(chezmoi source-path)
+
+THIS_SCRIPT=${HOME}/.core/scripts/install-vscode-extensions.sh
 
 echo "export VSCode extensions to executable"
-code --list-extensions | xargs -L 1 echo code --install-extension | sed 's/$/ --force/' | sed '$!s/$/ \&/' >${CHEZMOI_DIR}/install-vscode-extensions.sh
-chmod +x ${CHEZMOI_DIR}/install-vscode-extensions.sh
+code --list-extensions | xargs -L 1 echo code --install-extension | sed 's/$/ --force/' | sed '$!s/$/ \&/' >${THIS_SCRIPT}
+chmod +x ${THIS_SCRIPT}
 echo "export VSCode extensions to executable: done"
