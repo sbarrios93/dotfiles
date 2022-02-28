@@ -13,8 +13,7 @@ all: install deploy
 install: xcode brew-tap brew-core brew-formulas nvm-init oh-my-zsh poetry-init brew-casks crontab-ui brew-mas
 
 .PHONY: deploy
-deploy:
-	chezmoi code-extensions macos-defaults crontab
+deploy: chezmoi code-extensions macos-defaults crontab
 
 
 .PHONY: xcode
