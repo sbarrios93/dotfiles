@@ -14,11 +14,12 @@ install: xcode brew-core nvm-init oh-my-zsh poetry-init crontab-ui brew-install-
 
 .PHONY: deploy
 deploy:
-	chezmoi code-extensions macos-defaults
+	chezmoi code-extensions macos-defaults crontab
 
 
 .PHONY: xcode
 xcode: ## Install xcode unix tools
+
 	@echo "Installing xcode cli tools";
 	xcode-select --install || True
 
@@ -31,7 +32,7 @@ brew-install-all: brew-init
 .PHONY: brew-core
 brew-core: brew-init
 	eval "$$(/opt/homebrew/bin/brew shellenv)"; \
-	brew install python@3.9 node nvm chezmoi pyenv pyenv-virtualenv; \
+	brew install python@3.9 node nvm cmake chezmoi pyenv pyenv-virtualenv; \
 	brew postinstall node; \
 	brew link node; \
 
@@ -82,3 +83,7 @@ code-extensions:
 macos-defaults:
 	chmod +x ${SCRIPTS_DIR}/dot_macos
 	${SCRIPTS_DIR}/dot_macos
+
+.PHONY: crontab-restore
+crontab-restore:
+	crontab < ${HOME}/.core/scripts/crontab.save
