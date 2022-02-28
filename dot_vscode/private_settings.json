@@ -257,7 +257,7 @@
 	"vim.hlsearch": true,
 	"vim.overrideCopy": false,
 	"window.openFilesInNewWindow": "on",
-	"workbench.colorTheme": "Monokai Pro (Filter Machine)",
+	"workbench.colorTheme": "Night Owl",
 	"workbench.editorAssociations": {
 		"*.ipynb": "jupyter-notebook",
 		"*.pdf": "latex-workshop-pdf-hook"

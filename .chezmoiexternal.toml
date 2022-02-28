@@ -3,27 +3,29 @@ refreshPeriod = "168h"
 stripComponents = 1
 type = "archive"
 url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
-[".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+[".core/zsh/plugins/zsh-syntax-highlighting"]
 exact = true
 refreshPeriod = "168h"
 stripComponents = 1
 type = "archive"
 url = "https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.gz"
-[".oh-my-zsh/custom/themes/powerlevel10k"]
+[".core/zsh/themes/powerlevel10k"]
+refreshPeriod = "168h"
 stripComponents = 1
 type = "archive"
-url = "https://github.com/romkatv/powerlevel10k/archive/v1.15.0.tar.gz"
-[".oh-my-zsh/custom/plugins/conda-zsh-completion"]
-exact = true
+url = "https://github.com/romkatv/powerlevel10k/archive/master.tar.gz"
+[".core/zsh/plugins/conda-zsh-completion"]
+refreshPeriod = "168h"
 stripComponents = 1
 type = "archive"
 url = "https://github.com/esc/conda-zsh-completion/archive/master.tar.gz"
-[".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
-exact = true
+[".core/zsh/plugins/zsh-autosuggestions"]
+refreshPeriod = "168h"
 stripComponents = 1
 type = "archive"
 url = "https://github.com/zsh-users/zsh-autosuggestions/archive/master.tar.gz"
 [".core/bin/z"]
+refreshPeriod = "168h"
 stripComponents = 1
 type = "archive"
 url = "https://github.com/rupa/z/archive/master.tar.gz"

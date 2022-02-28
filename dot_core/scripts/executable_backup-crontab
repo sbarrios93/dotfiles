@@ -2,9 +2,9 @@
 PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin"
 
 # load environmental variables
-source ~/.oh-my-zsh/custom/_paths.zsh
+source ${HOME}/.core/zsh/_paths.zsh
 
-crontab -l > ${core}/scripts/crontab.save
+crontab -l >${core}/scripts/crontab.save
 
 chezmoi re-add ${core}/scripts/crontab.save
 

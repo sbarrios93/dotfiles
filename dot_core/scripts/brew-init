@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 # NOTE: CI=1
 #       Suppress "Press RETURN to continue or any other key to abort"

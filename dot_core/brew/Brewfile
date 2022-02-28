@@ -90,6 +90,8 @@ brew "eleventy"
 brew "fd"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Collection of GNU find, xargs, and locate
+brew "findutils"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Interpreter for PostScript and PDF
@@ -219,6 +221,8 @@ cask "chromium"
 cask "cmake"
 # Tool to show live information about the batteries in various devices
 cask "coconutbattery"
+# App to build and share containerized applications and microservices
+cask "docker"
 # Calendar software
 cask "fantastical"
 # Web browser

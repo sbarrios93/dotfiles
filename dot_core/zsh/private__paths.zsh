@@ -2,8 +2,8 @@
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH=$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH
 
-# CORE folder
-export core=$HOME/.core
+# poetry
+export PATH="$core/poetry/bin:$PATH"
 
 # Google  Drive
 export drive="/Volumes/GoogleDrive/My Drive"
@@ -39,7 +39,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export HDF5_DIR=/opt/homebrew/opt/hdf5
 
 # target this file
-export custompaths=/Users/seba/.oh-my-zsh/custom/_paths.zsh
+export custompaths=$core/zsh/_paths.zsh
 
 # for openblas
 export LDFLAGS="-L/opt/homebrew/opt/openblas/lib -L/opt/homebrew/opt/lapack/lib ${LDFLAGS}"
