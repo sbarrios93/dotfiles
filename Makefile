@@ -19,8 +19,7 @@ deploy:
 # Homebrew
 .PHONY: brew-init
 brew-init:
-	xcode-select --install 2>/dev/null || :
-	${SCRIPTS_DIR}/brew_init
+	xcode-select --install 2>/dev/null && chmod +x ${SCRIPTS_DIR}/brew_init && ${SCRIPTS_DIR}/brew_init
 
 .PHONY: brew
 brew: brew-init
