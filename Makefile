@@ -14,7 +14,7 @@ install: brew oh-my-zsh poetry-init crontab-ui
 
 .PHONY: deploy
 deploy:
-	chezmoi code-extensions
+	chezmoi code-extensions macos-defaults
 
 # Homebrew
 .PHONY: brew-init
@@ -55,3 +55,8 @@ chezmoi:
 code-extensions:
 	chmod +x ${SCRIPTS_DIR}/executable_install-vscode-extensions.sh
 	$(SCRIPTS_DIR)/executable_install-vscode-extensions.sh
+
+.PHONY: macos-defaults
+macos-defaults:
+	chmod +x ${SCRIPTS_DIR}/dot_macos
+	${SCRIPTS_DIR}/dot_macos
