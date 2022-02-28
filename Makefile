@@ -10,7 +10,7 @@ SCRIPTS_DIR := dot_core/scripts
 all: install deploy
 
 .PHONY: install
-install: xcode brew-core nvm oh-my-zsh poetry-init crontab-ui brew-install-all
+install: xcode brew-core nvm-init oh-my-zsh poetry-init crontab-ui brew-install-all
 
 .PHONY: deploy
 deploy:
