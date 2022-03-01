@@ -17,10 +17,10 @@ deploy: terminal-permissions sudo chezmoi code-extensions macos-defaults crontab
 
 .PHONY: terminal-permissions
 terminal-permissions: # Check whether Terminal has Full Disk Access
-	if [[ ! -r "/Library/Application Support/com.apple.TCC/TCC.db" ]]; then \
-		echo "Full Disk Access must be granted to Terminal in order to run this script." \
-		open "x-apple.systempreferences:com.apple.preference.security?Privacy" \
-		exit \
+	if [[ ! -r "/Library/Application Support/com.apple.TCC/TCC.db" ]]; then;\
+		echo "Full Disk Access must be granted to Terminal in order to run this script.";\
+		open "x-apple.systempreferences:com.apple.preference.security?Privacy";\
+		exit;\
 	fi
 
 .PHONY: sudo
