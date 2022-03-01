@@ -4,8 +4,8 @@ PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/bin:/usr/local/bin:/usr
 # load environmental variables
 source ${HOME}/.core/zsh/_paths.zsh
 
-crontab -l >${core}/scripts/crontab.save
+crontab -l >${HOME}/.core/scripts/crontab.save
 
-chezmoi re-add ${core}/scripts/crontab.save
+chezmoi re-add ${HOME}/.core/scripts/crontab.save
 
-echo "crontab saved as ${core}/scripts/crontab.save"
+echo "crontab saved as ${HOME}/.core/scripts/crontab.save"

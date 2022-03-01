@@ -16,9 +16,7 @@ install: terminal-permissions xcode brew-tap brew-core brew-formulas nvm-init oh
 deploy: terminal-permissions sudo chezmoi code-extensions macos-defaults crontab-restore
 
 .PHONY: terminal-permissions
-terminal-permissions: # Check whether macos Terminal has Full Disk Access
-	chmod +x dot_core/scripts/executable_terminal-permissions;\
-	./dot_core/scripts/executable_terminal-permissions
+terminal-permissions: # Check whether Terminal has Full Disk Access
 
 
 .PHONY: sudo
