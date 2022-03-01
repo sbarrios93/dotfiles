@@ -97,6 +97,7 @@ chezmoi:
 .PHONY: code-extensions
 code-extensions:
 	chmod +x ${SCRIPTS_DIR}/executable_install-vscode-extensions.sh
+	export PATH="$$PATH:/opt/homebrew/bin"; \
 	$(SCRIPTS_DIR)/executable_install-vscode-extensions.sh
 
 .PHONY: macos-defaults
