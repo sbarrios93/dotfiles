@@ -7,7 +7,11 @@ osascript -e 'tell application "System Preferences" to quit'
 sudo -v
 
 # Keep-alive: update existing sudo timestamp until macos has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do
+    sudo -n true
+    sleep 60
+    kill -0 "$$" || exit
+done 2>/dev/null &
 
 # Check whether Terminal has Full Disk Access
 if [[ ! -r "/Library/Application Support/com.apple.TCC/TCC.db" ]]; then
@@ -111,4 +115,3 @@ defaults write com.apple.commerce AutoUpdate -bool true
 defaults write com.apple.ImageCapture disableHotPlug -bool true
 killall Dock
 killall Finder
-killall SystemUIServerf
