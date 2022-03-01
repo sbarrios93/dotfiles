@@ -13,8 +13,11 @@ all: install deploy
 install: xcode brew-tap brew-core brew-formulas nvm-init oh-my-zsh poetry-init brew-casks crontab-ui brew-mas
 
 .PHONY: deploy
-deploy: chezmoi code-extensions macos-defaults crontab-restore
+deploy: sudo chezmoi code-extensions macos-defaults crontab-restore
 
+sudo:
+	sudo -v
+	while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 .PHONY: xcode
 xcode: ## Install xcode unix tools
