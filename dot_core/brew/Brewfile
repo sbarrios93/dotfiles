@@ -82,8 +82,6 @@ brew "coreutils"
 brew "deno"
 # Generate documentation for several programming languages
 brew "doxygen"
-# Platform built on V8 to build network applications
-brew "node"
 # Simpler static site generator
 brew "eleventy"
 # Simple, fast and user-friendly alternative to find
@@ -140,8 +138,6 @@ brew "meson"
 brew "neovim"
 # Port scanning utility for large networks
 brew "nmap"
-# Manage multiple Node.js versions
-brew "nvm"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Render and include figures in Pandoc documents using many plotting toolkits

@@ -5,9 +5,12 @@ DOTFILES := $(filter-out $(EXCLUDES), $(TARGETS))
 POETRY_HOME := ${HOME}/.core/poetry
 ZSH_CUSTOM := ${HOME}/.core/zsh
 SCRIPTS_DIR := dot_core/scripts
+NVM_DIR := $(HOME)/.nvm
+export XDG_CONFIG_HOME := $(HOME)/.config
+
 
 .PHONY: all
-all: install deploy
+all: install deploy python-envs
 
 .PHONY: install
 install: terminal-permissions xcode brew-tap brew-core brew-formulas nvm-init oh-my-zsh poetry-init brew-casks crontab-ui brew-mas
@@ -17,7 +20,8 @@ deploy: terminal-permissions sudo chezmoi code-extensions macos-defaults crontab
 
 .PHONY: terminal-permissions
 terminal-permissions: # Check whether Terminal has Full Disk Access
-
+	chmod +x dot_core/scripts/executable_terminal-permissions;\
+	dot_core/scripts/executable_terminal-permissions
 
 .PHONY: sudo
 sudo:
@@ -26,7 +30,6 @@ sudo:
 
 .PHONY: xcode
 xcode: ## Install xcode unix tools
-
 	@echo "Installing xcode cli tools";
 	xcode-select --install || True
 
@@ -35,9 +38,7 @@ xcode: ## Install xcode unix tools
 brew-core: brew-init
 	@echo "Installing Homebrew core";
 	eval "$$(/opt/homebrew/bin/brew shellenv)"; \
-	brew install python@3.9 node nvm cmake chezmoi pyenv pyenv-virtualenv; \
-	brew postinstall node; \
-	brew link node; \
+	brew install python@3.9 cmake chezmoi pyenv pyenv-virtualenv
 
 .PHONY: brew-tap
 brew-tap:
@@ -60,18 +61,18 @@ brew-casks:
 
 .PHONY: brew-init
 brew-init: ## Initialize homebrew
-	if [[ ! -f "/usr/local/bin/brew" ]]; then \
-		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; \
-	fi
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
 
 .PHONY: brew-mas
 brew-mas: ## Install Mac App Store apps
 	@echo "Installing Mac App Store apps"
 	eval "$$(/opt/homebrew/bin/brew shellenv)"; \
-	cat dot_core/brew/Brewfile |  grep '^[mas]' | grep -o '\d*$' | tr '\n' '\0' | xargs -n 1 -0 mas install
+	cat dot_core/brew/Brewfile |  grep '^[mas]' | grep -o '\d*$' | tr '\n' '\0' | xargs -n 1 -0 /opt/homebrew/bin/mas install
 
 .PHONY: nvm-init
 nvm-init: ## Initialize nvm
+	if ! [ -d $(NVM_DIR)/.git ]; then git clone https://github.com/creationix/nvm.git $(NVM_DIR); fi
+	. $(NVM_DIR)/nvm.sh;
 	source $(HOME)/.nvm/nvm.sh ;\
 	nvm install 17.6;\
 	nvm alias default 17.6;\
@@ -80,6 +81,9 @@ nvm-init: ## Initialize nvm
 .PHONY: oh-my-zsh
 oh-my-zsh:
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+.PHONY: python-envs
+python-envs: pyenv-env-base pyenv-env-jupyter
 
 # poetry
 .PHONY: poetry-init
@@ -117,3 +121,21 @@ macos-defaults:
 .PHONY: crontab-restore
 crontab-restore:
 	crontab < ${HOME}/.core/scripts/crontab.save
+
+.PHONY: pyenv-env-base
+pyenv-env-base:
+	@echo "Installing pyenv base env"
+	pyenv install 3.9.10;\
+	pyenv virtualenv 3.9.10 base;\
+	pyenv global base;\
+	pyenv rehash;\
+
+.PHONY: pyenv-env-jupyter
+pyenv-env-jupyter:
+	@echo "Installing pyenv jupyter env"
+	eval "$$(pyenv init -)"; \
+	eval "$$(pyenv virtualenv init -)"; \
+	pyenv virtualenv 3.9.10 jupyter;\
+	pyenv rehash;\
+	pyenv shell jupyter;\
+	pip install jupyterlab black jupyter_contrib_nbextensions jupyter_nbextensions_configurator ipykernel;\
