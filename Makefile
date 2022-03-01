@@ -5,15 +5,19 @@ DOTFILES := $(filter-out $(EXCLUDES), $(TARGETS))
 POETRY_HOME := ${HOME}/.core/poetry
 ZSH_CUSTOM := ${HOME}/.core/zsh
 SCRIPTS_DIR := dot_core/scripts
+PATH := "${PATH}:/opt/homebrew/bin"
 
 .PHONY: all
-all: install deploy
+all: install deploy python-envs
 
 .PHONY: install
 install: terminal-permissions xcode brew-tap brew-core brew-formulas nvm-init oh-my-zsh poetry-init brew-casks crontab-ui brew-mas
 
 .PHONY: deploy
 deploy: terminal-permissions sudo chezmoi code-extensions macos-defaults crontab-restore
+
+.PHONY: python-envs
+python-envs: pyenv-env-base pyenv-env-jupyter
 
 .PHONY: terminal-permissions
 terminal-permissions: # Check whether Terminal has Full Disk Access
@@ -117,3 +121,21 @@ macos-defaults:
 .PHONY: crontab-restore
 crontab-restore:
 	crontab < ${HOME}/.core/scripts/crontab.save
+
+.PHONY: pyenv-env-base
+pyenv-env-base:
+	@echo "Installing pyenv base env"
+	pyenv install 3.9.10;\
+	pyenv virtualenv 3.9.10 base;\
+	pyenv global base;\
+	pyenv rehash;\
+
+.PHONY: pyenv-env-jupyter
+pyenv-env-jupyter:
+	@echo "Installing pyenv jupyter env"
+	eval "$$(pyenv init -)"; \
+	eval "$$(pyenv virtualenv init -)"; \
+	pyenv virtualenv 3.9.10 jupyter;\
+	pyenv rehash;\
+	pyenv shell jupyter;\
+	pip install jupyterlab black jupyter_contrib_nbextensions jupyter_nbextensions_configurator ipykernel;\
