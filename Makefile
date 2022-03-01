@@ -10,11 +10,20 @@ SCRIPTS_DIR := dot_core/scripts
 all: install deploy
 
 .PHONY: install
-install: xcode brew-tap brew-core brew-formulas nvm-init oh-my-zsh poetry-init brew-casks crontab-ui brew-mas
+install: terminal-permissions xcode brew-tap brew-core brew-formulas nvm-init oh-my-zsh poetry-init brew-casks crontab-ui brew-mas
 
 .PHONY: deploy
-deploy: sudo chezmoi code-extensions macos-defaults crontab-restore
+deploy: terminal-permissions sudo chezmoi code-extensions macos-defaults crontab-restore
 
+.PHONY: terminal-permissions
+terminal-permissions: # Check whether Terminal has Full Disk Access
+	if [[ ! -r "/Library/Application Support/com.apple.TCC/TCC.db" ]]; then
+		echo "Full Disk Access must be granted to Terminal in order to run this script."
+		open "x-apple.systempreferences:com.apple.preference.security?Privacy"
+		exit
+	fi
+
+.PHONY: sudo
 sudo:
 	sudo -v
 	while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
