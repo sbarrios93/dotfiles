@@ -98,14 +98,15 @@
 	"git.enableSmartCommit": true,
 	"github.copilot.advanced": {
 		"inlineSuggestCount": 5,
-		"temperature": "0.4"
+		"temperature": "0.4",
+		"length": 500
 	},
 	"github.copilot.enable": {
 		"*": true,
-		"markdown": true,
+		"yaml": true,
 		"plaintext": false,
-		"python": true,
-		"yaml": true
+		"markdown": true,
+		"python": true
 	},
 	"html.format.templating": true,
 	"javascript.updateImportsOnFileMove.enabled": "always",
@@ -257,7 +258,7 @@
 	"vim.hlsearch": true,
 	"vim.overrideCopy": false,
 	"window.openFilesInNewWindow": "on",
-	"workbench.colorTheme": "Night Owl",
+	"workbench.colorTheme": "Monokai Pro (Filter Octagon)",
 	"workbench.editorAssociations": {
 		"*.ipynb": "jupyter-notebook",
 		"*.pdf": "latex-workshop-pdf-hook"
@@ -278,5 +279,6 @@
 	"sync.autoDownload": true,
 	"[shellscript]": {
 		"editor.defaultFormatter": "foxundermoon.shell-format"
-	}
+	},
+	"security.workspace.trust.enabled": false
 }

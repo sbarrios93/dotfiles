@@ -39,6 +39,7 @@ code --install-extension redhat.vscode-yaml --force &
 code --install-extension rogalmic.bash-debug --force &
 code --install-extension ronnidc.nunjucks --force &
 code --install-extension sdras.night-owl --force &
+code --install-extension sleistner.vscode-fileutils --force &
 code --install-extension tht13.python --force &
 code --install-extension VisualStudioExptTeam.vscodeintellicode --force &
 code --install-extension vscodevim.vim --force &

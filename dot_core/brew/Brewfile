@@ -16,18 +16,12 @@ tap "xwmx/taps"
 tap "yqrashawn/goku"
 tap "zegervdv/zathura"
 tap "zero-sh/tap"
+# Automate deployment, configuration, and upgrading
+brew "ansible"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
 # Core application library for C
 brew "glib"
-# Generate introspection data for GObject libraries
-brew "gobject-introspection"
-# OpenType text shaping engine
-brew "harfbuzz"
-# Framework for layout and rendering of i18n text
-brew "pango"
-# Automate deployment, configuration, and upgrading
-brew "ansible"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
 # Programmable completion for Bash 3.2
@@ -52,6 +46,10 @@ brew "gflags"
 brew "glog"
 # Optimized BLAS library
 brew "openblas"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
+# OpenType text shaping engine
+brew "harfbuzz"
 # Compression/decompression library aiming for high speed
 brew "snappy"
 # Implementation of extended-Rice lossless compression algorithm
@@ -82,6 +80,8 @@ brew "coreutils"
 brew "deno"
 # Generate documentation for several programming languages
 brew "doxygen"
+# Platform built on V8 to build network applications
+brew "node"
 # Simpler static site generator
 brew "eleventy"
 # Simple, fast and user-friendly alternative to find
@@ -104,6 +104,8 @@ brew "gnu-sed"
 brew "gnu-tar"
 # Image manipulation
 brew "netpbm"
+# Framework for layout and rendering of i18n text
+brew "pango"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
 # GSettings schemas for desktop components
@@ -138,6 +140,8 @@ brew "meson"
 brew "neovim"
 # Port scanning utility for large networks
 brew "nmap"
+# Manage multiple Node.js versions
+brew "nvm"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Render and include figures in Pandoc documents using many plotting toolkits
@@ -197,10 +201,12 @@ brew "jez/formulae/pandoc-sidenote"
 brew "xwmx/taps/nb"
 # karabiner configurator
 brew "yqrashawn/goku/goku"
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
 # Command-line helper for the 1Password password manager
 cask "1password-cli"
-# Collection of apps and services for photography, design, video, web, and UX
-cask "adobe-creative-cloud"
+# Application launcher and productivity software
+cask "alfred"
 # Application uninstaller
 cask "appcleaner"
 # Free and open-source web browser
@@ -209,10 +215,14 @@ cask "chromium"
 cask "cmake"
 # Tool to show live information about the batteries in various devices
 cask "coconutbattery"
+# Block websites, games and applications
+cask "cold-turkey-blocker"
 # App to build and share containerized applications and microservices
 cask "docker"
 # Calendar software
 cask "fantastical"
+# Reimagine your terminal
+cask "fig"
 # Web browser
 cask "firefox"
 # Monospaced font that includes programming ligatures
@@ -239,14 +249,18 @@ cask "inkscape"
 cask "iterm2"
 # Keyboard customizer
 cask "karabiner-elements"
-# Software for Logitech devices
-cask "logitech-options"
 # Full TeX Live distribution with GUI applications
 cask "mactex"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
 # Office suite
 cask "microsoft-office"
+# Tool to control external monitor brightness & volume
+cask "monitorcontrol"
+# Mounts servers and cloud storages as a disk on the desktop
+cask "mountain-duck"
+# App to write, plan, collaborate, and get organized
+cask "notion"
 # Environment for statistical computing and graphics
 cask "r"
 # Collection of apps available by subscription
@@ -260,6 +274,8 @@ cask "tikz-editor"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
+# Video communication and virtual meeting platform
+cask "zoom"
 mas "1Password for Safari", id: 1569813296
 mas "Craft", id: 1487937127
 mas "Divvy", id: 413857545
@@ -267,8 +283,8 @@ mas "GeoGebra Classic 6", id: 1182481622
 mas "HomeControl", id: 1547121417
 mas "Notability", id: 360593530
 mas "Save to Raindrop.io", id: 1549370672
-mas "Spark", id: 1176895641
 mas "Speedtest", id: 1153157709
 mas "Things", id: 904280696
+mas "TweetDeck", id: 485812721
 mas "Twitter", id: 1482454543
 mas "WhatsApp", id: 1147396723
