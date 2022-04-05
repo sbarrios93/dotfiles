@@ -1,8 +1,7 @@
 [".oh-my-zsh"]
-refreshPeriod = "168h"
 stripComponents = 1
-type = "archive"
-url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
+type = "git-repo"
+url = "https://github.com/ohmyzsh/ohmyzsh/"
 [".core/zsh/plugins/zsh-syntax-highlighting"]
 exact = true
 refreshPeriod = "168h"
@@ -27,5 +26,5 @@ url = "https://github.com/zsh-users/zsh-autosuggestions/archive/master.tar.gz"
 [".core/bin/z"]
 refreshPeriod = "168h"
 stripComponents = 1
-type = "archive"
-url = "https://github.com/rupa/z/archive/master.tar.gz"
+type = "git-repo"
+url = "https://github.com/rupa/z/"

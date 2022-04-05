@@ -27,7 +27,8 @@
 		"editor.snippetSuggestions": "top",
 		"editor.suggest.showSnippets": true,
 		"editor.suggestOnTriggerCharacters": true,
-		"editor.wordBasedSuggestions": false
+		"editor.wordBasedSuggestions": false,
+		"editor.defaultFormatter": "yzhang.markdown-all-in-one"
 	},
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.python",
@@ -239,14 +240,19 @@
 	"projectManager.git.baseFolders": ["/Users/seba/projects"],
 	"projectManager.ignoreProjectsWithinProjects": true,
 	"python.analysis.completeFunctionParens": true,
-	"python.formatting.blackArgs": ["--line-length", "120"],
-	"python.insidersChannel": "weekly",
 	"python.linting.enabled": true,
 	"python.linting.pylamaArgs": ["--max-line-length=120"],
 	"python.linting.pylamaEnabled": true,
 	"python.terminal.activateEnvInCurrentTerminal": true,
 	"python.terminal.activateEnvironment": true,
 	"security.workspace.trust.untrustedFiles": "open",
+	"python.linting.pylintEnabled": true,
+	"python.linting.pylintArgs": [
+		"--load-plugins",
+		"perflint",
+		"--rcfile",
+		"${workspaceFolder}/.pylintrc"
+	],
 	"sync.gist": "fbe45ded8939dc7ba24e96c2cda07c4d",
 	"sync.quietSync": true,
 	"terminal.integrated.env.osx": {
@@ -258,12 +264,10 @@
 	"vim.hlsearch": true,
 	"vim.overrideCopy": false,
 	"window.openFilesInNewWindow": "on",
-	"workbench.colorTheme": "Monokai Pro (Filter Octagon)",
 	"workbench.editorAssociations": {
 		"*.ipynb": "jupyter-notebook",
 		"*.pdf": "latex-workshop-pdf-hook"
 	},
-	"workbench.iconTheme": "material-icon-theme",
 	"workbench.tree.indent": 20,
 	"python.analysis.autoImportCompletions": false,
 	"python.analysis.typeCheckingMode": "basic",
@@ -280,5 +284,19 @@
 	"[shellscript]": {
 		"editor.defaultFormatter": "foxundermoon.shell-format"
 	},
-	"security.workspace.trust.enabled": false
+	"security.workspace.trust.enabled": false,
+	"editor.stickyTabStops": true,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"mypy.runUsingActiveInterpreter": true,
+	"workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+	"material-icon-theme.activeIconPack": "react_redux",
+	"workbench.colorTheme": "Monokai Pro (Filter Octagon)",
+	"debug.console.acceptSuggestionOnEnter": "on",
+	"debug.console.fontFamily": "'JetBrains Mono'",
+	"debug.console.fontSize": 13,
+	"debug.console.lineHeight": 15,
+	"debug.terminal.clearBeforeReusing": true,
+	"python.linting.mypyCategorySeverity.note": "Warning",
+	"markdown-preview-enhanced.previewTheme": "github-dark.css",
+	"notebook.output.textLineLimit": 80
 }

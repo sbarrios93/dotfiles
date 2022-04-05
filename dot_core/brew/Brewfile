@@ -52,8 +52,6 @@ brew "gobject-introspection"
 brew "harfbuzz"
 # Compression/decompression library aiming for high speed
 brew "snappy"
-# Implementation of extended-Rice lossless compression algorithm
-brew "szip"
 # File format designed to store large amounts of data
 brew "hdf5"
 # Key-value storage library with ordered mapping
@@ -64,6 +62,8 @@ brew "lmdb"
 brew "numpy"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
+# Implementation of extended-Rice lossless compression algorithm
+brew "szip", link: true
 # Toolkit for 3D computer graphics, image processing, and visualization
 brew "vtk"
 # Open source computer vision library
@@ -73,7 +73,7 @@ brew "caffe"
 # Manage your dotfiles across multiple diverse machines, securely
 brew "chezmoi"
 # Cross-platform make
-brew "cmake", link: false
+brew "cmake"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Secure runtime for JavaScript and TypeScript
@@ -102,6 +102,8 @@ brew "git-filter-repo"
 brew "gnu-sed"
 # GNU version of the tar archiving utility
 brew "gnu-tar"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
 # Image manipulation
 brew "netpbm"
 # Framework for layout and rendering of i18n text
@@ -116,6 +118,8 @@ brew "gtk-mac-integration"
 brew "highlight"
 # Configurable static site generator
 brew "hugo"
+# Command-line benchmarking tool
+brew "hyperfine"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # CLI wrapper for basic network utilities on macOS - ip command
@@ -150,8 +154,10 @@ brew "pandoc-plot"
 brew "pyenv"
 # Pyenv plugin to manage virtualenv
 brew "pyenv-virtualenv"
+# Alternative to pyenv for managing virtualenvs
+brew "pyenv-virtualenvwrapper"
 # Software environment for statistical computing
-brew "r"
+brew "r", link: false
 # File browser
 brew "ranger"
 # Ruby version manager
@@ -205,18 +211,20 @@ brew "yqrashawn/goku/goku"
 cask "1password"
 # Command-line helper for the 1Password password manager
 cask "1password-cli"
+# Collection of apps and services for photography, design, video, web, and UX
+cask "adobe-creative-cloud"
 # Application launcher and productivity software
 cask "alfred"
 # Application uninstaller
 cask "appcleaner"
 # Free and open-source web browser
 cask "chromium"
-# Family of tools to build, test and package software
-cask "cmake"
 # Tool to show live information about the batteries in various devices
 cask "coconutbattery"
 # Block websites, games and applications
 cask "cold-turkey-blocker"
+# API documentation browser and code snippet manager
+cask "dash"
 # App to build and share containerized applications and microservices
 cask "docker"
 # Calendar software
@@ -257,12 +265,14 @@ cask "microsoft-auto-update"
 cask "microsoft-office"
 # Tool to control external monitor brightness & volume
 cask "monitorcontrol"
-# Mounts servers and cloud storages as a disk on the desktop
-cask "mountain-duck"
 # App to write, plan, collaborate, and get organized
 cask "notion"
+# Desktop virtualization software
+cask "parallels"
 # Environment for statistical computing and graphics
 cask "r"
+# Data science software focusing on R and Python
+cask "rstudio"
 # Collection of apps available by subscription
 cask "setapp"
 # Team communication and collaboration software
@@ -270,6 +280,10 @@ cask "slack"
 # Music streaming service
 cask "spotify"
 cask "tikz-editor"
+# File transfer application
+cask "transmit"
+# VPN client for secure internet access and private browsing
+cask "tunnelbear"
 # Open-source code editor
 cask "visual-studio-code"
 # Multimedia player

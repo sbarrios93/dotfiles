@@ -109,11 +109,7 @@ snippet dategreeting "Gives you the current date!"m
 Hello from your hsnip at ``rv = new Date().toDateString()``!
 endsnippet
 
-snippet box "Box" A
-``rv = '┌' + '─'.repeat(t[0].length + 2) + '┐'``
-│ $1 │
-``rv = '└' + '─'.repeat(t[0].length + 2) + '┘'``
-endsnippet
+
 
 snippet // "Fraction simple" Am
 \frac{$1}{$2}$0
