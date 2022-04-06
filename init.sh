@@ -63,3 +63,6 @@ if ! brew list --formula chezmoi >/dev/null 2>&1; then
 else
     echo "[localenv] chezmoi is already installed with brew -> skipped"
 fi
+
+# init repo
+chezmoi init sbarrios93 --ssh
