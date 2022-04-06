@@ -64,5 +64,16 @@ else
     echo "[localenv] chezmoi is already installed with brew -> skipped"
 fi
 
-# init repo
-chezmoi init sbarrios93 --ssh
+# init repo, use ssh if local machine. In case CI is set, we don't want to use ssh
+chezmoi_init_args=(
+    sbarrios93
+)
+
+if [[ $CI != 1]]; then
+    echo "[localenv] localenv detected, adding ssh flag"
+    chezmoi_init_args+=(--ssh)
+else
+    echo "[localenv] CI detected, skipping ssh flag"
+fi
+
+chezmoi init "${chezmoi_init_args[@]}"
