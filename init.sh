@@ -75,8 +75,7 @@ if [[ $CI != 1 ]]; then
 else
     echo "[localenv] CI detected, skipping ssh flag, skipping data template"
     chezmoi_init_args+=(
-        --data
-        false
+        --data=false
     )
 fi
 
