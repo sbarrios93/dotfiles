@@ -69,7 +69,7 @@ chezmoi_init_args=(
     sbarrios93
 )
 
-if [[ $CI != 1]]; then
+if [[ $CI != 1 ]]; then
     echo "[localenv] localenv detected, adding ssh flag"
     chezmoi_init_args+=(--ssh)
 else
