@@ -251,6 +251,8 @@ cask "font-noto-serif-cjk-jp"
 cask "font-noto-serif-cjk-kr"
 cask "font-noto-serif-cjk-sc"
 cask "font-noto-serif-cjk-tc"
+# Web browser
+cask "google-chrome"
 # Vector graphics editor
 cask "inkscape"
 # Terminal emulator as alternative to Apple's Terminal app
