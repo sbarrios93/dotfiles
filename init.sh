@@ -58,8 +58,8 @@ fi
 
 # Installing go-task
 if ! brew list --formula chezmoi >/dev/null 2>&1; then
-    echo "[localenv] Installing go-task"
+    echo "[localenv] Installing chezmoi"
     brew install chezmoi
 else
-    echo "[localenv] go-task is already installed with brew -> skipped"
+    echo "[localenv] chezmoi is already installed with brew -> skipped"
 fi
