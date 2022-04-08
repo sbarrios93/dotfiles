@@ -8,9 +8,20 @@ vars:
   RED: $(tput setaf 1)
   BLUE: $(tput setaf 31)
   NC: $(tput sgr0)
+
+  # Paths
   SELF_DIR: $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
   CHEZMOIROOT: "{{.SELF_DIR}}/$(cat .chezmoiroot)"
   BREWFILE_PATH: "{{.CHEZMOIROOT}}/dot_core/brew/Brewfile"
+  POETRY_PATH: "$HOME/.core/poetry"
+  ZSH_CUSTOM_PATH: "$HOME/.core/zsh"
+  SCRIPTS_PATH: "{{.CHEZMOIROOT}}/dot_core/scripts"
+
+  # PYTHON
+  .PYTHON_BASE_VERSION: "3.9.10"
+  .PYTHON_BASE_ENV: "base"
+
+  # custom packages to install first through brew
   BREW_CORE_INSTALLS: |-
     python@3.9
     cmake
@@ -22,12 +33,13 @@ tasks:
     - task: "brew-tap"
     - task: "brew-core-install"
     - task: "brew-formula-install"
-    - task: "nvim-init"
+    - task: "nvm-init"
+    - task: "oh-my-zsh-init"
 
   "brew-tap":
     desc: "Install brew taps"
     cmds:
-      - cat {{.BREWFILE_PATH}} |  grep '^[tap]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' | xargs -n 1 -0 -I@ bash -c "echo @ && brew tap @"
+      - cat {{.BREWFILE_PATH}} |  grep '^[tap]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' | xargs -n 1 -0 -I@ bash -c "echo '{{.BLUE}} Tapping @ {{.NC}}' && brew tap @"
 
   "brew-core-install":
     desc: "Install brew core packages defined in BREW_CORE_INSTALLS variable"
@@ -36,6 +48,7 @@ tasks:
         while IFS= read -r line; do
             echo "Installing $line"
             brew install $line
+            echo "Done Installing $line"
         done < <(printf '%s\n' "{{.BREW_CORE_INSTALLS}}")
 
   "brew-formula-install":
@@ -55,3 +68,21 @@ tasks:
       - source $(NVM_DIR)/nvm.sh
       - nvm install 17.6
       - nvm alias default 17.6
+
+  "oh-my-zsh-init":
+    desc: "Initialize oh-my-zsh"
+    cmds:
+      - |
+        if [ ! -d "$HOME/.oh-my-zsh" ]; then
+          sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+        fi
+
+  "pyenv-base-env":
+    desc: "Create base python env for local machine through pyenv"
+    cmds:
+      - echo "{{.BLUE}} Creating pyenv base env {{.NC}}"
+      - eval "$(pyenv init -)"
+      - eval "$(pyenv virtualenv-init -)"
+      - pyenv virtualenv {{.PYTHON_BASE_VERSION}} {{.PYTHON_BASE_ENV}}
+      - pyenv global {{.PYTHON_BASE_ENV}}
+      - pyenv rehash
