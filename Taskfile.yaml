@@ -1,0 +1,57 @@
+version: 3
+
+output: prefixed
+
+vars:
+  # colors
+  GREEN: $(tput setaf 2)
+  RED: $(tput setaf 1)
+  BLUE: $(tput setaf 31)
+  NC: $(tput sgr0)
+  SELF_DIR: $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+  CHEZMOIROOT: "{{.SELF_DIR}}/$(cat .chezmoiroot)"
+  BREWFILE_PATH: "{{.CHEZMOIROOT}}/dot_core/brew/Brewfile"
+  BREW_CORE_INSTALLS: |-
+    python@3.9
+    cmake
+    pyenv
+    pyenv-virtualenv
+
+tasks:
+  "init":
+    - task: "brew-tap"
+    - task: "brew-core-install"
+    - task: "brew-formula-install"
+    - task: "nvim-init"
+
+  "brew-tap":
+    desc: "Install brew taps"
+    cmds:
+      - cat {{.BREWFILE_PATH}} |  grep '^[tap]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' | xargs -n 1 -0 -I@ bash -c "echo @ && brew tap @"
+
+  "brew-core-install":
+    desc: "Install brew core packages defined in BREW_CORE_INSTALLS variable"
+    cmds:
+      - |
+        while IFS= read -r line; do
+            echo "Installing $line"
+            brew install $line
+        done < <(printf '%s\n' "{{.BREW_CORE_INSTALLS}}")
+
+  "brew-formula-install":
+    desc: "Install brew formulas defined on the Brewfile"
+    cmds:
+      - cat {{.BREWFILE_PATH}} | grep '^[brew]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' |   xargs -n 1 -0 -I@ bash -c "echo '{{.BLUE}} Installing @ {{.NC}}' && brew install @"
+
+  "nvm-init":
+    desc: "Initialize nvm"
+    vars:
+      NVM_DIR: "$HOME/.nvm"
+    cmds:
+      - |
+        if [ ! -d "$NVM_DIR" ]; then
+          git clone https://github.com/creationix/nvm.git $(NVM_DIR)
+        fi
+      - source $(NVM_DIR)/nvm.sh
+      - nvm install 17.6
+      - nvm alias default 17.6

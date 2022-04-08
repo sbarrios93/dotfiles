@@ -23,6 +23,7 @@ code --install-extension James-Yu.latex-workshop --force &
 code --install-extension johnpapa.vscode-peacock --force &
 code --install-extension KevinRose.vsc-python-indent --force &
 code --install-extension knowsuchagency.pdm-task-provider --force &
+code --install-extension mads-hartmann.bash-ide-vscode --force &
 code --install-extension magicstack.MagicPython --force &
 code --install-extension matangover.mypy --force &
 code --install-extension maximetinu.identical-sublime-monokai-csharp-theme-colorizer --force &
@@ -44,14 +45,18 @@ code --install-extension mushan.vscode-paste-image --force &
 code --install-extension njpwerner.autodocstring --force &
 code --install-extension njqdev.vscode-python-typehint --force &
 code --install-extension OrangeX4.hsnips --force &
+code --install-extension paulvarache.vscode-taskfile --force &
 code --install-extension PKief.material-icon-theme --force &
 code --install-extension redhat.vscode-yaml --force &
 code --install-extension rogalmic.bash-debug --force &
 code --install-extension ronnidc.nunjucks --force &
 code --install-extension sdras.night-owl --force &
+code --install-extension shakram02.bash-beautify --force &
 code --install-extension shd101wyy.markdown-preview-enhanced --force &
 code --install-extension sleistner.vscode-fileutils --force &
 code --install-extension tht13.python --force &
+code --install-extension timonwong.shellcheck --force &
+code --install-extension truman.autocomplate-shell --force &
 code --install-extension VisualStudioExptTeam.vscodeintellicode --force &
 code --install-extension vscodevim.vim --force &
 code --install-extension wholroyd.jinja --force &

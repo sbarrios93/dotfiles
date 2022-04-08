@@ -169,3 +169,6 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
 }
+
+# git add and commit
+function gcaa() { git add --all && git commit -m "$*"}

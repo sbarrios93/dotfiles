@@ -3,6 +3,7 @@ tap "candid82/brew"
 tap "clintmod/formulas"
 tap "cloudflare/cloudflare"
 tap "d12frosted/emacs-plus"
+tap "go-task/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
@@ -16,6 +17,8 @@ tap "xwmx/taps"
 tap "yqrashawn/goku"
 tap "zegervdv/zathura"
 tap "zero-sh/tap"
+# Run your GitHub Actions locally 🚀
+brew "act"
 # Automate deployment, configuration, and upgrading
 brew "ansible"
 # Interpreted, interactive, object-oriented programming language
@@ -168,6 +171,8 @@ brew "rclone"
 brew "ripgrep"
 # Intuitive find & replace CLI
 brew "sd"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
 # Command-line YAML parser
 brew "shyaml"
 # Fuzzy Finder in rust!
@@ -202,6 +207,8 @@ brew "yarn"
 brew "zlib"
 # Cloudflare Tunnel
 brew "cloudflare/cloudflare/cloudflared"
+# Task runner / simpler Make alternative written in Go
+brew "go-task/tap/go-task"
 # Convert Pandoc Markdown-style footnotes into sidenotes
 brew "jez/formulae/pandoc-sidenote"
 brew "xwmx/taps/nb"
@@ -261,6 +268,8 @@ cask "iterm2"
 cask "karabiner-elements"
 # Full TeX Live distribution with GUI applications
 cask "mactex"
+# Scanner app for math and science
+cask "mathpix-snipping-tool"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
 # Office suite

@@ -1,6 +1,14 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 set -e # Exit immediately if a command exits with a non-zero status.
+
+DOTFILES_DIR="/usr/local/share/dotfiles"
+
+# colors
+GREEN=$(tput setaf 2)
+RED=$(tput setaf 1)
+BLUE=$(tput setaf 31)
+NC=$(tput sgr0)
 
 # first thing is check that connecting to github with ssh works
 # if it doesn't, then we need to exit
@@ -21,47 +29,58 @@ function github-authenticated() {
 }
 
 if [[ $CI == 1 ]]; then
-    echo 'CI detected, skipping github-authenticated check'
+    echo 'CI detected'
+    echo "Skip github authentication check"
+    echo "Skip terminal full disk access check"
 else
+    # run github authentication check
+    echo "${BLUE}[localenv] Checking github authentication${NC}"
     if github-authenticated; then
-        echo 'github-authenticated check passed'
+        echo "${GREEN}github-authenticated check passed${NC}"
     else
-        echo 'github-authenticated check failed'
+        echo "${RED}github-authenticated check failed${NC}"
         exit 1
+    fi
+    # Check whether Terminal has Full Disk Access
+    echo "${BLUE}[localenv] Checking terminal full disk access${NC}"
+    if [[ ! -r "/Library/Application Support/com.apple.TCC/TCC.db" ]]; then
+        echo "${RED}Full Disk Access must be granted to Terminal in order to run this script.${NC}"
+        open "x-apple.systempreferences:com.apple.preference.security?Privacy"
+        exit
     fi
 fi
 
 # proceed with core setup
 # Install xcode
 if ! xcode-select -p >/dev/null; then
-    echo "[localenv] Installing xcode"
+    echo "${BLUE}[localenv] Installing xcode${NC}"
     xcode-select --install
 else
-    echo "[localenv] xcode already installed -> skipped"
+    echo "${BLUE}[localenv] xcode already installed -> skipped${NC}"
 fi
 
 # Installing Homebrew
 if ! command -v brew >/dev/null 2>&1; then
-    echo "[localenv] Installing brew"
+    echo "${BLUE}[localenv] Installing brew${NC}"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
-    echo "[localenv] brew is already installed -> skipped"
+    echo "${BLUE}[localenv] brew is already installed -> skipped${NC}"
 fi
 
 # Installing go-task
 if ! brew list --formula go-task >/dev/null 2>&1; then
-    echo "[localenv] Installing go-task"
+    echo "${BLUE}[localenv] Installing go-task${NC}"
     brew install go-task/tap/go-task
 else
-    echo "[localenv] go-task is already installed with brew -> skipped"
+    echo "${BLUE}[localenv] go-task is already installed with brew -> skipped${NC}"
 fi
 
 # Installing go-task
 if ! brew list --formula chezmoi >/dev/null 2>&1; then
-    echo "[localenv] Installing chezmoi"
+    echo "${BLUE}[localenv] Installing chezmoi${NC}"
     brew install chezmoi
 else
-    echo "[localenv] chezmoi is already installed with brew -> skipped"
+    echo "${BLUE}[localenv] chezmoi is already installed with brew -> skipped${NC}"
 fi
 
 # init repo, use ssh if local machine. In case CI is set, we don't want to use ssh
@@ -70,13 +89,19 @@ chezmoi_init_args=(
 )
 
 if [[ $CI != 1 ]]; then
-    echo "[localenv] localenv detected, adding ssh flag"
+    echo "${BLUE}[localenv] localenv detected, adding ssh flag${NC}"
     chezmoi_init_args+=(--ssh)
 else
-    echo "[localenv] CI detected, skipping ssh flag, skipping data template"
-    chezmoi_init_args+=(
-        --data=false
-    )
+    echo "${BLUE}[localenv] CI detected, skipping ssh flag${NC}"
 fi
 
 chezmoi init "${chezmoi_init_args[@]}"
+
+# cd into dotfiles directory on local machine
+# because I set up the chezmoi dir in the home subfolder, we need to cd into the parent folder
+cd "$(chezmoi source-path)/.."
+echo "${BLUE}[localenv] cd into dotfiles directory${NC}"
+
+# execute taskfile.yaml
+echo "Run Taskfile..."
+task init
