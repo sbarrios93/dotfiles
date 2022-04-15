@@ -10,6 +10,8 @@ NC=$(tput sgr0)
 
 NVM_DIR="$HOME/.nvm"
 
+SKIP_INSTALL_GITHUB="skip-install-github-actions.yaml"
+
 # first thing is check that connecting to github with ssh works
 # if it doesn't, then we need to exit
 function github-authenticated() {
@@ -32,8 +34,12 @@ if [[ $CI == 1 ]]; then
     echo 'CI detected'
     echo "Skip github authentication check"
     echo "Skip terminal full disk access check"
-    pip3 install shyaml # for parsing .yaml files
-
+    # because we want a fast CI build, there's a file as yaml in the main directory for instructions of things to skip, I want to read that, and I need to use a yaml parser
+    # check if there is a file called skip-install-github-actions.yaml
+    if [[ -f $SKIP_INSTALL_GITHUB ]]; then
+        echo "skip-install-github-actions.yaml found. Installing shyaml to parse the file"
+        pip3 install shyaml # for parsing .yaml files
+    fi
 else
     # run github authentication check
     echo "${BLUE}[localenv] Checking github authentication${NC}"
