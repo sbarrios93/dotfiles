@@ -2,13 +2,13 @@
 
 set -e # Exit immediately if a command exits with a non-zero status.
 
-DOTFILES_DIR="/usr/local/share/dotfiles"
-
 # colors
 GREEN=$(tput setaf 2)
 RED=$(tput setaf 1)
 BLUE=$(tput setaf 31)
 NC=$(tput sgr0)
+
+NVM_DIR="$HOME/.nvm"
 
 # first thing is check that connecting to github with ssh works
 # if it doesn't, then we need to exit
@@ -32,6 +32,8 @@ if [[ $CI == 1 ]]; then
     echo 'CI detected'
     echo "Skip github authentication check"
     echo "Skip terminal full disk access check"
+    pip3 install shyaml # for parsing .yaml files
+
 else
     # run github authentication check
     echo "${BLUE}[localenv] Checking github authentication${NC}"
@@ -82,6 +84,15 @@ if ! brew list --formula chezmoi >/dev/null 2>&1; then
 else
     echo "${BLUE}[localenv] chezmoi is already installed with brew -> skipped${NC}"
 fi
+
+# installing nvm
+if [[ ! -d "$NVM_DIR" ]]; then
+    echo "${BLUE}[localenv] Installing nvm${NC}"
+    git clone https://github.com/creationix/nvm.git {{.NVM_DIR}}
+fi
+source $NVM_DIR/nvm.sh
+nvm install node
+nvm alias default node
 
 # init repo, use ssh if local machine. In case CI is set, we don't want to use ssh
 chezmoi_init_args=(

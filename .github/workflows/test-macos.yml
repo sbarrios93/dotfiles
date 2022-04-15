@@ -8,11 +8,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      #       - name: Install coreutils
-      #         run: |
-      #           set -eo pipefail
-      #           export CI=1
-      #           brew install coreutils  # For tac
       - name: Run setup dotfiles
         run: |
           set -eo pipefail

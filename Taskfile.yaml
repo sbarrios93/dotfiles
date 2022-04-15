@@ -13,13 +13,13 @@ vars:
   SELF_DIR: $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
   CHEZMOIROOT: "{{.SELF_DIR}}/$(cat .chezmoiroot)"
   BREWFILE_PATH: "{{.CHEZMOIROOT}}/dot_core/brew/Brewfile"
-  POETRY_PATH: "$HOME/.core/poetry"
-  ZSH_CUSTOM_PATH: "$HOME/.core/zsh"
+  POETRY_PATH: "{{.HOME}}/.core/poetry"
+  ZSH_CUSTOM_PATH: "{{.HOME}}/.core/zsh"
   SCRIPTS_PATH: "{{.CHEZMOIROOT}}/dot_core/scripts"
 
   # PYTHON
-  .PYTHON_BASE_VERSION: "3.9.10"
-  .PYTHON_BASE_ENV: "base"
+  PYTHON_BASE_VERSION: "3.9.10"
+  PYTHON_BASE_ENV: "base"
 
   # custom packages to install first through brew
   BREW_CORE_INSTALLS: |-
@@ -33,7 +33,6 @@ tasks:
     - task: "brew-tap"
     - task: "brew-core-install"
     - task: "brew-formula-install"
-    - task: "nvm-init"
     - task: "oh-my-zsh-init"
 
   "brew-tap":
@@ -54,35 +53,37 @@ tasks:
   "brew-formula-install":
     desc: "Install brew formulas defined on the Brewfile"
     cmds:
-      - cat {{.BREWFILE_PATH}} | grep '^[brew]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' |   xargs -n 1 -0 -I@ bash -c "echo '{{.BLUE}} Installing @ {{.NC}}' && brew install @"
-
-  "nvm-init":
-    desc: "Initialize nvm"
-    vars:
-      NVM_DIR: "$HOME/.nvm"
-    cmds:
-      - |
-        if [ ! -d "$NVM_DIR" ]; then
-          git clone https://github.com/creationix/nvm.git $(NVM_DIR)
-        fi
-      - source $(NVM_DIR)/nvm.sh
-      - nvm install 17.6
-      - nvm alias default 17.6
+      - cat {{.BREWFILE_PATH}} | grep '^[brew]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' |   xargs -n 1 -0 -I@ bash -c "echo '{{.BLUE}} Installing @ {{.NC}}' && brew install @ && echo '{{.GREEN}} Done Installing @ {{.NC}}'"
 
   "oh-my-zsh-init":
     desc: "Initialize oh-my-zsh"
     cmds:
       - |
-        if [ ! -d "$HOME/.oh-my-zsh" ]; then
+        if [ ! -d "{{.HOME}}/.oh-my-zsh" ]; then
           sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
         fi
 
   "pyenv-base-env":
     desc: "Create base python env for local machine through pyenv"
     cmds:
-      - echo "{{.BLUE}} Creating pyenv base env {{.NC}}"
-      - eval "$(pyenv init -)"
-      - eval "$(pyenv virtualenv-init -)"
-      - pyenv virtualenv {{.PYTHON_BASE_VERSION}} {{.PYTHON_BASE_ENV}}
-      - pyenv global {{.PYTHON_BASE_ENV}}
-      - pyenv rehash
+      - |
+        echo "{{.BLUE}} Creating pyenv base env {{.NC}}"
+        eval "$(pyenv init -)"
+        eval "$(pyenv virtualenv-init -)"
+        pyenv install {{.PYTHON_BASE_VERSION}}
+        pyenv virtualenv {{.PYTHON_BASE_VERSION}} {{.PYTHON_BASE_ENV}}
+        pyenv global {{.PYTHON_BASE_ENV}}
+        pyenv rehash
+
+  "poetry-init":
+    desc: "Initialize poetry"
+    cmds:
+      - |
+        export PYENV_SHELL_INIT='export PYENV_ROOT="$HOME/.pyenv"
+        export PATH="${PYENV_ROOT:-$HOME/.pyenv}/bin:${PATH}"
+        if command -v pyenv >/dev/null 2>&1 ; then
+          eval "$(pyenv init -)"
+          eval "$(pyenv virtualenv-init -)"
+        fi
+        '
+      - pyenv activate base
