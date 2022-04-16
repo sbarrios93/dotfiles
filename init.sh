@@ -3,7 +3,7 @@
 set -e # Exit immediately if a command exits with a non-zero status.
 
 #set os
-OS="$uname"
+OS="$(uname)"
 
 # colors
 GREEN=$(tput setaf 2)
@@ -14,7 +14,6 @@ NC=$(tput sgr0)
 NVM_DIR="$HOME/.nvm"
 
 SKIP_INSTALL_GITHUB="skip-install-github-actions.yaml"
-
 
 # install required dependencies if running linux
 if [[ "$OS" == "Linux" ]]; then
