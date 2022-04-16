@@ -39,7 +39,8 @@ tasks:
   "brew-tap":
     desc: "Install brew taps"
     cmds:
-      - cat {{.BREWFILE_PATH}} |  grep '^[tap]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' | xargs -n 1 -0 -I@ bash -c "echo '{{.BLUE}} Tapping @ {{.NC}}' && brew tap @"
+      - cat {{.BREWFILE_PATH}} |  grep '^[tap]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' | xargs -n 1 -0 -I@ sh -c "echo '{{.BLUE}} Tapping @ {{.NC}}' && brew tap @"
+      - echo 'DONE'
 
   "brew-core-install":
     desc: "Install brew core packages defined in BREW_CORE_INSTALLS variable"

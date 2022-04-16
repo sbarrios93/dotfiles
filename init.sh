@@ -15,6 +15,14 @@ NVM_DIR="$HOME/.nvm"
 
 SKIP_INSTALL_GITHUB="skip-install-github-actions.yaml"
 
+
+# install required dependencies if running linux
+if [[ "$OS" == "Linux" ]]; then
+    export DEBIAN_FRONTEND=noninteractive
+    apt-get update
+    sudo apt-get install git zsh -y
+fi
+
 # first thing is check that connecting to github with ssh works
 # if it doesn't, then we need to exit
 function github-authenticated() {
@@ -100,7 +108,7 @@ fi
 # installing nvm
 if [[ ! -d "$NVM_DIR" ]]; then
     echo "${BLUE}[localenv] Installing nvm${NC}"
-    git clone https://github.com/creationix/nvm.git {{.NVM_DIR}}
+    git clone https://github.com/creationix/nvm.git $NVM_DIR
 fi
 source $NVM_DIR/nvm.sh
 nvm install node
