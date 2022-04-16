@@ -15,8 +15,6 @@ tap "jez/formulae"
 tap "romkatv/powerlevel10k"
 tap "xwmx/taps"
 tap "yqrashawn/goku"
-tap "zegervdv/zathura"
-tap "zero-sh/tap"
 # Run your GitHub Actions locally 🚀
 brew "act"
 # Interpreted, interactive, object-oriented programming language

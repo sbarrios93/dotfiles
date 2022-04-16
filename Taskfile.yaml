@@ -39,7 +39,12 @@ tasks:
   "brew-tap":
     desc: "Install brew taps"
     cmds:
-      - cat {{.BREWFILE_PATH}} |  grep '^[tap]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' | xargs -n 1 -0 -I@ sh -c "echo '{{.BLUE}} Tapping @ {{.NC}}' && brew tap @"
+      - |
+        while IFS= read -r line; do
+            echo "Tapping $line"
+            brew tap $line
+            echo "Done Tapping $line"
+        done < <(printf '%s\n' $(cat {{.BREWFILE_PATH}} |  grep '^[tap]' | grep -o '".*"' | tr -d '"' ))
       - echo 'DONE'
 
   "brew-core-install":
