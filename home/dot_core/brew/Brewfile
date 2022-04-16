@@ -1,8 +1,5 @@
 tap "buo/cask-upgrade"
 tap "candid82/brew"
-tap "clintmod/formulas"
-tap "cloudflare/cloudflare"
-tap "d12frosted/emacs-plus"
 tap "go-task/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask"
