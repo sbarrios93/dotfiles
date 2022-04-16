@@ -135,4 +135,4 @@ echo "${BLUE}[localenv] cd into dotfiles directory${NC}"
 
 # execute taskfile.yaml
 echo "Run Taskfile..."
-task init
+task init -v

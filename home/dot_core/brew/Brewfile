@@ -1,6 +1,7 @@
 tap "buo/cask-upgrade"
 tap "candid82/brew"
 tap "clintmod/formulas"
+tap "cloudflare/cloudflare"
 tap "d12frosted/emacs-plus"
 tap "go-task/tap"
 tap "homebrew/bundle"
@@ -18,7 +19,7 @@ tap "zegervdv/zathura"
 tap "zero-sh/tap"
 # Run your GitHub Actions locally 🚀
 brew "act"
-# Automate deployment, configuration, and upgrading
+# Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
 # Core application library for C
 brew "glib"
@@ -62,8 +63,6 @@ brew "lmdb"
 brew "numpy"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
-# Implementation of extended-Rice lossless compression algorithm
-brew "szip", link: true
 # Toolkit for 3D computer graphics, image processing, and visualization
 brew "vtk"
 # Open source computer vision library
@@ -168,6 +167,8 @@ brew "rclone"
 brew "ripgrep"
 # Intuitive find & replace CLI
 brew "sd"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
 # Command-line YAML parser
 brew "shyaml"
 # Fuzzy Finder in rust!
@@ -176,6 +177,8 @@ brew "sk"
 brew "speedtest-cli"
 # Tool to create intelligent and beautiful documentation
 brew "sphinx-doc"
+# Implementation of extended-Rice lossless compression algorithm
+brew "szip", link: true
 # Modernized, complete, self-contained TeX/LaTeX engine
 brew "tectonic"
 # Official documentation format of the GNU project
@@ -255,14 +258,20 @@ cask "font-noto-serif-cjk-sc"
 cask "font-noto-serif-cjk-tc"
 # Web browser
 cask "google-chrome"
+# Client for the Google Drive storage service
+cask "google-drive"
 # Vector graphics editor
 cask "inkscape"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Keyboard customizer
 cask "karabiner-elements"
+# Tool to show what is persistently installed on the computer
+cask "knockknock"
 # Full TeX Live distribution with GUI applications
 cask "mactex"
+# Scanner app for math and science
+cask "mathpix-snipping-tool"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
 # Office suite
@@ -298,6 +307,7 @@ mas "1Password for Safari", id: 1569813296
 mas "Craft", id: 1487937127
 mas "Divvy", id: 413857545
 mas "GeoGebra Classic 6", id: 1182481622
+mas "Grocery", id: 1195676848
 mas "HomeControl", id: 1547121417
 mas "Notability", id: 360593530
 mas "Save to Raindrop.io", id: 1549370672
