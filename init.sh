@@ -2,6 +2,9 @@
 
 set -e # Exit immediately if a command exits with a non-zero status.
 
+#set os
+OS="$uname"
+
 # colors
 GREEN=$(tput setaf 2)
 RED=$(tput setaf 1)
@@ -49,23 +52,26 @@ else
         echo "${RED}github-authenticated check failed${NC}"
         exit 1
     fi
-    # Check whether Terminal has Full Disk Access
-    echo "${BLUE}[localenv] Checking terminal full disk access${NC}"
-    if [[ ! -r "/Library/Application Support/com.apple.TCC/TCC.db" ]]; then
-        echo "${RED}Full Disk Access must be granted to Terminal in order to run this script.${NC}"
-        open "x-apple.systempreferences:com.apple.preference.security?Privacy"
-        exit
+    if [[ "$OS" == "Darwin" ]]; then
+        # Check whether Terminal has Full Disk Access
+        echo "${BLUE}[localenv] Checking terminal full disk access${NC}"
+        if [[ ! -r "/Library/Application Support/com.apple.TCC/TCC.db" ]]; then
+            echo "${RED}Full Disk Access must be granted to Terminal in order to run this script.${NC}"
+            open "x-apple.systempreferences:com.apple.preference.security?Privacy"
+            exit
+        fi
+        if ! xcode-select -p >/dev/null; then
+            echo "${BLUE}[localenv] Installing xcode${NC}"
+            xcode-select --install
+        else
+            echo "${BLUE}[localenv] xcode already installed -> skipped${NC}"
+        fi
+
     fi
 fi
 
 # proceed with core setup
 # Install xcode
-if ! xcode-select -p >/dev/null; then
-    echo "${BLUE}[localenv] Installing xcode${NC}"
-    xcode-select --install
-else
-    echo "${BLUE}[localenv] xcode already installed -> skipped${NC}"
-fi
 
 # Installing Homebrew
 if ! command -v brew >/dev/null 2>&1; then
