@@ -23,7 +23,7 @@ SKIP_INSTALL_GITHUB="skip-install-github-actions.yaml"
 # install required dependencies if running linux
 if [[ "$OS" == "Linux" ]]; then
     export DEBIAN_FRONTEND=noninteractive
-    apt-get update
+    sudo apt-get update
     sudo apt-get install git zsh -y
 fi
 
