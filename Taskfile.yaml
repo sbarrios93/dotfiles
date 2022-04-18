@@ -62,12 +62,9 @@ tasks:
   brew:core-install:
     desc: "Install brew core packages defined in BREW_CORE_INSTALLS variable"
     cmds:
-      - |
-        while IFS= read -r line; do
-            echo "Installing $line"
-            brew install $line
-            echo "Done Installing $line"
-        done < <(printf '%s\n' "{{.BREW_CORE_INSTALLS}}")
+      - brew install python@3.9
+      - brew install pyenv
+      - brew install pyenv-virtualenv
     env:
       HOMEBREW_UPDATE_PREINSTALL: 0
 
