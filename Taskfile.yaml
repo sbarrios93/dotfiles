@@ -92,11 +92,10 @@ tasks:
         ignore_error: true
       - cmd: '{{if eq OS "linux"}} brew uninstall zlib --ignore-dependencies {{end}}' # see top comment
       - |
+        export PATH="$HOME/.pyenv/bin:$PATH"
         eval "$(pyenv init -)"
-        export PYENV_ROOT="{{.HOME}}/.pyenv"
-        export PATH="$PYENV_ROOT/bin:$PATH"
-        eval "$(pyenv virtualenv-init -)"
         eval "$(pyenv init --path)"
+        eval "$(pyenv virtualenv-init -)"
         pyenv install {{.PYTHON_BASE_VERSION}}
         pyenv virtualenv {{.PYTHON_BASE_VERSION}} {{.PYTHON_BASE_ENV}}
         pyenv global {{.PYTHON_BASE_ENV}}
@@ -123,11 +122,10 @@ tasks:
       - cmd: '{{if eq OS "linux"}} brew uninstall zlib --ignore-dependencies {{end}}' # see top comment
         ignore_error: true
       - |
+        export PATH="$HOME/.pyenv/bin:$PATH"
         eval "$(pyenv init -)"
-        export PYENV_ROOT="{{.HOME}}/.pyenv"
-        export PATH="$PYENV_ROOT/bin:$PATH"
-        eval "$(pyenv virtualenv-init -)"
         eval "$(pyenv init --path)"
+        eval "$(pyenv virtualenv-init -)"
         pyenv install {{.PYTHON_JUPYTER_VERSION}} -s
         pyenv virtualenv {{.PYTHON_JUPYTER_VERSION}} {{.PYTHON_JUPYTER_ENV}} || true
         pyenv shell {{.PYTHON_JUPYTER_ENV}}
