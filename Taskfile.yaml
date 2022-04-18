@@ -84,10 +84,10 @@ tasks:
     desc: "Create base python env for local machine through pyenv"
     cmds:
       - echo "{{.BLUE}} Creating pyenv base env {{.NC}}"
-      - brew uninstall readline
+      - cmd: brew uninstall readline --ignore-dependencies
         ignore_error: true
-      - brew uninstall zlib
-        ignore_error: true
+      - cmd: brew uninstall zlib
+        ignore_error: true --ignore-dependencies
       - |
         eval "$(pyenv init -)"
         eval "$(pyenv virtualenv-init -)"
