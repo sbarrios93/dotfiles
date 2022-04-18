@@ -52,7 +52,6 @@ function github-authenticated() {
     # Attempt to ssh to GitHub
     ssh -T git@github.com &>/dev/null
     RET=$?
-    echo $RET
     if [[ $RET == 1 ]]; then
         # user is authenticated, but fails to open a shell with GitHub
         return 0
@@ -63,7 +62,7 @@ function github-authenticated() {
         echo "unknown exit code in attempt to ssh into git@github.com"
         return 2
     fi
-
+    return 0
 }
 
 if [[ $CI == 1 ]]; then
