@@ -93,7 +93,7 @@ tasks:
       - cmd: '{{if eq OS "linux"}} brew uninstall zlib --ignore-dependencies {{end}}' # see top comment
         ignore_error: true
       - |
-        export PATH="$HOME/.pyenv/bin:$PATH"
+        export PATH="$(brew --prefix pyenv-virtualenv)/bin:$(brew --prefix pyenv)/bin:$PATH"
         eval "$(pyenv init -)"
         eval "$(pyenv init --path)"
         eval "$(pyenv virtualenv-init -)"
