@@ -1,6 +1,10 @@
 #!/usr/bin/env zsh
 
-set -e # Exit immediately if a command exits with a non-zero status.
+set -eu # Exit immediately if a command exits with a non-zero status.
+
+set -o pipefail # Return value of a pipeline as the value of the last command to
+# exit with a non-zero status, or zero if all commands in the
+# pipeline exit successfully.
 
 #set os
 OS="$(uname)"
