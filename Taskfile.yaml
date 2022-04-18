@@ -96,7 +96,7 @@ tasks:
         export PATH="$(brew --prefix pyenv-virtualenv)/bin:$(brew --prefix pyenv)/bin:$PATH"
         eval "$(pyenv init -)"
         eval "$(pyenv init --path)"
-        eval "$(pyenv virtualenv-init -)"
+        eval "$(pyenv-virtualenv-init -)"
         pyenv install {{.PYTHON_BASE_VERSION}} -s
         pyenv virtualenv {{.PYTHON_BASE_VERSION}} {{.PYTHON_BASE_ENV}} || true
         pyenv global {{.PYTHON_BASE_ENV}}
