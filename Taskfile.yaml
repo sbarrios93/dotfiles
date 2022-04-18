@@ -38,8 +38,11 @@ tasks:
     - task: python:poetry-init
     - task: python:jupyter-env:init
     - task: brew:install:formula
-    - task: crontab:install-crontab-ui
     - task: brew:install:cask
+    - task: chezmoi
+    - task: vscode:install-extensions
+    - task: macos:install-defaults
+    - task: crontab:restore
 
   brew:update:
     desc: Run Brew Update
@@ -159,9 +162,30 @@ tasks:
         fi
       - defer: brew install readline zlib # do even if prev command fails
 
-  crontab:install-crontab-ui:
-    desc: Install crontab ui https://github.com/alseambusher/crontab-ui
+  chezmoi:
+    desc: Apply chezmoi dotfiles
+    cmds:
+      - chezmoi init --apply
+
+  vscode:install-extensions:
+    desc: install extensions of vscode
+    cmds:
+      - chmod +x {{.SCRIPTS_PATH}}/executable_install-vscode-extensions.sh
+      - mkdir -p {{.HOME}}/.vscode/extensions
+      - bash {{.SCRIPTS_PATH}}/executable_install-vscode-extensions.sh
+
+  macos:install-defaults:
+    desc: install defaults configs
     cmds:
       - |
-        source {{.HOME}}/.nvm/nvm.sh
-        npm install -g crontab-ui
+        if [[ {{OS}} == "darwin" ]]; then
+          chmod +x {{.SCRIPTS_PATH}}/executable_dot_macos
+          bash {{.SCRIPTS_PATH}}/executable_dot_macos
+        else
+          echo "{{.RED}} Not macos {{.NC}} -> Skipping apply macos defaults"
+        fi
+
+  crontab:restore:
+    desc: "Restore crontab file from backup"
+    cmds:
+      - crontab < {{.HOME}}/.core/scripts/crontab.save

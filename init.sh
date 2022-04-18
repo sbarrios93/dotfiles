@@ -140,6 +140,8 @@ fi
 source $NVM_DIR/nvm.sh
 nvm install node
 nvm alias default node
+nvm use default
+npm install -g crontab-ui
 
 # init repo, use ssh if local machine. In case CI is set, we don't want to use ssh
 chezmoi_init_args=(
