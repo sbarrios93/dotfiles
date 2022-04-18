@@ -52,6 +52,7 @@ function github-authenticated() {
     # Attempt to ssh to GitHub
     ssh -T git@github.com &>/dev/null
     RET=$?
+    echo $RET
     if [[ $RET == 1 ]]; then
         # user is authenticated, but fails to open a shell with GitHub
         return 0
