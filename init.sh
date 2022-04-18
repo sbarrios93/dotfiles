@@ -61,8 +61,9 @@ function github-authenticated() {
         return 1
     else
         echo "unknown exit code in attempt to ssh into git@github.com"
+        return 2
     fi
-    return 2
+
 }
 
 if [[ $CI == 1 ]]; then
