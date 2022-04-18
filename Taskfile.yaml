@@ -37,8 +37,8 @@ tasks:
     - task: python:base-env
     - task: python:poetry-init
     - task: python:jupyter-env:init
-    - task: python:jupyter-env:install-deps
     - task: brew:formula-install
+    - task: crontab:install-crontab-ui
 
   brew:update:
     desc: Run Brew Update
@@ -70,8 +70,17 @@ tasks:
 
   brew:formula-install:
     desc: "Install brew formulas defined on the Brewfile"
+    deps: [brew:update]
     cmds:
-      - cat {{.BREWFILE_PATH}} | grep '^[brew]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' |   xargs -n 1 -0 -I@ bash -c "echo '{{.BLUE}} Installing @ {{.NC}}' && brew install @ && echo '{{.GREEN}} Done Installing @ {{.NC}}'"
+      - |
+        while IFS= read -r line; do
+            echo "Installing $line"
+            brew tap $line
+            echo "Done Installing $line"
+        done < <(printf '%s\n' $(cat {{.BREWFILE_PATH}} | grep '^[brew]' | grep -o '".*"' | tr -d '"'))
+      - echo 'DONE'
+    env:
+      HOMEBREW_UPDATE_PREINSTALL: 0
 
   oh-my-zsh-init:
     desc: "Initialize oh-my-zsh"
@@ -93,7 +102,7 @@ tasks:
         export PATH="$(brew --prefix pyenv-virtualenv)/bin:$(brew --prefix pyenv)/bin:$PATH"
         eval "$(pyenv init -)"
         eval "$(pyenv init --path)"
-        eval "$(pyenv-virtualenv-init -)"
+        eval "$(pyenv virtualenv-init -)"
         pyenv install {{.PYTHON_BASE_VERSION}} -s
         pyenv virtualenv {{.PYTHON_BASE_VERSION}} {{.PYTHON_BASE_ENV}} || true
         pyenv global {{.PYTHON_BASE_ENV}}
@@ -135,7 +144,7 @@ tasks:
         fi
       - defer: brew install readline zlib # do even if prev command fails
 
-  install-crontab-ui:
+  crontab:install-crontab-ui:
     desc: Install crontab ui https://github.com/alseambusher/crontab-ui
     cmds:
       - |
