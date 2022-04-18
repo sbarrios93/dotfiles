@@ -121,6 +121,7 @@ tasks:
         ignore_error: true
       - |
         eval "$(pyenv init -)"
+        eval "$(pyenv init --path)"
         eval "$(pyenv virtualenv-init -)"
         pyenv install {{.PYTHON_JUPYTER_VERSION}} -s
         pyenv virtualenv {{.PYTHON_JUPYTER_VERSION}} {{.PYTHON_JUPYTER_ENV}} || true
@@ -132,6 +133,10 @@ tasks:
           pip install jupyterlab black jupyter_contrib_nbextensions jupyter_nbextensions_configurator ipykernel
         fi
       - defer: brew install readline zlib # do even if prev command fails
-  echo-os:
+
+  install-crontab-ui:
+    desc: Install crontab ui https://github.com/alseambusher/crontab-ui
     cmds:
-      - echo "{{OS}}"
+      - |
+        source {{.HOME}}/.nvm/nvm.sh
+        npm install -g crontab-ui
