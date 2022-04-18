@@ -12,4 +12,5 @@ jobs:
         run: |
           set -eo pipefail
           export CI=1
+          echo "$(brew --prefix)"
           TERM=xterm zsh init.sh
