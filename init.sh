@@ -8,7 +8,7 @@ set -o pipefail # Return value of a pipeline as the value of the last command to
 
 #set os
 OS="$(uname)"
-CI=${CI:-}
+CI=${CI:-'0'}
 
 # colors
 GREEN=$(tput setaf 2)
