@@ -2,7 +2,7 @@
 
 set -eu # Exit immediately if a command exits with a non-zero status.
 
-set -x # debug
+# set -x # debug
 
 set -o pipefail # Return value of a pipeline as the value of the last command to
 # exit with a non-zero status, or zero if all commands in the

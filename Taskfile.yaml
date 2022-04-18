@@ -86,7 +86,7 @@ tasks:
     env:
       HOMEBREW_UPDATE_PREINSTALL: 0
 
-  brew:install:casks:
+  brew:install:cask:
     desc: "Install brew cask defined on the Brewfile"
     deps: [brew:update]
     cmds:
@@ -172,7 +172,7 @@ tasks:
     cmds:
       - chmod +x {{.SCRIPTS_PATH}}/executable_install-vscode-extensions.sh
       - mkdir -p {{.HOME}}/.vscode/extensions
-      - bash {{.SCRIPTS_PATH}}/executable_install-vscode-extensions.sh
+      - PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin" bash {{.SCRIPTS_PATH}}/executable_install-vscode-extensions.sh
 
   macos:install-defaults:
     desc: install defaults configs
