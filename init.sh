@@ -100,7 +100,8 @@ else
         else
             echo "${BLUE}[localenv] xcode already installed -> skipped${NC}"
         fi
-
+    else
+        echo "Not Darwin env"
     fi
 fi
 
