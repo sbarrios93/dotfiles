@@ -83,15 +83,18 @@ tasks:
   pyenv-base-env:
     desc: "Create base python env for local machine through pyenv"
     cmds:
+      - echo "{{.BLUE}} Creating pyenv base env {{.NC}}"
+      - brew uninstall readline
+        ignore_error: true
+      - brew uninstall zlib
+        ignore_error: true
       - |
-        echo "{{.BLUE}} Creating pyenv base env {{.NC}}"
         eval "$(pyenv init -)"
         eval "$(pyenv virtualenv-init -)"
-        brew uninstall readline --ignore-dependencies
         pyenv install {{.PYTHON_BASE_VERSION}}
         pyenv virtualenv {{.PYTHON_BASE_VERSION}} {{.PYTHON_BASE_ENV}}
         pyenv global {{.PYTHON_BASE_ENV}}
-        brew install readline
+        brew install readline zlib
         pyenv rehash
 
   poetry-init:
