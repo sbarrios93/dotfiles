@@ -29,15 +29,21 @@ vars:
     pyenv-virtualenv
 
 tasks:
-  "init":
-    - task: "brew-tap"
-    - task: "brew-core-install"
-    - task: "oh-my-zsh-init"
-    - task: "pyenv-base-env"
-    - task: "brew-formula-install"
+  init:
+    - task: brew-tap
+    - task: brew-core-install
+    - task: oh-my-zsh-init
+    - task: pyenv-base-env
+    - task: brew-formula-install
 
-  "brew-tap":
+  brew-update:
+    desc: Run Brew Update
+    cmds:
+     - brew update
+
+  brew-tap:
     desc: "Install brew taps"
+    deps: [brew-update]
     cmds:
       - |
         while IFS= read -r line; do
@@ -46,8 +52,10 @@ tasks:
             echo "Done Tapping $line"
         done < <(printf '%s\n' $(cat {{.BREWFILE_PATH}} |  grep '^[tap]' | grep -o '".*"' | tr -d '"' ))
       - echo 'DONE'
+    env:
+      HOMEBREW_UPDATE_PREINSTALL: 0
 
-  "brew-core-install":
+  brew-core-install:
     desc: "Install brew core packages defined in BREW_CORE_INSTALLS variable"
     cmds:
       - |
@@ -56,13 +64,15 @@ tasks:
             brew install $line
             echo "Done Installing $line"
         done < <(printf '%s\n' "{{.BREW_CORE_INSTALLS}}")
+    env:
+      HOMEBREW_UPDATE_PREINSTALL: 0
 
-  "brew-formula-install":
+  brew-formula-install:
     desc: "Install brew formulas defined on the Brewfile"
     cmds:
       - cat {{.BREWFILE_PATH}} | grep '^[brew]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' |   xargs -n 1 -0 -I@ bash -c "echo '{{.BLUE}} Installing @ {{.NC}}' && brew install @ && echo '{{.GREEN}} Done Installing @ {{.NC}}'"
 
-  "oh-my-zsh-init":
+  oh-my-zsh-init:
     desc: "Initialize oh-my-zsh"
     cmds:
       - |
@@ -70,19 +80,21 @@ tasks:
           sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
         fi
 
-  "pyenv-base-env":
+  pyenv-base-env:
     desc: "Create base python env for local machine through pyenv"
     cmds:
       - |
         echo "{{.BLUE}} Creating pyenv base env {{.NC}}"
         eval "$(pyenv init -)"
         eval "$(pyenv virtualenv-init -)"
+        brew uninstall readline --ignore-dependencies
         pyenv install {{.PYTHON_BASE_VERSION}}
         pyenv virtualenv {{.PYTHON_BASE_VERSION}} {{.PYTHON_BASE_ENV}}
         pyenv global {{.PYTHON_BASE_ENV}}
+        brew install readline
         pyenv rehash
 
-  "poetry-init":
+  poetry-init:
     desc: "Initialize poetry"
     cmds:
       - |
