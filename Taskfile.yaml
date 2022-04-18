@@ -86,8 +86,8 @@ tasks:
       - echo "{{.BLUE}} Creating pyenv base env {{.NC}}"
       - cmd: brew uninstall readline --ignore-dependencies
         ignore_error: true
-      - cmd: brew uninstall zlib
-        ignore_error: true --ignore-dependencies
+      - cmd: brew uninstall zlib  --ignore-dependencies
+        ignore_error: true
       - |
         eval "$(pyenv init -)"
         eval "$(pyenv virtualenv-init -)"
