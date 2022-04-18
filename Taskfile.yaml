@@ -97,8 +97,8 @@ tasks:
         eval "$(pyenv init -)"
         eval "$(pyenv init --path)"
         eval "$(pyenv virtualenv-init -)"
-        pyenv install {{.PYTHON_BASE_VERSION}}
-        pyenv virtualenv {{.PYTHON_BASE_VERSION}} {{.PYTHON_BASE_ENV}}
+        pyenv install {{.PYTHON_BASE_VERSION}} -s
+        pyenv virtualenv {{.PYTHON_BASE_VERSION}} {{.PYTHON_BASE_ENV}} || true
         pyenv global {{.PYTHON_BASE_ENV}}
         pyenv rehash
       - defer: brew install readline zlib # do even if prev command fails
