@@ -91,6 +91,7 @@ tasks:
       - cmd: '{{if eq OS "linux"}} brew uninstall readline --ignore-dependencies {{end}}' # see top comment
         ignore_error: true
       - cmd: '{{if eq OS "linux"}} brew uninstall zlib --ignore-dependencies {{end}}' # see top comment
+        ignore_error: true
       - |
         export PATH="$HOME/.pyenv/bin:$PATH"
         eval "$(pyenv init -)"
@@ -130,7 +131,7 @@ tasks:
         pyenv virtualenv {{.PYTHON_JUPYTER_VERSION}} {{.PYTHON_JUPYTER_ENV}} || true
         pyenv shell {{.PYTHON_JUPYTER_ENV}}
         pyenv rehash
-        echo "$PYEV_VERSION"
+        echo "$PYENV_VERSION"
         if [[ "$PYENV_VERSION"  == "{{.PYTHON_JUPYTER_ENV}}" ]]; then
           python -m pip install --upgrade pip
           pip install jupyterlab black jupyter_contrib_nbextensions jupyter_nbextensions_configurator ipykernel
