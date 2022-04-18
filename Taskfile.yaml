@@ -32,13 +32,14 @@ vars:
 tasks:
   init:
     - task: brew:tap
-    - task: brew:core-install
+    - task: brew:install:core
     - task: oh-my-zsh-init
     - task: python:base-env
     - task: python:poetry-init
     - task: python:jupyter-env:init
-    - task: brew:formula-install
+    - task: brew:install:formula
     - task: crontab:install-crontab-ui
+    - task: brew:install:cask
 
   brew:update:
     desc: Run Brew Update
@@ -59,7 +60,7 @@ tasks:
     env:
       HOMEBREW_UPDATE_PREINSTALL: 0
 
-  brew:core-install:
+  brew:install:core:
     desc: "Install brew core packages defined in BREW_CORE_INSTALLS variable"
     cmds:
       - brew install python@3.9
@@ -68,16 +69,30 @@ tasks:
     env:
       HOMEBREW_UPDATE_PREINSTALL: 0
 
-  brew:formula-install:
+  brew:install:formula:
     desc: "Install brew formulas defined on the Brewfile"
     deps: [brew:update]
     cmds:
       - |
         while IFS= read -r line; do
             echo "Installing $line"
-            brew tap $line
+            brew install $line
             echo "Done Installing $line"
         done < <(printf '%s\n' $(cat {{.BREWFILE_PATH}} | grep '^[brew]' | grep -o '".*"' | tr -d '"'))
+      - echo 'DONE'
+    env:
+      HOMEBREW_UPDATE_PREINSTALL: 0
+
+  brew:install:casks:
+    desc: "Install brew cask defined on the Brewfile"
+    deps: [brew:update]
+    cmds:
+      - |
+        while IFS= read -r line; do
+            echo "Installing $line"
+            brew install $line
+            echo "Done Installing $line"
+        done < <(printf '%s\n' $(cat {{.BREWFILE_PATH}} | grep '^[cask]' | grep -o '".*"' | tr -d '"'))
       - echo 'DONE'
     env:
       HOMEBREW_UPDATE_PREINSTALL: 0
