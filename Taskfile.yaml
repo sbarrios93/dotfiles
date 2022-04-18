@@ -20,30 +20,34 @@ vars:
   # PYTHON
   PYTHON_BASE_VERSION: "3.9.10"
   PYTHON_BASE_ENV: "base"
+  PYTHON_JUPYTER_VERSION: "3.9.10"
+  PYTHON_JUPYTER_ENV: "jupyter"
 
   # custom packages to install first through brew
   BREW_CORE_INSTALLS: |-
     python@3.9
-    cmake
     pyenv
     pyenv-virtualenv
 
 tasks:
   init:
-    - task: brew-tap
-    - task: brew-core-install
+    - task: brew:tap
+    - task: brew:core-install
     - task: oh-my-zsh-init
-    - task: pyenv-base-env
-    - task: brew-formula-install
+    - task: python:base-env
+    - task: python:poetry-init
+    - task: python:jupyter-env:init
+    - task: python:jupyter-env:install-deps
+    - task: brew:formula-install
 
-  brew-update:
+  brew:update:
     desc: Run Brew Update
     cmds:
-     - brew update
+      - brew update
 
-  brew-tap:
+  brew:tap:
     desc: "Install brew taps"
-    deps: [brew-update]
+    deps: [brew:update]
     cmds:
       - |
         while IFS= read -r line; do
@@ -55,7 +59,7 @@ tasks:
     env:
       HOMEBREW_UPDATE_PREINSTALL: 0
 
-  brew-core-install:
+  brew:core-install:
     desc: "Install brew core packages defined in BREW_CORE_INSTALLS variable"
     cmds:
       - |
@@ -67,7 +71,7 @@ tasks:
     env:
       HOMEBREW_UPDATE_PREINSTALL: 0
 
-  brew-formula-install:
+  brew:formula-install:
     desc: "Install brew formulas defined on the Brewfile"
     cmds:
       - cat {{.BREWFILE_PATH}} | grep '^[brew]' | grep -o '".*"' | tr -d '"' | tr '\n' '\0' |   xargs -n 1 -0 -I@ bash -c "echo '{{.BLUE}} Installing @ {{.NC}}' && brew install @ && echo '{{.GREEN}} Done Installing @ {{.NC}}'"
@@ -80,27 +84,54 @@ tasks:
           sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
         fi
 
-  pyenv-base-env:
+  python:base-env:
     desc: "Create base python env for local machine through pyenv"
     cmds:
       - echo "{{.BLUE}} Creating pyenv base env {{.NC}}"
-      - cmd: brew uninstall readline --ignore-dependencies
+      - cmd: '{{if eq OS "linux"}} brew uninstall readline --ignore-dependencies {{end}}' # see top comment
         ignore_error: true
-      - cmd: brew uninstall zlib  --ignore-dependencies
-        ignore_error: true
+      - cmd: '{{if eq OS "linux"}} brew uninstall zlib --ignore-dependencies {{end}}' # see top comment
       - |
         eval "$(pyenv init -)"
         eval "$(pyenv virtualenv-init -)"
         pyenv install {{.PYTHON_BASE_VERSION}}
         pyenv virtualenv {{.PYTHON_BASE_VERSION}} {{.PYTHON_BASE_ENV}}
         pyenv global {{.PYTHON_BASE_ENV}}
-        brew install readline zlib
         pyenv rehash
+      - defer: brew install readline zlib # do even if prev command fails
 
-  poetry-init:
+  python:poetry-init:
     desc: "Initialize poetry"
     cmds:
       - |
         eval "$(pyenv init -)"
         eval "$(pyenv virtualenv-init -)"
-        echo "$(ls $(pyenv root)/{{.PYTHON_BASE_ENV}}/versions/bin/python)"
+        curl -sSL https://install.python-poetry.org | POETRY_HOME={{.POETRY_PATH}} {{.PYTHON_BASE_ENV_BIN}} -
+    vars:
+      PYTHON_BASE_ENV_BIN:
+        sh: echo "$(pyenv root)/versions/{{.PYTHON_BASE_ENV}}/bin/python"
+
+  python:jupyter-env:init:
+    desc: "Initialize jupyter environment with pyenv"
+    cmds:
+      - echo "{{.BLUE}} Creating pyenv jupyter env {{.NC}}"
+      - cmd: '{{if eq OS "linux"}} brew uninstall readline --ignore-dependencies {{end}}' # see top comment
+        ignore_error: true
+      - cmd: '{{if eq OS "linux"}} brew uninstall zlib --ignore-dependencies {{end}}' # see top comment
+        ignore_error: true
+      - |
+        eval "$(pyenv init -)"
+        eval "$(pyenv virtualenv-init -)"
+        pyenv install {{.PYTHON_JUPYTER_VERSION}} -s
+        pyenv virtualenv {{.PYTHON_JUPYTER_VERSION}} {{.PYTHON_JUPYTER_ENV}} || true
+        pyenv shell {{.PYTHON_JUPYTER_ENV}}
+        pyenv rehash
+        echo "$PYEV_VERSION"
+        if [[ "$PYENV_VERSION"  == "{{.PYTHON_JUPYTER_ENV}}" ]]; then
+          python -m pip install --upgrade pip
+          pip install jupyterlab black jupyter_contrib_nbextensions jupyter_nbextensions_configurator ipykernel
+        fi
+      - defer: brew install readline zlib # do even if prev command fails
+  echo-os:
+    cmds:
+      - echo "{{OS}}"
