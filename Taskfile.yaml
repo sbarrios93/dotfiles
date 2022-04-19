@@ -13,6 +13,7 @@ vars:
   SELF_DIR: $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
   CHEZMOIROOT: "{{.SELF_DIR}}/$(cat .chezmoiroot)"
   BREWFILE_PATH: "{{.CHEZMOIROOT}}/dot_core/brew/Brewfile"
+  TEMP_PATH: "{{.HOME}}/.core/temp"
   POETRY_PATH: "{{.HOME}}/.core/poetry"
   ZSH_CUSTOM_PATH: "{{.HOME}}/.core/zsh"
   SCRIPTS_PATH: "{{.CHEZMOIROOT}}/dot_core/scripts"
@@ -31,6 +32,9 @@ vars:
 
 tasks:
   init:
+    - |
+      echo "{{.GREEN}}Initializing temp dir {{.TEMP_PATH}}{{.NC}}"
+      mkdir -p {{.TEMP_PATH}}
     - task: brew:tap
     - task: brew:install:core
     - task: oh-my-zsh-init
@@ -49,17 +53,18 @@ tasks:
     cmds:
       - brew update
 
+  brew:make-temp-brewfiles:
+    desc: build temp directory where we will make different brewfiles for taps, formulas, and cask
+    cmds:
+      - mkdir -p {{.BREWFILE_PATH}}/../tmp
+      - ((grep '^[tap]' ) < {{.BREWFILE_PATH}}) > {{.TEMP_PATH}}/taps.brewfile
+      - ((grep '^[brew]' ) < {{.BREWFILE_PATH}}) > {{.TEMP_PATH}}/formula.brewfile
+      - ((grep '^[cask]' ) < {{.BREWFILE_PATH}}) > {{.TEMP_PATH}}/cask.brewfile
   brew:tap:
     desc: "Install brew taps"
     deps: [brew:update]
     cmds:
-      - |
-        while IFS= read -r line; do
-            echo "Tapping $line"
-            brew tap $line
-            echo "Done Tapping $line"
-        done < <(printf '%s\n' $(cat {{.BREWFILE_PATH}} |  grep '^[tap]' | grep -o '".*"' | tr -d '"' ))
-      - echo 'DONE'
+      - brew bundle --file={{.TEMP_PATH}}/taps.brewfile
     env:
       HOMEBREW_UPDATE_PREINSTALL: 0
 
@@ -76,13 +81,7 @@ tasks:
     desc: "Install brew formulas defined on the Brewfile"
     deps: [brew:update]
     cmds:
-      - |
-        while IFS= read -r line; do
-            echo "Installing $line"
-            brew install $line
-            echo "Done Installing $line"
-        done < <(printf '%s\n' $(cat {{.BREWFILE_PATH}} | grep '^[brew]' | grep -o '".*"' | tr -d '"'))
-      - echo 'DONE'
+      - brew bundle --file={{.TEMP_PATH}}/formula.brewfile
     env:
       HOMEBREW_UPDATE_PREINSTALL: 0
 
@@ -90,13 +89,7 @@ tasks:
     desc: "Install brew cask defined on the Brewfile"
     deps: [brew:update]
     cmds:
-      - |
-        while IFS= read -r line; do
-            echo "Installing $line"
-            brew install $line
-            echo "Done Installing $line"
-        done < <(printf '%s\n' $(cat {{.BREWFILE_PATH}} | grep '^[cask]' | grep -o '".*"' | tr -d '"'))
-      - echo 'DONE'
+      - brew bundle --file={{.TEMP_PATH}}/cask.brewfile
     interactive: true
     env:
       HOMEBREW_UPDATE_PREINSTALL: 0
