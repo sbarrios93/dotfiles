@@ -32,9 +32,10 @@ vars:
 
 tasks:
   init:
-    - |
-      echo "{{.GREEN}}Initializing temp dir {{.TEMP_PATH}}{{.NC}}"
-      mkdir -p {{.TEMP_PATH}}
+    - cmd: |
+          echo "{{.GREEN}}Initializing temp dir {{.TEMP_PATH}}{{.NC}}"
+          mkdir -p {{.TEMP_PATH}}
+    - task: brew:make-temp-brewfiles
     - task: brew:tap
     - task: brew:install:core
     - task: oh-my-zsh-init
@@ -47,6 +48,7 @@ tasks:
     - task: vscode:install-extensions
     - task: macos:install-defaults
     - task: crontab:restore
+    defer: rm -rf {{.TEMP_PATH}}
 
   brew:update:
     desc: Run Brew Update
