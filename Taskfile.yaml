@@ -97,6 +97,7 @@ tasks:
             echo "Done Installing $line"
         done < <(printf '%s\n' $(cat {{.BREWFILE_PATH}} | grep '^[cask]' | grep -o '".*"' | tr -d '"'))
       - echo 'DONE'
+    interactive: true
     env:
       HOMEBREW_UPDATE_PREINSTALL: 0
 
@@ -172,7 +173,7 @@ tasks:
     cmds:
       - chmod +x {{.SCRIPTS_PATH}}/executable_install-vscode-extensions.sh
       - mkdir -p {{.HOME}}/.vscode/extensions
-      - PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin" bash {{.SCRIPTS_PATH}}/executable_install-vscode-extensions.sh
+      - bash {{.SCRIPTS_PATH}}/executable_install-vscode-extensions.sh
 
   macos:install-defaults:
     desc: install defaults configs
