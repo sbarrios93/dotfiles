@@ -58,7 +58,6 @@ tasks:
   brew:make-temp-brewfiles:
     desc: build temp directory where we will make different brewfiles for taps, formulas, and cask
     cmds:
-      - mkdir -p {{.BREWFILE_PATH}}/../tmp
       - ((grep '^[tap]' ) < {{.BREWFILE_PATH}}) > {{.TEMP_PATH}}/taps.brewfile
       - ((grep '^[brew]' ) < {{.BREWFILE_PATH}}) > {{.TEMP_PATH}}/formula.brewfile
       - ((grep '^[cask]' ) < {{.BREWFILE_PATH}}) > {{.TEMP_PATH}}/cask.brewfile
