@@ -58,9 +58,9 @@ tasks:
   brew:make-temp-brewfiles:
     desc: build temp directory where we will make different brewfiles for taps, formulas, and cask
     cmds:
-      - ((grep '^[tap]' ) < {{.BREWFILE_PATH}}) > {{.TEMP_PATH}}/taps.brewfile
-      - ((grep '^[brew]' ) < {{.BREWFILE_PATH}}) > {{.TEMP_PATH}}/formula.brewfile
-      - ((grep '^[cask]' ) < {{.BREWFILE_PATH}}) > {{.TEMP_PATH}}/cask.brewfile
+      - (grep '^[tap]' < {{.BREWFILE_PATH}}) > {{.TEMP_PATH}}/taps.brewfile
+      - (grep '^[brew]' < {{.BREWFILE_PATH}}) > {{.TEMP_PATH}}/formula.brewfile
+      - (grep '^[cask]' < {{.BREWFILE_PATH}}) > {{.TEMP_PATH}}/cask.brewfile
   brew:tap:
     desc: "Install brew taps"
     deps: [brew:update]
