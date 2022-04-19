@@ -83,6 +83,7 @@ tasks:
     deps: [brew:update]
     cmds:
       - brew bundle --file={{.TEMP_PATH}}/formula.brewfile
+    ignore_error: true
     env:
       HOMEBREW_UPDATE_PREINSTALL: 0
 
