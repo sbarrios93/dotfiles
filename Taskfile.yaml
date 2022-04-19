@@ -35,7 +35,6 @@ tasks:
     - cmd: |
         echo "{{.GREEN}}Initializing temp dir {{.TEMP_PATH}}{{.NC}}"
         mkdir -p {{.TEMP_PATH}}
-    - defer: rm -rf {{.TEMP_PATH}}
     - task: brew:make-temp-brewfiles
     - task: brew:tap
     - task: brew:install:core
@@ -49,6 +48,7 @@ tasks:
     - task: vscode:install-extensions
     - task: macos:install-defaults
     - task: crontab:restore
+    - defer: rm -rf {{.TEMP_PATH}}
 
   brew:update:
     desc: Run Brew Update
@@ -111,7 +111,6 @@ tasks:
         ignore_error: true
       - cmd: '{{if eq OS "linux"}} brew uninstall zlib --ignore-dependencies {{end}}' # see top comment
         ignore_error: true
-      - defer: brew install readline zlib # do even if prev command fails
       - |
         export PATH="$(brew --prefix pyenv-virtualenv)/bin:$(brew --prefix pyenv)/bin:$PATH"
         eval "$(pyenv init -)"
@@ -121,6 +120,7 @@ tasks:
         pyenv virtualenv {{.PYTHON_BASE_VERSION}} {{.PYTHON_BASE_ENV}} || true
         pyenv global {{.PYTHON_BASE_ENV}}
         pyenv rehash
+      - defer: brew install readline zlib # do even if prev command fails
 
   python:poetry-init:
     desc: "Initialize poetry"
@@ -141,7 +141,6 @@ tasks:
         ignore_error: true
       - cmd: '{{if eq OS "linux"}} brew uninstall zlib --ignore-dependencies {{end}}' # see top comment
         ignore_error: true
-      - defer: brew install readline zlib # do even if prev command fails
       - |
         export PATH="$HOME/.pyenv/bin:$PATH"
         eval "$(pyenv init -)"
@@ -156,6 +155,7 @@ tasks:
           python -m pip install --upgrade pip
           pip install jupyterlab black jupyter_contrib_nbextensions jupyter_nbextensions_configurator ipykernel
         fi
+      - defer: brew install readline zlib # do even if prev command fails
 
   chezmoi:
     desc: Apply chezmoi dotfiles
