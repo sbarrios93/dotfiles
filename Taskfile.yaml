@@ -82,7 +82,7 @@ tasks:
     desc: "Install brew formulas defined on the Brewfile"
     deps: [brew:update]
     cmds:
-      - brew bundle --file={{.TEMP_PATH}}/formula.brewfile 2 > /dev/null
+      - brew bundle --file={{.TEMP_PATH}}/formula.brewfile || true
     ignore_error: true
     env:
       HOMEBREW_UPDATE_PREINSTALL: 0
