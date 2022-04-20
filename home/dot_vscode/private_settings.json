@@ -298,5 +298,9 @@
 	"debug.terminal.clearBeforeReusing": true,
 	"python.linting.mypyCategorySeverity.note": "Warning",
 	"markdown-preview-enhanced.previewTheme": "github-dark.css",
-	"notebook.output.textLineLimit": 80
+	"notebook.output.textLineLimit": 80,
+	"python.defaultInterpreterPath": "/Users/seba/.pyenv/versions/3.10.3/envs/adm-booth/bin/python",
+	"redhat.telemetry.enabled": false,
+	"remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
+	"remote.SSH.configFile": "/var/folders/qk/mkh7x25n30d8p6y5cmkbt86m0000gn/T/gitpod_ssh_config-21840-3ZKdwlpKHr7N"
 }

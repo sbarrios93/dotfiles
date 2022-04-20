@@ -5,6 +5,7 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "jason0x43/neovim-nightly"
@@ -12,12 +13,12 @@ tap "jez/formulae"
 tap "romkatv/powerlevel10k"
 tap "xwmx/taps"
 tap "yqrashawn/goku"
-# Run your GitHub Actions locally 🚀
-brew "act"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
+# Library for command-line editing
+brew "readline"
 # Core application library for C
 brew "glib"
+# GNOME accessibility toolkit
+brew "atk"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
 # Programmable completion for Bash 3.2
@@ -26,14 +27,12 @@ brew "bash-completion"
 brew "bazel"
 # Garbage collector for C and C++
 brew "bdw-gc"
-# Development kit for the Java programming language
-brew "openjdk"
-# Remove large files or passwords from Git history like git-filter-branch
-brew "bfg"
 # Collection of portable C++ source libraries
 brew "boost"
 # Freely available high-quality data compressor
 brew "bzip2"
+# Vector graphics library with cross-device output support
+brew "cairo"
 # GNU multiple precision arithmetic library
 brew "gmp"
 # Library for processing command-line flags
@@ -42,12 +41,18 @@ brew "gflags"
 brew "glog"
 # Optimized BLAS library
 brew "openblas"
+# C++ library for large-scale optimization
+brew "ceres-solver"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
 # OpenType text shaping engine
 brew "harfbuzz"
+# Subtitle renderer for the ASS/SSA subtitle format
+brew "libass"
 # Compression/decompression library aiming for high speed
 brew "snappy"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg@4"
 # File format designed to store large amounts of data
 brew "hdf5"
 # Key-value storage library with ordered mapping
@@ -58,6 +63,8 @@ brew "lmdb"
 brew "numpy"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
+# Python bindings for v5 of Qt
+brew "pyqt@5"
 # Toolkit for 3D computer graphics, image processing, and visualization
 brew "vtk"
 # Open source computer vision library
@@ -66,18 +73,10 @@ brew "opencv"
 brew "caffe"
 # Manage your dotfiles across multiple diverse machines, securely
 brew "chezmoi"
-# Cross-platform make
-brew "cmake"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
-# Generate documentation for several programming languages
-brew "doxygen"
-# Platform built on V8 to build network applications
-brew "node"
-# Simpler static site generator
-brew "eleventy"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Play, record, convert, and stream audio and video
@@ -86,6 +85,8 @@ brew "ffmpeg"
 brew "findutils"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Toolkit for image loading and pixel buffer manipulation
+brew "gdk-pixbuf"
 # Interpreter for PostScript and PDF
 brew "ghostscript"
 # Distributed revision control system
@@ -100,20 +101,30 @@ brew "gnu-tar"
 brew "go"
 # Image manipulation
 brew "netpbm"
+# GNU triangulated surface library
+brew "gts"
 # Framework for layout and rendering of i18n text
 brew "pango"
+# Library to render SVG files using Cairo
+brew "librsvg"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
 # GSettings schemas for desktop components
 brew "gsettings-desktop-schemas"
+# GUI toolkit
+brew "gtk+"
+# Toolkit for creating graphical user interfaces
+brew "gtk+3"
 # Integrates GTK macOS applications with the Mac desktop
 brew "gtk-mac-integration"
 # Convert source code to formatted text with syntax highlighting
 brew "highlight"
-# Configurable static site generator
-brew "hugo"
 # Command-line benchmarking tool
 brew "hyperfine"
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew "libheif"
+# C/C++ seam carving library
+brew "liblqr"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # CLI wrapper for basic network utilities on macOS - ip command
@@ -124,6 +135,8 @@ brew "jq"
 brew "lapack"
 # Implementations for atomic memory update operations
 brew "libatomic_ops"
+# I/O abstraction library for dealing with structured file formats
+brew "libgsf"
 # Implementation of the file(1) command
 brew "libmagic"
 # Utility for directing compilation
@@ -138,20 +151,26 @@ brew "meson"
 brew "neovim"
 # Port scanning utility for large networks
 brew "nmap"
+# Platform built on V8 to build network applications
+brew "node"
 # Manage multiple Node.js versions
 brew "nvm"
+# C library to read whole-slide images (a.k.a. virtual slides)
+brew "openslide"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Render and include figures in Pandoc documents using many plotting toolkits
 brew "pandoc-plot"
+# Cross-platform application and UI framework
+brew "qt"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
 # Python version management
 brew "pyenv"
 # Pyenv plugin to manage virtualenv
 brew "pyenv-virtualenv"
 # Alternative to pyenv for managing virtualenvs
 brew "pyenv-virtualenvwrapper"
-# Software environment for statistical computing
-brew "r", link: false
 # File browser
 brew "ranger"
 # Ruby version manager
@@ -164,20 +183,18 @@ brew "ripgrep"
 brew "sd"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
-# Command-line YAML parser
-brew "shyaml"
 # Fuzzy Finder in rust!
 brew "sk"
 # Command-line interface for https://speedtest.net bandwidth tests
 brew "speedtest-cli"
-# Tool to create intelligent and beautiful documentation
-brew "sphinx-doc"
-# Implementation of extended-Rice lossless compression algorithm
-brew "szip", link: true
 # Modernized, complete, self-contained TeX/LaTeX engine
 brew "tectonic"
 # Official documentation format of the GNU project
 brew "texinfo"
+# Simplified and community-driven man pages
+brew "tldr"
+# Terminal multiplexer
+brew "tmux"
 # CLI tool that moves files or folder to the trash
 brew "trash"
 # Display directories as trees (with optional color/HTML output)
@@ -198,8 +215,6 @@ brew "xclip"
 brew "yarn"
 # General-purpose lossless data-compression library
 brew "zlib"
-# Cloudflare Tunnel
-brew "cloudflare/cloudflare/cloudflared"
 # Task runner / simpler Make alternative written in Go
 brew "go-task/tap/go-task"
 # Convert Pandoc Markdown-style footnotes into sidenotes
@@ -208,15 +223,19 @@ brew "xwmx/taps/nb"
 # karabiner configurator
 brew "yqrashawn/goku/goku"
 # Password manager that keeps all passwords secure behind one password
-cask "1password"
+cask "1password-beta"
 # Command-line helper for the 1Password password manager
-cask "1password-cli"
+cask "1password-cli-beta"
 # Collection of apps and services for photography, design, video, web, and UX
 cask "adobe-creative-cloud"
 # Application launcher and productivity software
 cask "alfred"
 # Application uninstaller
 cask "appcleaner"
+# 3D creation suite
+cask "blender"
+# Build, render, and create LEGO instructions
+cask "bricklink-studio"
 # Free and open-source web browser
 cask "chromium"
 # Tool to show live information about the batteries in various devices
@@ -233,26 +252,9 @@ cask "fantastical"
 cask "fig"
 # Web browser
 cask "firefox"
-# Monospaced font that includes programming ligatures
-cask "font-cascadia-code"
-# Version of Cascadia Code with embedded Powerline symbols
-cask "font-cascadia-code-pl"
-# Version of Cascadia Code without ligatures
-cask "font-cascadia-mono"
-# Version of Cascadia Code without ligatures and with embedded Powerline symbols
-cask "font-cascadia-mono-pl"
-cask "font-caskaydia-cove-nerd-font"
-cask "font-fira-code"
-cask "font-fira-code-nerd-font"
 # Typeface made for developers
 cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
-cask "font-noto-serif-cjk-jp"
-cask "font-noto-serif-cjk-kr"
-cask "font-noto-serif-cjk-sc"
-cask "font-noto-serif-cjk-tc"
-# Web browser
-cask "google-chrome"
 # Client for the Google Drive storage service
 cask "google-drive"
 # Vector graphics editor
@@ -273,8 +275,6 @@ cask "microsoft-auto-update"
 cask "microsoft-office"
 # Tool to control external monitor brightness & volume
 cask "monitorcontrol"
-# App to write, plan, collaborate, and get organized
-cask "notion"
 # Desktop virtualization software
 cask "parallels"
 # Environment for statistical computing and graphics

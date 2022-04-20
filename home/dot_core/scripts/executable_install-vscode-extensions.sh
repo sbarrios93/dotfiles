@@ -18,6 +18,8 @@ code --install-extension fabiospampinato.vscode-diff --force &
 code --install-extension foxundermoon.shell-format --force &
 code --install-extension GitHub.copilot-nightly --force &
 code --install-extension GitHub.remotehub --force &
+code --install-extension gitpod.gitpod-desktop --force &
+code --install-extension GrapeCity.gc-excelviewer --force &
 code --install-extension IBM.output-colorizer --force &
 code --install-extension James-Yu.latex-workshop --force &
 code --install-extension johnpapa.vscode-peacock --force &

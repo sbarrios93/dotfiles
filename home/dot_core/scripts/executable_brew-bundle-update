@@ -13,4 +13,4 @@ BREWFILE="~/.core/brew/Brewfile"
 brew bundle dump --file=$BREWFILE --force --describe --tap --formula --cask --cleanup
 
 # update chezmoi brewfile
-chezmoi re-add ${BREWFILE}
+chezmoi add ${BREWFILE}
