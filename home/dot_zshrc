@@ -88,7 +88,7 @@ ZSH_CUSTOM=$core/zsh
 plugins=(git
     zsh-syntax-highlighting
     vscode
-    poetry conda-zsh-completion python virtualenv pyenv)
+    poetry conda-zsh-completion python virtualenv pyenv zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 # User configuration
