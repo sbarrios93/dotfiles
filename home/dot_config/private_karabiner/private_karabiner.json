@@ -1587,6 +1587,29 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "run script to turn on workstation light ",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "0",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_control",
+                                            "right_shift",
+                                            "right_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "bash $HOME/.core/scripts/homecontrol-workstation-light"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },

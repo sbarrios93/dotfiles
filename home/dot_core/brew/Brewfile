@@ -16,7 +16,7 @@ tap "yqrashawn/goku"
 # Library for command-line editing
 brew "readline"
 # Core application library for C
-brew "glib"
+brew "glib", link: false
 # GNOME accessibility toolkit
 brew "atk"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -236,8 +236,6 @@ cask "appcleaner"
 cask "blender"
 # Build, render, and create LEGO instructions
 cask "bricklink-studio"
-# Free and open-source web browser
-cask "chromium"
 # Tool to show live information about the batteries in various devices
 cask "coconutbattery"
 # Block websites, games and applications
@@ -246,6 +244,8 @@ cask "cold-turkey-blocker"
 cask "dash"
 # App to build and share containerized applications and microservices
 cask "docker"
+# Utility to finds and fix problems on computer systems
+cask "etrecheckpro"
 # Calendar software
 cask "fantastical"
 # Reimagine your terminal
@@ -275,10 +275,14 @@ cask "microsoft-auto-update"
 cask "microsoft-office"
 # Tool to control external monitor brightness & volume
 cask "monitorcontrol"
+# App to write, plan, collaborate, and get organized
+cask "notion"
 # Desktop virtualization software
 cask "parallels"
 # Environment for statistical computing and graphics
 cask "r"
+# Control your tools with a few keystrokes
+cask "raycast"
 # Data science software focusing on R and Python
 cask "rstudio"
 # Collection of apps available by subscription

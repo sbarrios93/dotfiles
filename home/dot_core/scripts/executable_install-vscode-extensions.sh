@@ -21,6 +21,7 @@ code --install-extension GitHub.remotehub --force &
 code --install-extension gitpod.gitpod-desktop --force &
 code --install-extension GrapeCity.gc-excelviewer --force &
 code --install-extension IBM.output-colorizer --force &
+code --install-extension IronGeek.vscode-env --force &
 code --install-extension James-Yu.latex-workshop --force &
 code --install-extension johnpapa.vscode-peacock --force &
 code --install-extension KevinRose.vsc-python-indent --force &
