@@ -16,13 +16,21 @@ tap "yqrashawn/goku"
 # Library for command-line editing
 brew "readline"
 # Core application library for C
-brew "glib", link: false
+brew "glib"
 # GNOME accessibility toolkit
 brew "atk"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
 # Programmable completion for Bash 3.2
 brew "bash-completion"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# GNU multiple precision arithmetic library
+brew "gmp"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Bash Automated Testing System
+brew "bats-core"
 # Google's own build tool
 brew "bazel"
 # Garbage collector for C and C++
@@ -33,8 +41,6 @@ brew "boost"
 brew "bzip2"
 # Vector graphics library with cross-device output support
 brew "cairo"
-# GNU multiple precision arithmetic library
-brew "gmp"
 # Library for processing command-line flags
 brew "gflags"
 # Application-level logging library
@@ -73,10 +79,12 @@ brew "opencv"
 brew "caffe"
 # Manage your dotfiles across multiple diverse machines, securely
 brew "chezmoi"
-# GNU File, Shell, and Text utilities
-brew "coreutils"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
+# Modern replacement for 'ls'
+brew "exa"
+# Command-line tool to interact with exercism.io
+brew "exercism"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Play, record, convert, and stream audio and video
@@ -179,6 +187,8 @@ brew "rbenv"
 brew "rclone"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Rust toolchain installer
+brew "rustup-init"
 # Intuitive find & replace CLI
 brew "sd"
 # Static analysis and lint tool, for (ba)sh scripts
@@ -213,8 +223,12 @@ brew "wget"
 brew "xclip"
 # JavaScript package manager
 brew "yarn"
+# Tracks most-used directories to make cd smarter
+brew "z"
 # General-purpose lossless data-compression library
 brew "zlib"
+# UNIX shell (command interpreter)
+brew "zsh"
 # Task runner / simpler Make alternative written in Go
 brew "go-task/tap/go-task"
 # Convert Pandoc Markdown-style footnotes into sidenotes
@@ -261,10 +275,12 @@ cask "google-drive"
 cask "inkscape"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
-# Keyboard customizer
-cask "karabiner-elements"
 # Tool to show what is persistently installed on the computer
 cask "knockknock"
+# Update your Logitech wireless receivers and selected keyboards
+cask "logitech-firmwareupdatetool"
+# Utility for pairing devices with Unifying receivers
+cask "logitech-unifying"
 # Full TeX Live distribution with GUI applications
 cask "mactex"
 # Scanner app for math and science
@@ -281,8 +297,12 @@ cask "notion"
 cask "parallels"
 # Environment for statistical computing and graphics
 cask "r"
+# All-in-one bookmark manager
+cask "raindropio"
 # Control your tools with a few keystrokes
 cask "raycast"
+# Emoji picker optimized for blind people
+cask "rocket"
 # Data science software focusing on R and Python
 cask "rstudio"
 # Collection of apps available by subscription
@@ -303,15 +323,14 @@ cask "vlc"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "1Password for Safari", id: 1569813296
+mas "ColorSlurp", id: 1287239339
 mas "Craft", id: 1487937127
 mas "Divvy", id: 413857545
 mas "GeoGebra Classic 6", id: 1182481622
-mas "Grocery", id: 1195676848
 mas "HomeControl", id: 1547121417
 mas "Notability", id: 360593530
 mas "Save to Raindrop.io", id: 1549370672
 mas "Speedtest", id: 1153157709
 mas "Things", id: 904280696
-mas "TweetDeck", id: 485812721
 mas "Twitter", id: 1482454543
 mas "WhatsApp", id: 1147396723

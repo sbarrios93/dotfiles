@@ -1,3 +1,5 @@
+code --install-extension albert.TabOut --force &
+code --install-extension alefragnani.Bookmarks --force &
 code --install-extension alefragnani.project-manager --force &
 code --install-extension almenon.arepl --force &
 code --install-extension azemoh.one-monokai --force &
@@ -11,16 +13,19 @@ code --install-extension codezombiech.gitignore --force &
 code --install-extension DavidAnson.vscode-markdownlint --force &
 code --install-extension donjayamanne.python-environment-manager --force &
 code --install-extension DougFinke.vscode-pandoc --force &
+code --install-extension dustypomerleau.rust-syntax --force &
 code --install-extension eamodio.gitlens --force &
 code --install-extension esbenp.prettier-vscode --force &
 code --install-extension ExodiusStudios.comment-anchors --force &
 code --install-extension fabiospampinato.vscode-diff --force &
 code --install-extension foxundermoon.shell-format --force &
 code --install-extension GitHub.copilot-nightly --force &
+code --install-extension GitHub.github-vscode-theme --force &
 code --install-extension GitHub.remotehub --force &
 code --install-extension gitpod.gitpod-desktop --force &
 code --install-extension GrapeCity.gc-excelviewer --force &
 code --install-extension IBM.output-colorizer --force &
+code --install-extension idleberg.applescript --force &
 code --install-extension IronGeek.vscode-env --force &
 code --install-extension James-Yu.latex-workshop --force &
 code --install-extension johnpapa.vscode-peacock --force &
@@ -29,6 +34,7 @@ code --install-extension knowsuchagency.pdm-task-provider --force &
 code --install-extension mads-hartmann.bash-ide-vscode --force &
 code --install-extension magicstack.MagicPython --force &
 code --install-extension matangover.mypy --force &
+code --install-extension matklad.rust-analyzer --force &
 code --install-extension maximetinu.identical-sublime-monokai-csharp-theme-colorizer --force &
 code --install-extension mikestead.dotenv --force &
 code --install-extension monokai.theme-monokai-pro-vscode --force &
@@ -60,9 +66,11 @@ code --install-extension sleistner.vscode-fileutils --force &
 code --install-extension tht13.python --force &
 code --install-extension timonwong.shellcheck --force &
 code --install-extension truman.autocomplate-shell --force &
+code --install-extension vintharas.learn-vim --force &
 code --install-extension VisualStudioExptTeam.vscodeintellicode --force &
 code --install-extension vscodevim.vim --force &
 code --install-extension wholroyd.jinja --force &
 code --install-extension withfig.fig --force &
 code --install-extension yy0931.mplstyle --force &
-code --install-extension yzhang.markdown-all-in-one --force
+code --install-extension yzhang.markdown-all-in-one --force &
+code --install-extension zhuangtongfa.material-theme --force

@@ -24,7 +24,6 @@
 	"[markdown]": {
 		"editor.quickSuggestions": true,
 		"editor.quickSuggestionsDelay": 1000000,
-		"editor.snippetSuggestions": "top",
 		"editor.suggest.showSnippets": true,
 		"editor.suggestOnTriggerCharacters": true,
 		"editor.wordBasedSuggestions": false,
@@ -33,13 +32,9 @@
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.python",
 		"editor.formatOnSave": true
-		// "editor.snippetSuggestions": "bottom"
 	},
 	"[typescript]": {
 		"editor.defaultFormatter": "vscode.typescript-language-features"
-	},
-	"[xml]": {
-		"editor.defaultFormatter": "DotJoshJohnson.xml"
 	},
 	"[yaml]": {
 		"editor.defaultFormatter": "redhat.vscode-yaml"
@@ -92,7 +87,9 @@
 		"*.rmd": "markdown",
 		"*.tmpl": "shellscript"
 	},
+
 	"files.autoSave": "onFocusChange",
+
 	"files.trimTrailingWhitespace": true,
 	"git.autofetch": true,
 	"git.confirmSync": false,
@@ -105,7 +102,7 @@
 	"github.copilot.enable": {
 		"*": true,
 		"yaml": true,
-		"plaintext": false,
+		"plaintext": true,
 		"markdown": true,
 		"python": true
 	},
@@ -253,8 +250,6 @@
 		"--rcfile",
 		"${workspaceFolder}/.pylintrc"
 	],
-	"sync.gist": "fbe45ded8939dc7ba24e96c2cda07c4d",
-	"sync.quietSync": true,
 	"terminal.integrated.env.osx": {
 		"FIG_NEW_SESSION": "1"
 	},
@@ -279,8 +274,6 @@
 	"markdown.trace": "verbose",
 	"python.formatting.provider": "black",
 	"workbench.fontAliasing": "antialiased",
-	"sync.autoUpload": true,
-	"sync.autoDownload": true,
 	"[shellscript]": {
 		"editor.defaultFormatter": "foxundermoon.shell-format"
 	},
@@ -288,9 +281,9 @@
 	"editor.stickyTabStops": true,
 	"diffEditor.ignoreTrimWhitespace": false,
 	"mypy.runUsingActiveInterpreter": true,
-	"workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+	"workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
 	"material-icon-theme.activeIconPack": "react_redux",
-	"workbench.colorTheme": "Monokai Pro (Filter Octagon)",
+	"workbench.colorTheme": "GitHub Dark",
 	"debug.console.acceptSuggestionOnEnter": "on",
 	"debug.console.fontFamily": "'JetBrains Mono'",
 	"debug.console.fontSize": 13,
@@ -302,5 +295,88 @@
 	"python.defaultInterpreterPath": "/Users/seba/.pyenv/versions/3.10.3/envs/adm-booth/bin/python",
 	"redhat.telemetry.enabled": false,
 	"remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
-	"remote.SSH.configFile": "/var/folders/qk/mkh7x25n30d8p6y5cmkbt86m0000gn/T/gitpod_ssh_config-21840-3ZKdwlpKHr7N"
+	"remote.SSH.configFile": "/var/folders/qk/mkh7x25n30d8p6y5cmkbt86m0000gn/T/gitpod_ssh_config-21840-3ZKdwlpKHr7N",
+	"[rust]": {
+		"editor.defaultFormatter": "matklad.rust-analyzer"
+	},
+	"editor.inlayHints.enabled": true,
+	"vim.smartRelativeLine": true,
+	"vim.statusBarColorControl": false,
+	"vim.leader": "<space>",
+	"vim.useSystemClipboard": true,
+	"vim.normalModeKeyBindings": [
+		{
+			"before": ["<leader>", "m"],
+			"commands": ["bookmarks.toggle"]
+		},
+		{
+			"before": ["<leader>", "b"],
+			"commands": ["bookmarks.list"]
+		},
+		{
+			"before": ["up"],
+			"after": ["<Esc>"]
+		},
+		{
+			"before": ["down"],
+			"after": ["<Esc>"]
+		},
+		{
+			"before": ["right"],
+			"after": ["<Esc>"]
+		},
+		{
+			"before": ["left"],
+			"after": ["<Esc>"]
+		}
+	],
+	"vim.insertModeKeyBindings": [
+		{
+			"before": ["j", "j"],
+			"after": ["<Esc>"]
+		},
+		{
+			"before": ["up"],
+			"after": ["<Esc>"]
+		},
+		{
+			"before": ["down"],
+			"after": ["<Esc>"]
+		},
+		{
+			"before": ["right"],
+			"after": ["<Esc>"]
+		},
+		{
+			"before": ["left"],
+			"after": ["<Esc>"]
+		}
+	],
+	"vim.visualModeKeyBindings": [
+		{
+			"before": [">"],
+			"commands": ["editor.action.indentLines"]
+		},
+		{
+			"before": ["<"],
+			"commands": ["editor.action.outdentLines"]
+		},
+		{
+			"before": ["up"],
+			"after": ["<Esc>"]
+		},
+		{
+			"before": ["down"],
+			"after": ["<Esc>"]
+		},
+		{
+			"before": ["right"],
+			"after": ["<Esc>"]
+		},
+		{
+			"before": ["left"],
+			"after": ["<Esc>"]
+		}
+	],
+	"vim.easymotion": true
 }

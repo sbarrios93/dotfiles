@@ -248,5 +248,39 @@
 		"key": "enter",
 		"command": "-notebook.cell.edit",
 		"when": "notebookCellListFocused && notebookEditable && !inputFocus"
+	},
+	{
+		"key": "cmd+w",
+		"command": "workbench.action.terminal.kill",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "cmd+w",
+		"command": "workbench.action.closeActiveEditor",
+		"when": "!terminalFocus"
+	},
+	{
+		"key": "cmd+w",
+		"command": "-workbench.action.closeActiveEditor"
+	},
+	{
+		"key": "ctrl+shift+cmd+g",
+		"command": "workbench.view.scm",
+		"when": "workbench.scm.active"
+	},
+	{
+		"key": "ctrl+shift+g",
+		"command": "-workbench.view.scm",
+		"when": "workbench.scm.active"
+	},
+	{
+		"key": "ctrl+shift+cmd+g",
+		"command": "workbench.view.scm",
+		"when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
+	},
+	{
+		"key": "ctrl+shift+g",
+		"command": "-workbench.view.scm",
+		"when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
 	}
 ]

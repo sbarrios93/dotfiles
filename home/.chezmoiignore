@@ -12,3 +12,4 @@ node_modules
 .core/poetry/**/*
 .core/bin/z
 .core/zsh/plugins
+**/.git
