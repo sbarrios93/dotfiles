@@ -162,6 +162,12 @@ tasks:
     desc: Apply chezmoi dotfiles
     cmds:
       - chezmoi init --apply
+  
+  lvim:install:
+    desc: "Install LunarVim"
+    cmds: 
+      - bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh) -y
+
 
   vscode:install-extensions:
     desc: install extensions of vscode

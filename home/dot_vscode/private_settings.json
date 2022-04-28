@@ -281,7 +281,7 @@
 	"editor.stickyTabStops": true,
 	"diffEditor.ignoreTrimWhitespace": false,
 	"mypy.runUsingActiveInterpreter": true,
-	"workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
+	"workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
 	"material-icon-theme.activeIconPack": "react_redux",
 	"workbench.colorTheme": "GitHub Dark",
 	"debug.console.acceptSuggestionOnEnter": "on",

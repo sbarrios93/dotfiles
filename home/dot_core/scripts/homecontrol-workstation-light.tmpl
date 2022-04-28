@@ -1,1 +1,4 @@
+{{ $git_ := printf "%s" (env "CI") }}
+{{ if eq $git_ "1" }}
 open -g "homecontrol://x-callback-url/run-action?action-type=switch-device-status&item-type=device&item-name=Workstation&room-name=Office&home-name=My%20Home&activation-mode=toggle&authentication-token={{- ( onepasswordDetailsFields "HomeControlAPI" ).credential.value -}}"
+{{ end }}

@@ -293,6 +293,8 @@ cask "microsoft-office"
 cask "monitorcontrol"
 # App to write, plan, collaborate, and get organized
 cask "notion"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
 # Desktop virtualization software
 cask "parallels"
 # Environment for statistical computing and graphics
