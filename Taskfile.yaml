@@ -60,7 +60,13 @@ tasks:
     cmds:
       - (grep '^[tap]' < {{.BREWFILE_PATH}}) > {{.TEMP_PATH}}/taps.brewfile
       - (grep '^[brew]' < {{.BREWFILE_PATH}}) > {{.TEMP_PATH}}/formula.brewfile
-      - (grep '^[cask]' < {{.BREWFILE_PATH}}) > {{.TEMP_PATH}}/cask.brewfile
+      - |
+        if [[ $CI == 1 ]]; then
+          (grep '^[cask]' < {{.BREWFILE_PATH}} | grep -v 'mactex') > {{.TEMP_PATH}}/cask.brewfile
+        else
+          (grep '^[cask]' < {{.BREWFILE_PATH}}) > {{.TEMP_PATH}}/cask.brewfile
+        fi
+
   brew:tap:
     desc: "Install brew taps"
     deps: [brew:update]
@@ -162,12 +168,11 @@ tasks:
     desc: Apply chezmoi dotfiles
     cmds:
       - chezmoi init --apply
-  
+
   lvim:install:
     desc: "Install LunarVim"
-    cmds: 
+    cmds:
       - bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh) -y
-
 
   vscode:install-extensions:
     desc: install extensions of vscode
