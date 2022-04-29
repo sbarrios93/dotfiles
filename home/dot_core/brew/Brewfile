@@ -231,8 +231,6 @@ brew "zlib"
 brew "zsh"
 # Task runner / simpler Make alternative written in Go
 brew "go-task/tap/go-task"
-# Convert Pandoc Markdown-style footnotes into sidenotes
-brew "jez/formulae/pandoc-sidenote"
 brew "xwmx/taps/nb"
 # karabiner configurator
 brew "yqrashawn/goku/goku"
@@ -242,20 +240,14 @@ cask "1password-beta"
 cask "1password-cli-beta"
 # Collection of apps and services for photography, design, video, web, and UX
 cask "adobe-creative-cloud"
-# Application launcher and productivity software
-cask "alfred"
 # Application uninstaller
 cask "appcleaner"
 # Data backup and storage service
 cask "backblaze"
 # 3D creation suite
 cask "blender"
-# Build, render, and create LEGO instructions
-cask "bricklink-studio"
 # Tool to show live information about the batteries in various devices
 cask "coconutbattery"
-# API documentation browser and code snippet manager
-cask "dash"
 # App to build and share containerized applications and microservices
 cask "docker"
 # Utility to finds and fix problems on computer systems
