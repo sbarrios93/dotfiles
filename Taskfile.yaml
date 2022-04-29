@@ -43,6 +43,7 @@ tasks:
     - task: python:poetry-init
     - task: python:jupyter-env:init
     - task: brew:install:formula
+    - task: lvim:install
     - task: brew:install:cask
     - task: chezmoi
     - task: vscode:install-extensions

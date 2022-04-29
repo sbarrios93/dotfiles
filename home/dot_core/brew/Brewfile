@@ -246,14 +246,14 @@ cask "adobe-creative-cloud"
 cask "alfred"
 # Application uninstaller
 cask "appcleaner"
+# Data backup and storage service
+cask "backblaze"
 # 3D creation suite
 cask "blender"
 # Build, render, and create LEGO instructions
 cask "bricklink-studio"
 # Tool to show live information about the batteries in various devices
 cask "coconutbattery"
-# Block websites, games and applications
-cask "cold-turkey-blocker"
 # API documentation browser and code snippet manager
 cask "dash"
 # App to build and share containerized applications and microservices
@@ -303,8 +303,6 @@ cask "r"
 cask "raindropio"
 # Control your tools with a few keystrokes
 cask "raycast"
-# Emoji picker optimized for blind people
-cask "rocket"
 # Data science software focusing on R and Python
 cask "rstudio"
 # Collection of apps available by subscription
@@ -313,7 +311,6 @@ cask "setapp"
 cask "slack"
 # Music streaming service
 cask "spotify"
-cask "tikz-editor"
 # File transfer application
 cask "transmit"
 # VPN client for secure internet access and private browsing
@@ -327,12 +324,9 @@ cask "zoom"
 mas "1Password for Safari", id: 1569813296
 mas "ColorSlurp", id: 1287239339
 mas "Craft", id: 1487937127
-mas "Divvy", id: 413857545
-mas "GeoGebra Classic 6", id: 1182481622
 mas "HomeControl", id: 1547121417
 mas "Notability", id: 360593530
 mas "Save to Raindrop.io", id: 1549370672
 mas "Speedtest", id: 1153157709
 mas "Things", id: 904280696
-mas "Twitter", id: 1482454543
 mas "WhatsApp", id: 1147396723
