@@ -100,6 +100,7 @@ else
         else
             echo "${BLUE}[localenv] xcode already installed -> skipped${NC}"
         fi
+         softwareupdate --install-rosetta
     else
         echo "Not Darwin env"
     fi
