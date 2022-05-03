@@ -1,382 +1,381 @@
 {
-	"editor.language.colorizedBracketPairs": [
-		["{", "}"],
-		["[", "]"],
-		["(", ")"],
-		["\\[", "\\]"],
-		["\\(", "\\)"]
-	],
-	"[html]": {
-		"editor.defaultFormatter": "vscode.html-language-features"
-	},
-	"[javascript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[json]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[jsonc]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[latex]": {
-		"editor.defaultFormatter": "James-Yu.latex-workshop"
-	},
-	"[markdown]": {
-		"editor.quickSuggestions": true,
-		"editor.quickSuggestionsDelay": 1000000,
-		"editor.suggest.showSnippets": true,
-		"editor.suggestOnTriggerCharacters": true,
-		"editor.wordBasedSuggestions": false,
-		"editor.defaultFormatter": "yzhang.markdown-all-in-one"
-	},
-	"[python]": {
-		"editor.defaultFormatter": "ms-python.python",
-		"editor.formatOnSave": true
-	},
-	"[typescript]": {
-		"editor.defaultFormatter": "vscode.typescript-language-features"
-	},
-	"[yaml]": {
-		"editor.defaultFormatter": "redhat.vscode-yaml"
-	},
-	"diffEditor.codeLens": true,
-	"editor.accessibilitySupport": "off",
-	"editor.bracketPairColorization.enabled": true,
-	"editor.cursorBlinking": "phase",
-	"editor.cursorSmoothCaretAnimation": true,
-	"editor.cursorSurroundingLines": 20,
-	"editor.find.autoFindInSelection": "multiline",
-	"editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
-	"editor.fontLigatures": true,
-	"editor.fontSize": 14,
-	"editor.formatOnSave": true,
-	"editor.inlineSuggest.enabled": true,
-	"editor.largeFileOptimizations": false,
-	"editor.minimap.enabled": false,
-	"editor.multiCursorModifier": "ctrlCmd",
-	"editor.padding.bottom": 40,
-	"editor.padding.top": 20,
-	"editor.renderLineHighlight": "all",
-	"editor.renderWhitespace": "boundary",
-	"editor.scrollbar.verticalScrollbarSize": 8,
-	"editor.semanticHighlighting.enabled": true,
-	"editor.showFoldingControls": "always",
-	"editor.semanticTokenColorCustomizations": {
-		"enabled": true
-	},
-	"editor.smoothScrolling": true,
-	"editor.tokenColorCustomizations": {
-		"[Monokai Pro New]": {
-			"textMateRules": [
-				{
-					"scope": "string.quoted.docstring.multi.python",
-					"settings": {
-						"foreground": "#8a8a8a"
-					}
-				}
-			]
-		}
-	},
-	"editor.wordWrap": "bounded",
-	"editor.wordWrapColumn": 120,
-	"explorer.autoReveal": true,
-	"explorer.confirmDelete": false,
-	"files.associations": {
-		"*.html": "html",
-		"*.njk": "html",
-		"*.rmd": "markdown",
-		"*.tmpl": "shellscript"
-	},
+    "editor.language.colorizedBracketPairs": [
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"],
+        ["\\[", "\\]"],
+        ["\\(", "\\)"]
+    ],
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[latex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop"
+    },
+    "[markdown]": {
+        "editor.quickSuggestions": true,
+        "editor.quickSuggestionsDelay": 1000000,
+        "editor.suggest.showSnippets": true,
+        "editor.suggestOnTriggerCharacters": true,
+        "editor.wordBasedSuggestions": false,
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python",
+        "editor.formatOnSave": true
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "diffEditor.codeLens": true,
+    "editor.accessibilitySupport": "off",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.cursorBlinking": "phase",
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorSurroundingLines": 20,
+    "editor.find.autoFindInSelection": "multiline",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "editor.formatOnSave": true,
+    "editor.inlineSuggest.enabled": true,
+    "editor.largeFileOptimizations": false,
+    "editor.minimap.enabled": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.padding.bottom": 40,
+    "editor.padding.top": 20,
+    "editor.renderLineHighlight": "all",
+    "editor.renderWhitespace": "boundary",
+    "editor.scrollbar.verticalScrollbarSize": 8,
+    "editor.semanticHighlighting.enabled": true,
+    "editor.showFoldingControls": "always",
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true
+    },
+    "editor.smoothScrolling": true,
+    "editor.tokenColorCustomizations": {
+        "[Monokai Pro New]": {
+            "textMateRules": [
+                {
+                    "scope": "string.quoted.docstring.multi.python",
+                    "settings": {
+                        "foreground": "#8a8a8a"
+                    }
+                }
+            ]
+        }
+    },
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 120,
+    "explorer.autoReveal": true,
+    "explorer.confirmDelete": false,
+    "files.associations": {
+        "*.html": "html",
+        "*.njk": "html",
+        "*.rmd": "markdown",
+        "*.tmpl": "shellscript"
+    },
 
-	"files.autoSave": "onFocusChange",
+    "files.autoSave": "onFocusChange",
 
-	"files.trimTrailingWhitespace": true,
-	"git.autofetch": true,
-	"git.confirmSync": false,
-	"git.enableSmartCommit": true,
-	"github.copilot.advanced": {
-		"inlineSuggestCount": 5,
-		"temperature": "0.4",
-		"length": 500
-	},
-	"github.copilot.enable": {
-		"*": true,
-		"yaml": true,
-		"plaintext": true,
-		"markdown": true,
-		"python": true
-	},
-	"html.format.templating": true,
-	"javascript.updateImportsOnFileMove.enabled": "always",
-	"jupyter.askForKernelRestart": false,
-	"jupyter.generateSVGPlots": true,
-	"jupyter.interactiveWindowMode": "perFile",
-	"jupyter.jupyterServerType": "local",
-	"jupyter.pylanceHandlesNotebooks": true,
-	"jupyter.sendSelectionToInteractiveWindow": true,
-	"jupyter.useDefaultConfigForJupyter": false,
-	"jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
-	"latex-workshop.chktex.enabled": true,
-	"latex-workshop.intellisense.unimathsymbols.enabled": true,
-	"latex-workshop.latex.magic.args": [
-		"-synctex=1",
-		"-interaction=nonstopmode",
-		"-file-line-error",
-		"%DOC%"
-	],
-	"latex-workshop.latex.recipe.default": "latexmk (pdflatex)",
-	"latex-workshop.latex.recipes": [
-		{
-			"name": "latexmk (pdflatex)",
-			"tools": ["pdflatex"]
-		},
-		{
-			"name": "latexmk (xelatex)",
-			"tools": ["xelatexmk"]
-		}
-	],
-	"latex-workshop.latex.tools": [
-		{
-			"args": [
-				"--shell-escape", // if you want to have the shell-escape flag
-				"-synctex=1",
-				"-interaction=nonstopmode",
-				"-file-line-error",
-				"%DOC%"
-			],
-			"command": "pdflatex",
-			"name": "pdflatex"
-		},
-		{
-			"args": [
-				"--shell-escape",
-				"-xelatex",
-				"-synctex=1",
-				"-interaction=nonstopmode",
-				"-file-line-error",
-				"%DOC%"
-			],
-			"command": "latexmk",
-			"name": "xelatexmk"
-		}
-	],
-	"latex-workshop.synctex.afterBuild.enabled": true,
-	"latex-workshop.view.autoFocus.enabled": false,
-	"latex-workshop.view.pdf.viewer": "tab",
-	"markdown-preview-enhanced.breakOnSingleNewLine": true,
-	"markdown-preview-enhanced.enableExtendedTableSyntax": true,
-	"markdown-preview-enhanced.enableTypographer": true,
-	"markdown-preview-enhanced.frontMatterRenderingOption": "code block",
-	"markdown-preview-enhanced.imageFolderPath": "/images",
-	"markdown-preview-enhanced.latexEngine": "pdflatex",
-	"markdown-preview-enhanced.liveUpdate": true,
-	"markdown-preview-enhanced.mathBlockDelimiters": [
-		["$$", "$$"],
-		["\\[", "\\]"]
-	],
-	"markdown-preview-enhanced.mathInlineDelimiters": [
-		["$", "$"],
-		["\\(", "\\)"]
-	],
-	"markdownShiki.theme": "Material-Theme-Ocean-High-Contrast",
-	"markdownlint.focusMode": true,
-	"notebook.cellFocusIndicator": "border",
-	"notebook.cellToolbarLocation": {
-		"default": "right",
-		"jupyter-notebook": "left"
-	},
-	"notebook.compactView": false,
-	"notebook.displayOrder": ["text/html", "image/png"],
-	"notebook.showFoldingControls": "always",
-	"pasteImage.filePathConfirmInputBoxMode": "onlyName",
-	"pasteImage.path": "${currentFileDir}/assets/images",
-	"pasteImage.prefix": "",
-	"pasteImage.showFilePathConfirmInputBox": true,
-	"peacock.affectSashHover": false,
-	"peacock.affectStatusBar": false,
-	"peacock.favoriteColors": [
-		{
-			"name": "Angular Red",
-			"value": "#dd0531"
-		},
-		{
-			"name": "Azure Blue",
-			"value": "#007fff"
-		},
-		{
-			"name": "JavaScript Yellow",
-			"value": "#f9e64f"
-		},
-		{
-			"name": "Mandalorian Blue",
-			"value": "#1857a4"
-		},
-		{
-			"name": "Node Green",
-			"value": "#215732"
-		},
-		{
-			"name": "React Blue",
-			"value": "#61dafb"
-		},
-		{
-			"name": "Something Different",
-			"value": "#832561"
-		},
-		{
-			"name": "Svelte Orange",
-			"value": "#ff3d00"
-		},
-		{
-			"name": "Vue Green",
-			"value": "#42b883"
-		}
-	],
-	"prettier.tabWidth": 4,
-	"prettier.useTabs": true,
-	"projectManager.git.baseFolders": ["/Users/seba/projects"],
-	"projectManager.ignoreProjectsWithinProjects": true,
-	"python.analysis.completeFunctionParens": true,
-	"python.linting.enabled": true,
-	"python.linting.pylamaArgs": ["--max-line-length=120"],
-	"python.linting.pylamaEnabled": true,
-	"python.terminal.activateEnvInCurrentTerminal": true,
-	"python.terminal.activateEnvironment": true,
-	"security.workspace.trust.untrustedFiles": "open",
-	"python.linting.pylintEnabled": true,
-	"python.linting.pylintArgs": [
-		"--load-plugins",
-		"perflint",
-		"--rcfile",
-		"${workspaceFolder}/.pylintrc"
-	],
-	"terminal.integrated.env.osx": {
-		"FIG_NEW_SESSION": "1"
-	},
-	"terminal.integrated.inheritEnv": false,
-	"typescript.updateImportsOnFileMove.enabled": "always",
-	"vim.highlightedyank.enable": true,
-	"vim.hlsearch": true,
-	"vim.overrideCopy": false,
-	"window.openFilesInNewWindow": "on",
-	"workbench.editorAssociations": {
-		"*.ipynb": "jupyter-notebook",
-		"*.pdf": "latex-workshop-pdf-hook"
-	},
-	"workbench.tree.indent": 20,
-	"python.analysis.autoImportCompletions": false,
-	"python.analysis.typeCheckingMode": "basic",
-	"markdown.extension.tableFormatter.normalizeIndentation": true,
-	"prettier.proseWrap": "never",
-	"editor.guides.bracketPairsHorizontal": true,
-	"editor.guides.bracketPairs": "active",
-	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
-	"markdown.trace": "verbose",
-	"python.formatting.provider": "black",
-	"workbench.fontAliasing": "antialiased",
-	"[shellscript]": {
-		"editor.defaultFormatter": "foxundermoon.shell-format"
-	},
-	"security.workspace.trust.enabled": false,
-	"editor.stickyTabStops": true,
-	"diffEditor.ignoreTrimWhitespace": false,
-	"mypy.runUsingActiveInterpreter": true,
-	"workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
-	"material-icon-theme.activeIconPack": "react_redux",
-	"workbench.colorTheme": "GitHub Dark",
-	"debug.console.acceptSuggestionOnEnter": "on",
-	"debug.console.fontFamily": "'JetBrains Mono'",
-	"debug.console.fontSize": 13,
-	"debug.console.lineHeight": 15,
-	"debug.terminal.clearBeforeReusing": true,
-	"python.linting.mypyCategorySeverity.note": "Warning",
-	"markdown-preview-enhanced.previewTheme": "github-dark.css",
-	"notebook.output.textLineLimit": 80,
-	"python.defaultInterpreterPath": "/Users/seba/.pyenv/versions/3.10.3/envs/adm-booth/bin/python",
-	"redhat.telemetry.enabled": false,
-	"remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
-	"remote.SSH.configFile": "/var/folders/qk/mkh7x25n30d8p6y5cmkbt86m0000gn/T/gitpod_ssh_config-21840-3ZKdwlpKHr7N",
-	"[rust]": {
-		"editor.defaultFormatter": "matklad.rust-analyzer"
-	},
-	"editor.inlayHints.enabled": true,
-	"vim.smartRelativeLine": true,
-	"vim.statusBarColorControl": false,
-	"vim.leader": "<space>",
-	"vim.useSystemClipboard": true,
-	"vim.normalModeKeyBindings": [
-		{
-			"before": ["<leader>", "m"],
-			"commands": ["bookmarks.toggle"]
-		},
-		{
-			"before": ["<leader>", "b"],
-			"commands": ["bookmarks.list"]
-		},
-		{
-			"before": ["up"],
-			"after": ["<Esc>"]
-		},
-		{
-			"before": ["down"],
-			"after": ["<Esc>"]
-		},
-		{
-			"before": ["right"],
-			"after": ["<Esc>"]
-		},
-		{
-			"before": ["left"],
-			"after": ["<Esc>"]
-		}
-	],
-	"vim.insertModeKeyBindings": [
-		{
-			"before": ["j", "j"],
-			"after": ["<Esc>"]
-		},
-		{
-			"before": ["up"],
-			"after": ["<Esc>"]
-		},
-		{
-			"before": ["down"],
-			"after": ["<Esc>"]
-		},
-		{
-			"before": ["right"],
-			"after": ["<Esc>"]
-		},
-		{
-			"before": ["left"],
-			"after": ["<Esc>"]
-		}
-	],
-	"vim.visualModeKeyBindings": [
-		{
-			"before": [">"],
-			"commands": ["editor.action.indentLines"]
-		},
-		{
-			"before": ["<"],
-			"commands": ["editor.action.outdentLines"]
-		},
-		{
-			"before": ["up"],
-			"after": ["<Esc>"]
-		},
-		{
-			"before": ["down"],
-			"after": ["<Esc>"]
-		},
-		{
-			"before": ["right"],
-			"after": ["<Esc>"]
-		},
-		{
-			"before": ["left"],
-			"after": ["<Esc>"]
-		}
-	],
-	"vim.easymotion": true
+    "files.trimTrailingWhitespace": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "github.copilot.advanced": {
+        "inlineSuggestCount": 5,
+        "temperature": "0.4",
+        "length": 500
+    },
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": true,
+        "plaintext": true,
+        "markdown": true,
+        "python": true
+    },
+    "html.format.templating": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "jupyter.askForKernelRestart": false,
+    "jupyter.generateSVGPlots": true,
+    "jupyter.interactiveWindowMode": "perFile",
+    "jupyter.jupyterServerType": "local",
+    "jupyter.pylanceHandlesNotebooks": true,
+    "jupyter.sendSelectionToInteractiveWindow": true,
+    "jupyter.useDefaultConfigForJupyter": false,
+    "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
+    "latex-workshop.chktex.enabled": true,
+    "latex-workshop.intellisense.unimathsymbols.enabled": true,
+    "latex-workshop.latex.magic.args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+    ],
+    "latex-workshop.latex.recipe.default": "latexmk (pdflatex)",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk (pdflatex)",
+            "tools": ["pdflatex"]
+        },
+        {
+            "name": "latexmk (xelatex)",
+            "tools": ["xelatexmk"]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "args": [
+                "--shell-escape", // if you want to have the shell-escape flag
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "command": "pdflatex",
+            "name": "pdflatex"
+        },
+        {
+            "args": [
+                "--shell-escape",
+                "-xelatex",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "command": "latexmk",
+            "name": "xelatexmk"
+        }
+    ],
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.view.autoFocus.enabled": false,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "markdown-preview-enhanced.breakOnSingleNewLine": true,
+    "markdown-preview-enhanced.enableExtendedTableSyntax": true,
+    "markdown-preview-enhanced.enableTypographer": true,
+    "markdown-preview-enhanced.frontMatterRenderingOption": "code block",
+    "markdown-preview-enhanced.imageFolderPath": "/images",
+    "markdown-preview-enhanced.latexEngine": "pdflatex",
+    "markdown-preview-enhanced.liveUpdate": true,
+    "markdown-preview-enhanced.mathBlockDelimiters": [
+        ["$$", "$$"],
+        ["\\[", "\\]"]
+    ],
+    "markdown-preview-enhanced.mathInlineDelimiters": [
+        ["$", "$"],
+        ["\\(", "\\)"]
+    ],
+    "markdownShiki.theme": "Material-Theme-Ocean-High-Contrast",
+    "markdownlint.focusMode": true,
+    "notebook.cellFocusIndicator": "border",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "notebook.compactView": false,
+    "notebook.displayOrder": ["text/html", "image/png"],
+    "notebook.showFoldingControls": "always",
+    "pasteImage.filePathConfirmInputBoxMode": "onlyName",
+    "pasteImage.path": "${currentFileDir}/assets/images",
+    "pasteImage.prefix": "",
+    "pasteImage.showFilePathConfirmInputBox": true,
+    "peacock.affectSashHover": false,
+    "peacock.affectStatusBar": false,
+    "peacock.favoriteColors": [
+        {
+            "name": "Angular Red",
+            "value": "#dd0531"
+        },
+        {
+            "name": "Azure Blue",
+            "value": "#007fff"
+        },
+        {
+            "name": "JavaScript Yellow",
+            "value": "#f9e64f"
+        },
+        {
+            "name": "Mandalorian Blue",
+            "value": "#1857a4"
+        },
+        {
+            "name": "Node Green",
+            "value": "#215732"
+        },
+        {
+            "name": "React Blue",
+            "value": "#61dafb"
+        },
+        {
+            "name": "Something Different",
+            "value": "#832561"
+        },
+        {
+            "name": "Svelte Orange",
+            "value": "#ff3d00"
+        },
+        {
+            "name": "Vue Green",
+            "value": "#42b883"
+        }
+    ],
+    "prettier.tabWidth": 4,
+    "projectManager.git.baseFolders": ["/Users/seba/projects"],
+    "projectManager.ignoreProjectsWithinProjects": true,
+    "python.analysis.completeFunctionParens": true,
+    "python.linting.enabled": true,
+    "python.linting.pylamaArgs": ["--max-line-length=120"],
+    "python.linting.pylamaEnabled": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.terminal.activateEnvironment": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "perflint",
+        "--rcfile",
+        "${workspaceFolder}/.pylintrc"
+    ],
+    "terminal.integrated.env.osx": {
+        "FIG_NEW_SESSION": "1"
+    },
+    "terminal.integrated.inheritEnv": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "vim.highlightedyank.enable": true,
+    "vim.hlsearch": true,
+    "vim.overrideCopy": false,
+    "window.openFilesInNewWindow": "on",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook",
+        "*.pdf": "latex-workshop-pdf-hook"
+    },
+    "workbench.tree.indent": 20,
+    "python.analysis.autoImportCompletions": false,
+    "python.analysis.typeCheckingMode": "basic",
+    "markdown.extension.tableFormatter.normalizeIndentation": true,
+    "prettier.proseWrap": "never",
+    "editor.guides.bracketPairsHorizontal": true,
+    "editor.guides.bracketPairs": "active",
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+    "markdown.trace": "verbose",
+    "python.formatting.provider": "black",
+    "workbench.fontAliasing": "antialiased",
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "security.workspace.trust.enabled": false,
+    "editor.stickyTabStops": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "mypy.runUsingActiveInterpreter": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.activeIconPack": "react_redux",
+    "workbench.colorTheme": "Apollo Midnight",
+    "debug.console.acceptSuggestionOnEnter": "on",
+    "debug.console.fontFamily": "'JetBrains Mono'",
+    "debug.console.fontSize": 13,
+    "debug.console.lineHeight": 15,
+    "debug.terminal.clearBeforeReusing": true,
+    "python.linting.mypyCategorySeverity.note": "Warning",
+    "markdown-preview-enhanced.previewTheme": "github-dark.css",
+    "notebook.output.textLineLimit": 80,
+    "python.defaultInterpreterPath": "/Users/seba/.pyenv/versions/3.10.3/envs/adm-booth/bin/python",
+    "redhat.telemetry.enabled": false,
+    "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
+    "remote.SSH.configFile": "/var/folders/qk/mkh7x25n30d8p6y5cmkbt86m0000gn/T/gitpod_ssh_config-21840-3ZKdwlpKHr7N",
+    "[rust]": {
+        "editor.defaultFormatter": "matklad.rust-analyzer"
+    },
+    "editor.inlayHints.enabled": true,
+    "vim.smartRelativeLine": true,
+    "vim.statusBarColorControl": false,
+    "vim.leader": "<space>",
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>", "m"],
+            "commands": ["bookmarks.toggle"]
+        },
+        {
+            "before": ["<leader>", "b"],
+            "commands": ["bookmarks.list"]
+        },
+        {
+            "before": ["up"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["down"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["right"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["left"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["up"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["down"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["right"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["left"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [">"],
+            "commands": ["editor.action.indentLines"]
+        },
+        {
+            "before": ["<"],
+            "commands": ["editor.action.outdentLines"]
+        },
+        {
+            "before": ["up"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["down"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["right"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["left"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.easymotion": true
 }

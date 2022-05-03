@@ -10,6 +10,5 @@ node_modules
 .core/zsh/**/*example*
 .core/zsh/themes
 .core/poetry/**/*
-.core/bin/z
 .core/zsh/plugins
-**/.git
+**/.git/**

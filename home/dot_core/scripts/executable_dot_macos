@@ -50,7 +50,7 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # Set delay until key repeat
-defaults write NSGlobalDomain InitialKeyRepeat -float 15.0
+defaults write NSGlobalDomain InitialKeyRepeat -float 13.0
 
 # Set key repeat speed
 defaults write NSGlobalDomain KeyRepeat -float 1.0
@@ -109,9 +109,25 @@ defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
 # Turn on app auto-update
 defaults write com.apple.commerce AutoUpdate -bool true
 
+# Use AirDrop over every interface. srsly this should be a default.
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
+
+# Always open everything in Finder's list view. This is important.
+defaults write com.apple.Finder FXPreferredViewStyle Nlsv
+
+# Set up Safari for development.
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
+defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+
 ## PHOTOS ##
 
 # Prevent Photos from opening automatically when devices are plugged in
 defaults write com.apple.ImageCapture disableHotPlug -bool true
 killall Dock
 killall Finder
+
+

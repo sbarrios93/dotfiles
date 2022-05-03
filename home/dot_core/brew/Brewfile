@@ -15,6 +15,8 @@ tap "xwmx/taps"
 tap "yqrashawn/goku"
 # Library for command-line editing
 brew "readline"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Core application library for C
 brew "glib"
 # GNOME accessibility toolkit
@@ -248,8 +250,12 @@ cask "backblaze"
 cask "blender"
 # Tool to show live information about the batteries in various devices
 cask "coconutbattery"
+# Voice and text chat software
+cask "discord"
 # App to build and share containerized applications and microservices
 cask "docker"
+# Client for the Dropbox cloud storage service
+cask "dropbox"
 # Utility to finds and fix problems on computer systems
 cask "etrecheckpro"
 # Calendar software
@@ -261,14 +267,16 @@ cask "firefox"
 # Typeface made for developers
 cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
-# Client for the Google Drive storage service
-cask "google-drive"
 # Vector graphics editor
 cask "inkscape"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Keyboard customizer
+cask "karabiner-elements"
 # Tool to show what is persistently installed on the computer
 cask "knockknock"
+# Software for Logitech devices
+cask "logi-options-plus"
 # Update your Logitech wireless receivers and selected keyboards
 cask "logitech-firmwareupdatetool"
 # Utility for pairing devices with Unifying receivers
@@ -281,6 +289,8 @@ cask "mathpix-snipping-tool"
 cask "microsoft-auto-update"
 # Office suite
 cask "microsoft-office"
+# Native app email client for Gmail
+cask "mimestream"
 # Tool to control external monitor brightness & volume
 cask "monitorcontrol"
 # App to write, plan, collaborate, and get organized
@@ -311,14 +321,8 @@ cask "tunnelbear"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
+# Remote desktop application focusing on security
+cask "vnc-viewer"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "1Password for Safari", id: 1569813296
-mas "ColorSlurp", id: 1287239339
-mas "Craft", id: 1487937127
-mas "HomeControl", id: 1547121417
-mas "Notability", id: 360593530
-mas "Save to Raindrop.io", id: 1549370672
-mas "Speedtest", id: 1153157709
-mas "Things", id: 904280696
-mas "WhatsApp", id: 1147396723

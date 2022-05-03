@@ -1,4 +1,4 @@
-PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin"
-14 11,13,21 * * * $HOME/.core/scripts/backup-vscode-extensions; 
-14 11,13,21 * * * $HOME/.core/scripts/backup-crontab; 
-16 11,13,19 * * * $HOME/.core/scripts/brew-bundle-update; 
+14 11,13,21 * * * ((({ $HOME/.core/scripts/backup-vscode-extensions; } | tee /tmp/aDxpYFcND0fZ897X.stdout) 3>&1 1>&2 2>&3 | tee /tmp/aDxpYFcND0fZ897X.stderr) 3>&1 1>&2 2>&3)
+16 11,13,19 * * * ((({ $HOME/.core/scripts/brew-bundle-update; } | tee /tmp/cwzX2XcNTo2lq4Be.stdout) 3>&1 1>&2 2>&3 | tee /tmp/cwzX2XcNTo2lq4Be.stderr) 3>&1 1>&2 2>&3)
+55 9,13,19 * * * ((({ $HOME/.core/scripts/stop_creative_cloud.sh; } | tee /tmp/dhJW0UuspsO2Heqy.stdout) 3>&1 1>&2 2>&3 | tee /tmp/dhJW0UuspsO2Heqy.stderr) 3>&1 1>&2 2>&3)
+14 11,13,21 * * * ((({ $HOME/.core/scripts/backup-crontab; } | tee /tmp/jEsV15NbZqYrx155.stdout) 3>&1 1>&2 2>&3 | tee /tmp/jEsV15NbZqYrx155.stderr) 3>&1 1>&2 2>&3)
