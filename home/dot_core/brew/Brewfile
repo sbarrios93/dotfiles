@@ -323,8 +323,6 @@ cask "monitorcontrol"
 cask "mos"
 # App to write, plan, collaborate, and get organized
 cask "notion"
-# Knowledge base that works on top of a local folder of plain text Markdown files
-cask "obsidian"
 # Desktop virtualization software
 cask "parallels"
 # Environment for statistical computing and graphics
@@ -348,8 +346,6 @@ cask "steermouse"
 cask "transmission"
 # File transfer application
 cask "transmit"
-# Unicode keyboard layout editor
-cask "ukelele"
 # Open-source code editor
 cask "visual-studio-code"
 # Remote desktop application focusing on security
