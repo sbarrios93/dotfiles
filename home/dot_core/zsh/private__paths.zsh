@@ -6,7 +6,7 @@ export PATH=$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH
 export PATH="$core/poetry/bin:$PATH"
 
 # Google  Drive
-export drive="/Volumes/GoogleDrive/My Drive"
+export drive="/Users/seba/Dropbox"
 
 # Machine Learning Folder
 export ml="$drive/ML/"

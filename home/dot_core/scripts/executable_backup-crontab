@@ -6,6 +6,6 @@ source ${HOME}/.core/zsh/_paths.zsh
 
 crontab -l >${HOME}/.core/scripts/crontab.save
 
-chezmoi re-add ${HOME}/.core/scripts/crontab.save
+chezmoi add ${HOME}/.core/scripts/crontab.save
 
 echo "crontab saved as ${HOME}/.core/scripts/crontab.save"

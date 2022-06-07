@@ -37,6 +37,8 @@ brew "bats-core"
 brew "bazel"
 # Garbage collector for C and C++
 brew "bdw-gc"
+# Remove large files or passwords from Git history like git-filter-branch
+brew "bfg"
 # Collection of portable C++ source libraries
 brew "boost"
 # Freely available high-quality data compressor
@@ -81,6 +83,10 @@ brew "opencv"
 brew "caffe"
 # Manage your dotfiles across multiple diverse machines, securely
 brew "chezmoi"
+# Cross-platform make
+brew "cmake"
+# Utility that creates projects from templates
+brew "cookiecutter"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
 # Modern replacement for 'ls'
@@ -145,6 +151,8 @@ brew "jq"
 brew "lapack"
 # Implementations for atomic memory update operations
 brew "libatomic_ops"
+# Asynchronous event library
+brew "libev"
 # I/O abstraction library for dealing with structured file formats
 brew "libgsf"
 # Implementation of the file(1) command
@@ -197,8 +205,12 @@ brew "sd"
 brew "shellcheck"
 # Fuzzy Finder in rust!
 brew "sk"
+# SMART hard drive monitoring
+brew "smartmontools"
 # Command-line interface for https://speedtest.net bandwidth tests
 brew "speedtest-cli"
+# Cross-shell prompt for astronauts
+brew "starship"
 # Modernized, complete, self-contained TeX/LaTeX engine
 brew "tectonic"
 # Official documentation format of the GNU project
@@ -246,8 +258,12 @@ cask "adobe-creative-cloud"
 cask "appcleaner"
 # Data backup and storage service
 cask "backblaze"
+# Tool to flash OS images to SD cards & USB drives
+cask "balenaetcher"
 # 3D creation suite
 cask "blender"
+# Automated testing of webapps for Google Chrome
+cask "chromedriver"
 # Tool to show live information about the batteries in various devices
 cask "coconutbattery"
 # Voice and text chat software
@@ -258,15 +274,27 @@ cask "docker"
 cask "dropbox"
 # Utility to finds and fix problems on computer systems
 cask "etrecheckpro"
+# VPN client for secure internet access and private browsing
+cask "expressvpn"
 # Calendar software
 cask "fantastical"
 # Reimagine your terminal
 cask "fig"
 # Web browser
 cask "firefox"
+cask "font-caskaydia-cove-nerd-font"
+cask "font-fira-code-nerd-font"
 # Typeface made for developers
 cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
+# Web browser
+cask "google-chrome"
+# Desktop automation application
+cask "hammerspoon"
+# Convert your caps lock key or any of your modifier keys to the hyper key
+cask "hyperkey"
+# Free and open-source media player
+cask "iina"
 # Vector graphics editor
 cask "inkscape"
 # Terminal emulator as alternative to Apple's Terminal app
@@ -275,8 +303,6 @@ cask "iterm2"
 cask "karabiner-elements"
 # Tool to show what is persistently installed on the computer
 cask "knockknock"
-# Software for Logitech devices
-cask "logi-options-plus"
 # Update your Logitech wireless receivers and selected keyboards
 cask "logitech-firmwareupdatetool"
 # Utility for pairing devices with Unifying receivers
@@ -293,6 +319,8 @@ cask "microsoft-office"
 cask "mimestream"
 # Tool to control external monitor brightness & volume
 cask "monitorcontrol"
+# Smooths scrolling and set mouse scroll directions independently
+cask "mos"
 # App to write, plan, collaborate, and get organized
 cask "notion"
 # Knowledge base that works on top of a local folder of plain text Markdown files
@@ -313,16 +341,25 @@ cask "setapp"
 cask "slack"
 # Music streaming service
 cask "spotify"
+cask "steelseries-exactmouse-tool"
+# Customize mouse buttons, wheels and cursor speed
+cask "steermouse"
+# Open-source BitTorrent client
+cask "transmission"
 # File transfer application
 cask "transmit"
-# VPN client for secure internet access and private browsing
-cask "tunnelbear"
+# Unicode keyboard layout editor
+cask "ukelele"
 # Open-source code editor
 cask "visual-studio-code"
-# Multimedia player
-cask "vlc"
 # Remote desktop application focusing on security
 cask "vnc-viewer"
 # Video communication and virtual meeting platform
 cask "zoom"
+mas "1Blocker", id: 1365531024
 mas "1Password for Safari", id: 1569813296
+mas "Grocery", id: 1195676848
+mas "HomeControl", id: 1547121417
+mas "Save to Raindrop.io", id: 1549370672
+mas "The Unarchiver", id: 425424353
+mas "WhatsApp", id: 1147396723

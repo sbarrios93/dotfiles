@@ -27,11 +27,19 @@
         "editor.suggest.showSnippets": true,
         "editor.suggestOnTriggerCharacters": true,
         "editor.wordBasedSuggestions": false,
-        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[python]": {
-        "editor.defaultFormatter": "ms-python.python",
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        // Enable parameter hints
+        "editor.parameterHints.enabled": true,
+        "editor.quickSuggestions": {
+            "other": "on",
+            "comments": "off",
+            "strings": "off"
+        },
+        "editor.suggest.localityBonus": true,
+        "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
@@ -46,10 +54,9 @@
     "editor.cursorSmoothCaretAnimation": true,
     "editor.cursorSurroundingLines": 20,
     "editor.find.autoFindInSelection": "multiline",
-    "editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
+    "editor.fontFamily": "JetBrainsMono Nerd Font, Times New Roman",
     "editor.fontLigatures": true,
-    "editor.fontSize": 14,
-    "editor.formatOnSave": true,
+    "editor.fontSize": 13,
     "editor.inlineSuggest.enabled": true,
     "editor.largeFileOptimizations": false,
     "editor.minimap.enabled": false,
@@ -112,7 +119,6 @@
     "jupyter.generateSVGPlots": true,
     "jupyter.interactiveWindowMode": "perFile",
     "jupyter.jupyterServerType": "local",
-    "jupyter.pylanceHandlesNotebooks": true,
     "jupyter.sendSelectionToInteractiveWindow": true,
     "jupyter.useDefaultConfigForJupyter": false,
     "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
@@ -192,8 +198,6 @@
     "pasteImage.path": "${currentFileDir}/assets/images",
     "pasteImage.prefix": "",
     "pasteImage.showFilePathConfirmInputBox": true,
-    "peacock.affectSashHover": false,
-    "peacock.affectStatusBar": false,
     "peacock.favoriteColors": [
         {
             "name": "Angular Red",
@@ -238,11 +242,9 @@
     "python.analysis.completeFunctionParens": true,
     "python.linting.enabled": true,
     "python.linting.pylamaArgs": ["--max-line-length=120"],
-    "python.linting.pylamaEnabled": true,
     "python.terminal.activateEnvInCurrentTerminal": true,
     "python.terminal.activateEnvironment": true,
     "security.workspace.trust.untrustedFiles": "open",
-    "python.linting.pylintEnabled": true,
     "python.linting.pylintArgs": [
         "--load-plugins",
         "perflint",
@@ -271,8 +273,6 @@
     "editor.guides.bracketPairs": "active",
     "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
     "markdown.trace": "verbose",
-    "python.formatting.provider": "black",
-    "workbench.fontAliasing": "antialiased",
     "[shellscript]": {
         "editor.defaultFormatter": "foxundermoon.shell-format"
     },
@@ -282,14 +282,14 @@
     "mypy.runUsingActiveInterpreter": true,
     "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.activeIconPack": "react_redux",
-    "workbench.colorTheme": "Apollo Midnight",
+    "workbench.colorTheme": "Monokai Pro",
     "debug.console.acceptSuggestionOnEnter": "on",
     "debug.console.fontFamily": "'JetBrains Mono'",
     "debug.console.fontSize": 13,
     "debug.console.lineHeight": 15,
     "debug.terminal.clearBeforeReusing": true,
     "python.linting.mypyCategorySeverity.note": "Warning",
-    "markdown-preview-enhanced.previewTheme": "github-dark.css",
+    "markdown-preview-enhanced.previewTheme": "one-light.css",
     "notebook.output.textLineLimit": 80,
     "python.defaultInterpreterPath": "/Users/seba/.pyenv/versions/3.10.3/envs/adm-booth/bin/python",
     "redhat.telemetry.enabled": false,
@@ -377,5 +377,21 @@
             "after": ["<Esc>"]
         }
     ],
-    "vim.easymotion": true
+    "vim.easymotion": true,
+    "tabnine.experimentalAutoImports": false,
+    "python.formatting.provider": "black",
+    "editor.formatOnSaveMode": "file",
+    "editor.formatOnSave": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.prospectorEnabled": true,
+    "peacock.affectSashHover": false,
+    "peacock.affectStatusBar": false,
+    "workbench.fontAliasing": "auto",
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "pylance.insidersChannel": "daily",
+    "python.pylanceLspNotebooksEnabled": true,
+    "jupyter.pylanceHandlesNotebooks": true,
+    "notebook.markup.fontSize": 13
 }

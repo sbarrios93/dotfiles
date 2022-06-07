@@ -8,7 +8,6 @@ an executable
 ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
-local colors = require('github-theme.colors')
 
 -- general
 lvim.log.level = "warn"
@@ -154,10 +153,24 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- Additional Plugins
 lvim.plugins = {
-  'github/copilot.vim',
-  'projekt0n/github-nvim-theme',
+  { "github/copilot.vim" },
+  { "lunarvim/colorschemes" },
+  { "projekt0n/github-nvim-theme",
+    after = "lualine.nvim",
+    config = function()
+      require("github-theme").setup({
+        theme_style = "dark_default"
+        -- your github config
+      })
+    end },
+  { "folke/tokyonight.nvim" }, {
+    "ray-x/lsp_signature.nvim",
+    config = function() require "lsp_signature".on_attach() end,
+    event = "BufRead"
+  }
 }
 
+local colors = require('github-theme.colors')
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
