@@ -36,3 +36,6 @@ alias cat=' bat'
 
 # fix brew doctor issue with config files outside directory (pyenv issue)
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+
+# go github folder
+alias gogit='cd $GOPATH/src/github.com/sbarrios93/'

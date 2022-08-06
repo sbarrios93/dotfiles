@@ -1,11 +1,7 @@
 {
-    "editor.language.colorizedBracketPairs": [
-        ["{", "}"],
-        ["[", "]"],
-        ["(", ")"],
-        ["\\[", "\\]"],
-        ["\\(", "\\)"]
-    ],
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
@@ -22,24 +18,38 @@
         "editor.defaultFormatter": "James-Yu.latex-workshop"
     },
     "[markdown]": {
-        "editor.quickSuggestions": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "other": "on",
+            "strings": "on"
+        },
         "editor.quickSuggestionsDelay": 1000000,
         "editor.suggest.showSnippets": true,
         "editor.suggestOnTriggerCharacters": true,
-        "editor.wordBasedSuggestions": false,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.wordBasedSuggestions": false
     },
     "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true,
         // Enable parameter hints
         "editor.parameterHints.enabled": true,
         "editor.quickSuggestions": {
-            "other": "on",
             "comments": "off",
+            "other": "on",
             "strings": "off"
         },
         "editor.suggest.localityBonus": true,
-        "editor.defaultFormatter": "ms-python.black-formatter"
+        "editor.wordWrapColumn": 80
+    },
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    },
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
     },
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
@@ -47,8 +57,13 @@
     "[yaml]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
+    "black-formatter.args": ["--line-length", "80"],
+    "debug.console.acceptSuggestionOnEnter": "on",
+    "debug.console.fontFamily": "JetBrainsMono Nerd Font",
+    "debug.console.lineHeight": 15,
+    "debug.terminal.clearBeforeReusing": true,
     "diffEditor.codeLens": true,
-    "editor.accessibilitySupport": "off",
+    "diffEditor.ignoreTrimWhitespace": false,
     "editor.bracketPairColorization.enabled": true,
     "editor.cursorBlinking": "phase",
     "editor.cursorSmoothCaretAnimation": true,
@@ -57,68 +72,71 @@
     "editor.fontFamily": "JetBrainsMono Nerd Font, Times New Roman",
     "editor.fontLigatures": true,
     "editor.fontSize": 13,
+    "editor.lineHeight": 1.6,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "editor.guides.bracketPairs": "active",
+    "editor.guides.bracketPairsHorizontal": true,
     "editor.inlineSuggest.enabled": true,
+    "editor.language.colorizedBracketPairs": [
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"],
+        ["\\[", "\\]"],
+        ["\\(", "\\)"]
+    ],
     "editor.largeFileOptimizations": false,
     "editor.minimap.enabled": false,
-    "editor.multiCursorModifier": "ctrlCmd",
     "editor.padding.bottom": 40,
     "editor.padding.top": 20,
     "editor.renderLineHighlight": "all",
     "editor.renderWhitespace": "boundary",
     "editor.scrollbar.verticalScrollbarSize": 8,
-    "editor.semanticHighlighting.enabled": true,
     "editor.showFoldingControls": "always",
-    "editor.semanticTokenColorCustomizations": {
-        "enabled": true
-    },
     "editor.smoothScrolling": true,
-    "editor.tokenColorCustomizations": {
-        "[Monokai Pro New]": {
-            "textMateRules": [
-                {
-                    "scope": "string.quoted.docstring.multi.python",
-                    "settings": {
-                        "foreground": "#8a8a8a"
-                    }
-                }
-            ]
-        }
-    },
+    "editor.stickyTabStops": true,
     "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 120,
     "explorer.autoReveal": true,
     "explorer.confirmDelete": false,
+    "extensions.experimental.affinity": {
+        "ms-python.python": 1,
+        "ms-python.vscode-pylance": 1,
+        "ms-toolsai.jupyter": 1,
+        "ms-toolsai.jupyter-renderers": 1
+    },
     "files.associations": {
         "*.html": "html",
         "*.njk": "html",
         "*.rmd": "markdown",
-        "*.tmpl": "shellscript"
+        "*.tmpl": "html"
     },
-
     "files.autoSave": "onFocusChange",
-
     "files.trimTrailingWhitespace": true,
     "git.autofetch": true,
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
+    "github.copilot-labs.advanced": {
+        "length": 500
+    },
     "github.copilot.advanced": {
         "inlineSuggestCount": 5,
-        "temperature": "0.4",
-        "length": 500
+        "length": 500,
+        "temperature": "0.4"
     },
     "github.copilot.enable": {
         "*": true,
         "yaml": true,
         "plaintext": true,
         "markdown": true,
-        "python": true
+        "python": true,
+        "rust": false,
+        "go": false
     },
     "html.format.templating": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "jupyter.askForKernelRestart": false,
     "jupyter.generateSVGPlots": true,
     "jupyter.interactiveWindowMode": "perFile",
-    "jupyter.jupyterServerType": "local",
     "jupyter.sendSelectionToInteractiveWindow": true,
     "jupyter.useDefaultConfigForJupyter": false,
     "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
@@ -184,20 +202,29 @@
         ["$", "$"],
         ["\\(", "\\)"]
     ],
-    "markdownShiki.theme": "Material-Theme-Ocean-High-Contrast",
+    "markdown-preview-enhanced.previewTheme": "one-light.css",
+    "markdown.extension.tableFormatter.normalizeIndentation": true,
+    "markdown.preview.lineHeight": 1.2,
+    "markdown.trace": "verbose",
     "markdownlint.focusMode": true,
+    "material-icon-theme.activeIconPack": "react_redux",
     "notebook.cellFocusIndicator": "border",
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
     },
     "notebook.compactView": false,
+    "notebook.consolidatedRunButton": true,
     "notebook.displayOrder": ["text/html", "image/png"],
+    "notebook.output.textLineLimit": 80,
+    "python.defaultInterpreterPath": "/Users/seba/.pyenv/versions/3.10.3/envs/adm-booth/bin/python",
     "notebook.showFoldingControls": "always",
     "pasteImage.filePathConfirmInputBoxMode": "onlyName",
     "pasteImage.path": "${currentFileDir}/assets/images",
     "pasteImage.prefix": "",
     "pasteImage.showFilePathConfirmInputBox": true,
+    "peacock.affectSashHover": false,
+    "peacock.affectStatusBar": false,
     "peacock.favoriteColors": [
         {
             "name": "Angular Red",
@@ -236,73 +263,66 @@
             "value": "#42b883"
         }
     ],
+    "prettier.proseWrap": "never",
     "prettier.tabWidth": 4,
     "projectManager.git.baseFolders": ["/Users/seba/projects"],
     "projectManager.ignoreProjectsWithinProjects": true,
+    "python.analysis.autoImportCompletions": false,
     "python.analysis.completeFunctionParens": true,
-    "python.linting.enabled": true,
-    "python.linting.pylamaArgs": ["--max-line-length=120"],
-    "python.terminal.activateEnvInCurrentTerminal": true,
-    "python.terminal.activateEnvironment": true,
-    "security.workspace.trust.untrustedFiles": "open",
+    "python.formatting.provider": "black",
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyCategorySeverity.note": "Warning",
+    "python.linting.pydocstyleEnabled": false,
+    "python.linting.pylamaArgs": ["--max-line-length=80"],
     "python.linting.pylintArgs": [
         "--load-plugins",
         "perflint",
         "--rcfile",
         "${workspaceFolder}/.pylintrc"
     ],
+    "python.sortImports.args": ["--profile", "black"],
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.terminal.activateEnvironment": true,
+    "redhat.telemetry.enabled": false,
+    "security.workspace.trust.enabled": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "sqltools.connections": [],
+    "tabnine.experimentalAutoImports": false,
+    "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.env.osx": {
-        "FIG_NEW_SESSION": "1"
+        "FIG_NEW_SESSION": "1",
+        "PYTHONPATH": "${workspaceFolder}/__pypackages__/3.10/lib"
     },
     "terminal.integrated.inheritEnv": false,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
+    "vim.easymotion": true,
+    "vim.foldfix": true,
     "vim.highlightedyank.enable": true,
     "vim.hlsearch": true,
-    "vim.overrideCopy": false,
-    "window.openFilesInNewWindow": "on",
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook",
-        "*.pdf": "latex-workshop-pdf-hook"
-    },
-    "workbench.tree.indent": 20,
-    "python.analysis.autoImportCompletions": false,
-    "python.analysis.typeCheckingMode": "basic",
-    "markdown.extension.tableFormatter.normalizeIndentation": true,
-    "prettier.proseWrap": "never",
-    "editor.guides.bracketPairsHorizontal": true,
-    "editor.guides.bracketPairs": "active",
-    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
-    "markdown.trace": "verbose",
-    "[shellscript]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
-    },
-    "security.workspace.trust.enabled": false,
-    "editor.stickyTabStops": true,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "mypy.runUsingActiveInterpreter": true,
-    "workbench.iconTheme": "material-icon-theme",
-    "material-icon-theme.activeIconPack": "react_redux",
-    "workbench.colorTheme": "Monokai Pro",
-    "debug.console.acceptSuggestionOnEnter": "on",
-    "debug.console.fontFamily": "'JetBrains Mono'",
-    "debug.console.fontSize": 13,
-    "debug.console.lineHeight": 15,
-    "debug.terminal.clearBeforeReusing": true,
-    "python.linting.mypyCategorySeverity.note": "Warning",
-    "markdown-preview-enhanced.previewTheme": "one-light.css",
-    "notebook.output.textLineLimit": 80,
-    "python.defaultInterpreterPath": "/Users/seba/.pyenv/versions/3.10.3/envs/adm-booth/bin/python",
-    "redhat.telemetry.enabled": false,
-    "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
-    "remote.SSH.configFile": "/var/folders/qk/mkh7x25n30d8p6y5cmkbt86m0000gn/T/gitpod_ssh_config-21840-3ZKdwlpKHr7N",
-    "[rust]": {
-        "editor.defaultFormatter": "matklad.rust-analyzer"
-    },
-    "editor.inlayHints.enabled": true,
-    "vim.smartRelativeLine": true,
-    "vim.statusBarColorControl": false,
+    "vim.insertModeKeyBindings": [
+        {
+            "after": ["<Esc>"],
+            "before": ["j", "j"]
+        },
+        {
+            "after": ["<Esc>"],
+            "before": ["up"]
+        },
+        {
+            "after": ["<Esc>"],
+            "before": ["down"]
+        },
+        {
+            "after": ["<Esc>"],
+            "before": ["right"]
+        },
+        {
+            "after": ["<Esc>"],
+            "before": ["left"]
+        }
+    ],
     "vim.leader": "<space>",
-    "vim.useSystemClipboard": true,
     "vim.normalModeKeyBindings": [
         {
             "before": ["<leader>", "m"],
@@ -313,44 +333,26 @@
             "commands": ["bookmarks.list"]
         },
         {
-            "before": ["up"],
-            "after": ["<Esc>"]
+            "after": ["<Esc>"],
+            "before": ["up"]
         },
         {
-            "before": ["down"],
-            "after": ["<Esc>"]
+            "after": ["<Esc>"],
+            "before": ["down"]
         },
         {
-            "before": ["right"],
-            "after": ["<Esc>"]
+            "after": ["<Esc>"],
+            "before": ["right"]
         },
         {
-            "before": ["left"],
-            "after": ["<Esc>"]
+            "after": ["<Esc>"],
+            "before": ["left"]
         }
     ],
-    "vim.insertModeKeyBindings": [
-        {
-            "before": ["j", "j"],
-            "after": ["<Esc>"]
-        },
-        {
-            "before": ["up"],
-            "after": ["<Esc>"]
-        },
-        {
-            "before": ["down"],
-            "after": ["<Esc>"]
-        },
-        {
-            "before": ["right"],
-            "after": ["<Esc>"]
-        },
-        {
-            "before": ["left"],
-            "after": ["<Esc>"]
-        }
-    ],
+    "vim.overrideCopy": false,
+    "vim.smartRelativeLine": true,
+    "vim.statusBarColorControl": false,
+    "vim.useSystemClipboard": true,
     "vim.visualModeKeyBindings": [
         {
             "before": [">"],
@@ -361,37 +363,68 @@
             "commands": ["editor.action.outdentLines"]
         },
         {
-            "before": ["up"],
-            "after": ["<Esc>"]
+            "after": ["<Esc>"],
+            "before": ["up"]
         },
         {
-            "before": ["down"],
-            "after": ["<Esc>"]
+            "after": ["<Esc>"],
+            "before": ["down"]
         },
         {
-            "before": ["right"],
-            "after": ["<Esc>"]
+            "after": ["<Esc>"],
+            "before": ["right"]
         },
         {
-            "before": ["left"],
-            "after": ["<Esc>"]
+            "after": ["<Esc>"],
+            "before": ["left"]
         }
     ],
-    "vim.easymotion": true,
-    "tabnine.experimentalAutoImports": false,
-    "python.formatting.provider": "black",
-    "editor.formatOnSaveMode": "file",
-    "editor.formatOnSave": true,
-    "python.linting.mypyEnabled": true,
-    "python.linting.prospectorEnabled": true,
-    "peacock.affectSashHover": false,
-    "peacock.affectStatusBar": false,
-    "workbench.fontAliasing": "auto",
-    "[dockerfile]": {
-        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    "window.openFilesInNewWindow": "on",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook",
+        "*.pdf": "latex-workshop-pdf-hook"
     },
-    "pylance.insidersChannel": "daily",
+    // "workbench.fontAliasing": "auto",
+    "workbench.iconTheme": "Monokai Pro Icons",
+    "workbench.tree.indent": 15,
+    "workspace.searchLimit": 100,
+    "editor.accessibilitySupport": "off",
+    "files.exclude": {
+        "**/.trunk/*out": true
+    },
+    "files.watcherExclude": {
+        "**/.trunk/*out": true
+    },
+    "trunk.trunkGrayOutNonBlockingIssues": false,
+    "workbench.colorCustomizations": {
+        "editorInlayHint.background": "#1e1e1e00",
+        "editorInlayHint.foreground": "#95a8ff"
+    },
     "python.pylanceLspNotebooksEnabled": true,
     "jupyter.pylanceHandlesNotebooks": true,
-    "notebook.markup.fontSize": 13
+    "editor.inlayHints.fontSize": 12,
+    "mplstyle.hover.matplotlibPath": "/home/sbarrios/miniconda3/envs/path-analysis/lib/python3.10/site-packages/matplotlib",
+    "hdinsight.disableOpenSurveyLink": true,
+    "jupyter.diagnostics.reservedPythonNames.exclude": [
+        "**/site-packages/**",
+        "**/lib/python/**",
+        "**/lib64/python/**",
+        "/Users/sbarrios/code/personal/amazon-ynab/amazon_ynab/__main__.py"
+    ],
+    "mypy.dmypyExecutable": "~/.pyenv/versions/base/bin/dmypy",
+    "editor.inlayHints.enabled": true,
+    "[sql]": {
+        "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+    },
+    "workbench.colorTheme": "Monokai Pro",
+    "workbench.editor.splitInGroupLayout": "vertical",
+    "window.commandCenter": true,
+    "window.dialogStyle": "custom",
+    "python.linting.mypyCategorySeverity.error": "Warning",
+    "[properties]": {
+        "editor.defaultFormatter": "trunk.io"
+    },
+    "[ignore]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    }
 }

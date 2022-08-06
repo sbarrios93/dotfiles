@@ -13,12 +13,12 @@ tap "jez/formulae"
 tap "romkatv/powerlevel10k"
 tap "xwmx/taps"
 tap "yqrashawn/goku"
+# Core application library for C
+brew "glib"
 # Library for command-line editing
 brew "readline"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
-# Core application library for C
-brew "glib"
 # GNOME accessibility toolkit
 brew "atk"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -115,6 +115,8 @@ brew "gnu-sed"
 brew "gnu-tar"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Fast linters runner for Go
+brew "golangci-lint"
 # Image manipulation
 brew "netpbm"
 # GNU triangulated surface library
@@ -125,6 +127,8 @@ brew "pango"
 brew "librsvg"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
+# Command-line tool for generating regular expressions
+brew "grex"
 # GSettings schemas for desktop components
 brew "gsettings-desktop-schemas"
 # GUI toolkit
@@ -161,26 +165,32 @@ brew "libmagic"
 brew "make"
 # Mac App Store command-line interface
 brew "mas"
+# Safe, concurrent, practical language
+brew "rust"
+# Build and publish Rust crates as Python packages
+brew "maturin"
 # Show markdown documents on text terminals
 brew "mdcat"
 # Fast and user friendly build system
 brew "meson"
-# Ambitious Vim-fork focused on extensibility and agility
-brew "neovim"
 # Port scanning utility for large networks
 brew "nmap"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Command-line and local web note‑taking, bookmarking, and archiving
+brew "nb"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
 # Platform built on V8 to build network applications
 brew "node"
 # Manage multiple Node.js versions
 brew "nvm"
 # C library to read whole-slide images (a.k.a. virtual slides)
 brew "openslide"
-# Swiss-army knife of markup format conversion
-brew "pandoc"
 # Render and include figures in Pandoc documents using many plotting toolkits
 brew "pandoc-plot"
-# Cross-platform application and UI framework
-brew "qt"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Python version management
@@ -189,14 +199,14 @@ brew "pyenv"
 brew "pyenv-virtualenv"
 # Alternative to pyenv for managing virtualenvs
 brew "pyenv-virtualenvwrapper"
+# Cross-platform application and UI framework
+brew "qt"
 # File browser
 brew "ranger"
 # Ruby version manager
 brew "rbenv"
 # Rsync for cloud storage
 brew "rclone"
-# Search tool like grep and The Silver Searcher
-brew "ripgrep"
 # Rust toolchain installer
 brew "rustup-init"
 # Intuitive find & replace CLI
@@ -243,9 +253,12 @@ brew "z"
 brew "zlib"
 # UNIX shell (command interpreter)
 brew "zsh"
+# Zsh port of Fish shell's history search
+brew "zsh-history-substring-search"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
 # Task runner / simpler Make alternative written in Go
 brew "go-task/tap/go-task"
-brew "xwmx/taps/nb"
 # karabiner configurator
 brew "yqrashawn/goku/goku"
 # Password manager that keeps all passwords secure behind one password
@@ -325,6 +338,8 @@ cask "mos"
 cask "notion"
 # Desktop virtualization software
 cask "parallels"
+# IDE for professional Python development
+cask "pycharm"
 # Environment for statistical computing and graphics
 cask "r"
 # All-in-one bookmark manager
@@ -350,12 +365,7 @@ cask "transmit"
 cask "visual-studio-code"
 # Remote desktop application focusing on security
 cask "vnc-viewer"
+# Resources for Wacom tablets
+cask "wacom-tablet"
 # Video communication and virtual meeting platform
 cask "zoom"
-mas "1Blocker", id: 1365531024
-mas "1Password for Safari", id: 1569813296
-mas "Grocery", id: 1195676848
-mas "HomeControl", id: 1547121417
-mas "Save to Raindrop.io", id: 1549370672
-mas "The Unarchiver", id: 425424353
-mas "WhatsApp", id: 1147396723

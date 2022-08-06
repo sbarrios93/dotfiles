@@ -1,6 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-. "$HOME/.fig/shell/zshrc.pre.zsh"
-
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 # MAIN PATHS
 export core="$HOME/.core"
 export ZSH_CUSTOM=$core/zsh
@@ -53,11 +52,15 @@ source /opt/homebrew/etc/profile.d/z.sh
 eval "$(starship init zsh)"
 
 # dracula syntax highlighting
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_CUSTOM/dracula-syntax-highlighting/zsh-syntax-highlighting.sh
 
 # chezmoi completions
 source $ZSH_CUSTOM/chezmoi-completion.zsh
 
-
+# history substring search
+source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 # Fig post block. Keep at the bottom of this file.
-. "$HOME/.fig/shell/zshrc.post.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"

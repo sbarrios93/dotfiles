@@ -11,7 +11,7 @@ export drive="/Users/seba/Dropbox"
 # Machine Learning Folder
 export ml="$drive/ML/"
 
-# MBA Foldere
+# MBA Folder
 export mba="$drive/MBA/"
 
 # Personal Site
@@ -48,5 +48,10 @@ export OPENBLAS=$(/opt/homebrew/bin/brew --prefix openblas)
 export CFLAGS="-falign-functions=8 ${CFLAGS}"
 export CPPFLAGS="-I/opt/homebrew/opt/lapack/include -I/opt/homebrew/opt/openblas/include ${CPPFLAGS}"
 
+# Go Paths
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
+export GOROOT=$(brew --prefix)/opt/go/libexec
+export PATH="$GOBIN:$PATH"
 # custom scripts
 export scripts="$core/scripts"
