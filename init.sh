@@ -158,12 +158,13 @@ else
     echo "${BLUE}[localenv] CI detected, skipping ssh flag${NC}"
 fi
 
+echo "${BLUE}[localenv] Running chezmoi init${NC}"
+echo "${BLUE}[localenv] Args: ${chezmoi_init_args[@]}${NC}"
 chezmoi init "${chezmoi_init_args[@]}"
 
 # cd into dotfiles directory on local machine
 # because I set up the chezmoi dir in the home subfolder, we need to cd into the parent folder
-cd "$(chezmoi source-path)/.."
-echo "$(chezmoi source-path)"
+cd "$HOME/.local/share/chezmoi"
 echo "${BLUE}[localenv] cd into dotfiles directory${NC}"
 
 # execute taskfile.yaml
