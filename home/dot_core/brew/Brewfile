@@ -37,14 +37,16 @@ brew "bats-core"
 brew "bazel"
 # Garbage collector for C and C++
 brew "bdw-gc"
+# Vector graphics library with cross-device output support
+brew "cairo"
+# OpenType text shaping engine
+brew "harfbuzz"
 # Remove large files or passwords from Git history like git-filter-branch
 brew "bfg"
 # Collection of portable C++ source libraries
 brew "boost"
 # Freely available high-quality data compressor
 brew "bzip2"
-# Vector graphics library with cross-device output support
-brew "cairo"
 # Library for processing command-line flags
 brew "gflags"
 # Application-level logging library
@@ -55,14 +57,12 @@ brew "openblas"
 brew "ceres-solver"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
-# OpenType text shaping engine
-brew "harfbuzz"
 # Subtitle renderer for the ASS/SSA subtitle format
 brew "libass"
 # Compression/decompression library aiming for high speed
 brew "snappy"
 # Play, record, convert, and stream audio and video
-brew "ffmpeg@4"
+brew "ffmpeg"
 # File format designed to store large amounts of data
 brew "hdf5"
 # Key-value storage library with ordered mapping
@@ -85,10 +85,20 @@ brew "caffe"
 brew "chezmoi"
 # Cross-platform make
 brew "cmake"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
+# Dependency manager for Cocoa projects
+brew "cocoapods"
 # Utility that creates projects from templates
 brew "cookiecutter"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
+# Clean Docker containers, images, networks, and volumes
+brew "docker-clean"
+# Select default apps for documents and URL schemes on macOS
+brew "duti"
 # Modern replacement for 'ls'
 brew "exa"
 # Command-line tool to interact with exercism.io
@@ -96,13 +106,15 @@ brew "exercism"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Play, record, convert, and stream audio and video
-brew "ffmpeg"
+brew "ffmpeg@4"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Toolkit for image loading and pixel buffer manipulation
 brew "gdk-pixbuf"
+# GitHub command-line tool
+brew "gh"
 # Interpreter for PostScript and PDF
 brew "ghostscript"
 # Distributed revision control system
@@ -193,6 +205,8 @@ brew "openslide"
 brew "pandoc-plot"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
+# Framework for managing multi-language pre-commit hooks
+brew "pre-commit"
 # Python version management
 brew "pyenv"
 # Pyenv plugin to manage virtualenv
@@ -267,6 +281,10 @@ cask "1password-beta"
 cask "1password-cli-beta"
 # Collection of apps and services for photography, design, video, web, and UX
 cask "adobe-creative-cloud"
+# Toolset to implement parts of Android apps in native code
+cask "android-ndk"
+# Tools for building Android applications
+cask "android-studio"
 # Application uninstaller
 cask "appcleaner"
 # Data backup and storage service
@@ -295,11 +313,18 @@ cask "fantastical"
 cask "fig"
 # Web browser
 cask "firefox"
+# UI toolkit for building applications for mobile, web and desktop
+cask "flutter"
+# Fork of the Cascadia Code typeface
 cask "font-caskaydia-cove-nerd-font"
+# Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
 # Typeface made for developers
 cask "font-jetbrains-mono"
+# Developer targeted fonts with a high number of glyphs
 cask "font-jetbrains-mono-nerd-font"
+# Git client focusing on productivity
+cask "gitkraken"
 # Web browser
 cask "google-chrome"
 # Desktop automation application
@@ -369,3 +394,13 @@ cask "vnc-viewer"
 cask "wacom-tablet"
 # Video communication and virtual meeting platform
 cask "zoom"
+mas "1Blocker", id: 1365531024
+mas "1Password for Safari", id: 1569813296
+mas "Cubox", id: 1113361350
+mas "Grocery", id: 1195676848
+mas "HomeControl", id: 1547121417
+mas "Kindle", id: 405399194
+mas "Save to Raindrop.io", id: 1549370672
+mas "The Unarchiver", id: 425424353
+mas "WhatsApp", id: 1147396723
+mas "Xcode", id: 497799835

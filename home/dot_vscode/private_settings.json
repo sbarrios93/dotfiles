@@ -1,22 +1,4 @@
 {
-    "[dockerfile]": {
-        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[latex]": {
-        "editor.defaultFormatter": "James-Yu.latex-workshop"
-    },
     "[markdown]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.quickSuggestions": {
@@ -43,7 +25,7 @@
             "strings": "off"
         },
         "editor.suggest.localityBonus": true,
-        "editor.wordWrapColumn": 80
+        "editor.wordWrapColumn": 120,
     },
     "[rust]": {
         "editor.defaultFormatter": "rust-lang.rust-analyzer"
@@ -57,21 +39,23 @@
     "[yaml]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
-    "black-formatter.args": ["--line-length", "80"],
+    "black-formatter.args": [
+        "--line-length",
+        "88"
+    ],
     "debug.console.acceptSuggestionOnEnter": "on",
     "debug.console.fontFamily": "JetBrainsMono Nerd Font",
     "debug.console.lineHeight": 15,
     "debug.terminal.clearBeforeReusing": true,
     "diffEditor.codeLens": true,
-    "diffEditor.ignoreTrimWhitespace": false,
     "editor.bracketPairColorization.enabled": true,
     "editor.cursorBlinking": "phase",
     "editor.cursorSmoothCaretAnimation": true,
     "editor.cursorSurroundingLines": 20,
     "editor.find.autoFindInSelection": "multiline",
-    "editor.fontFamily": "JetBrainsMono Nerd Font, Times New Roman",
+    "editor.fontFamily": "JetBrainsMono Nerd Font, JetBrains Mono, Times New Roman",
     "editor.fontLigatures": true,
-    "editor.fontSize": 13,
+    "editor.fontSize": 14,
     "editor.lineHeight": 1.6,
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "file",
@@ -79,11 +63,26 @@
     "editor.guides.bracketPairsHorizontal": true,
     "editor.inlineSuggest.enabled": true,
     "editor.language.colorizedBracketPairs": [
-        ["{", "}"],
-        ["[", "]"],
-        ["(", ")"],
-        ["\\[", "\\]"],
-        ["\\(", "\\)"]
+        [
+            "{",
+            "}"
+        ],
+        [
+            "[",
+            "]"
+        ],
+        [
+            "(",
+            ")"
+        ],
+        [
+            "\\[",
+            "\\]"
+        ],
+        [
+            "\\(",
+            "\\)"
+        ]
     ],
     "editor.largeFileOptimizations": false,
     "editor.minimap.enabled": false,
@@ -99,10 +98,10 @@
     "explorer.autoReveal": true,
     "explorer.confirmDelete": false,
     "extensions.experimental.affinity": {
-        "ms-python.python": 1,
-        "ms-python.vscode-pylance": 1,
-        "ms-toolsai.jupyter": 1,
-        "ms-toolsai.jupyter-renderers": 1
+        "ms-python.python": 2,
+        "ms-python.vscode-pylance": 2,
+        "ms-toolsai.jupyter": 2,
+        "ms-toolsai.jupyter-renderers": 2
     },
     "files.associations": {
         "*.html": "html",
@@ -139,8 +138,10 @@
     "jupyter.interactiveWindowMode": "perFile",
     "jupyter.sendSelectionToInteractiveWindow": true,
     "jupyter.useDefaultConfigForJupyter": false,
-    "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
-    "latex-workshop.chktex.enabled": true,
+    "jupyter.widgetScriptSources": [
+        "jsdelivr.com",
+        "unpkg.com"
+    ],
     "latex-workshop.intellisense.unimathsymbols.enabled": true,
     "latex-workshop.latex.magic.args": [
         "-synctex=1",
@@ -152,11 +153,15 @@
     "latex-workshop.latex.recipes": [
         {
             "name": "latexmk (pdflatex)",
-            "tools": ["pdflatex"]
+            "tools": [
+                "pdflatex"
+            ]
         },
         {
             "name": "latexmk (xelatex)",
-            "tools": ["xelatexmk"]
+            "tools": [
+                "xelatexmk"
+            ]
         }
     ],
     "latex-workshop.latex.tools": [
@@ -195,12 +200,24 @@
     "markdown-preview-enhanced.latexEngine": "pdflatex",
     "markdown-preview-enhanced.liveUpdate": true,
     "markdown-preview-enhanced.mathBlockDelimiters": [
-        ["$$", "$$"],
-        ["\\[", "\\]"]
+        [
+            "$$",
+            "$$"
+        ],
+        [
+            "\\[",
+            "\\]"
+        ]
     ],
     "markdown-preview-enhanced.mathInlineDelimiters": [
-        ["$", "$"],
-        ["\\(", "\\)"]
+        [
+            "$",
+            "$"
+        ],
+        [
+            "\\(",
+            "\\)"
+        ]
     ],
     "markdown-preview-enhanced.previewTheme": "one-light.css",
     "markdown.extension.tableFormatter.normalizeIndentation": true,
@@ -215,7 +232,10 @@
     },
     "notebook.compactView": false,
     "notebook.consolidatedRunButton": true,
-    "notebook.displayOrder": ["text/html", "image/png"],
+    "notebook.displayOrder": [
+        "text/html",
+        "image/png"
+    ],
     "notebook.output.textLineLimit": 80,
     "python.defaultInterpreterPath": "/Users/seba/.pyenv/versions/3.10.3/envs/adm-booth/bin/python",
     "notebook.showFoldingControls": "always",
@@ -265,7 +285,9 @@
     ],
     "prettier.proseWrap": "never",
     "prettier.tabWidth": 4,
-    "projectManager.git.baseFolders": ["/Users/seba/projects"],
+    "projectManager.git.baseFolders": [
+        "/Users/seba/projects"
+    ],
     "projectManager.ignoreProjectsWithinProjects": true,
     "python.analysis.autoImportCompletions": false,
     "python.analysis.completeFunctionParens": true,
@@ -273,14 +295,22 @@
     "python.linting.flake8Enabled": true,
     "python.linting.mypyCategorySeverity.note": "Warning",
     "python.linting.pydocstyleEnabled": false,
-    "python.linting.pylamaArgs": ["--max-line-length=80"],
+    "isort.args": [
+        "--line-length=88"
+    ],
+    "python.linting.pylamaArgs": [
+        "--max-line-length=88"
+    ],
     "python.linting.pylintArgs": [
         "--load-plugins",
         "perflint",
         "--rcfile",
         "${workspaceFolder}/.pylintrc"
     ],
-    "python.sortImports.args": ["--profile", "black"],
+    "python.sortImports.args": [
+        "--profile",
+        "black"
+    ],
     "python.terminal.activateEnvInCurrentTerminal": true,
     "python.terminal.activateEnvironment": true,
     "redhat.telemetry.enabled": false,
@@ -289,10 +319,6 @@
     "sqltools.connections": [],
     "tabnine.experimentalAutoImports": false,
     "terminal.integrated.copyOnSelection": true,
-    "terminal.integrated.env.osx": {
-        "FIG_NEW_SESSION": "1",
-        "PYTHONPATH": "${workspaceFolder}/__pypackages__/3.10/lib"
-    },
     "terminal.integrated.inheritEnv": false,
     "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
@@ -302,51 +328,98 @@
     "vim.hlsearch": true,
     "vim.insertModeKeyBindings": [
         {
-            "after": ["<Esc>"],
-            "before": ["j", "j"]
+            "after": [
+                "<Esc>"
+            ],
+            "before": [
+                "j",
+                "j"
+            ]
         },
         {
-            "after": ["<Esc>"],
-            "before": ["up"]
+            "after": [
+                "<Esc>"
+            ],
+            "before": [
+                "up"
+            ]
         },
         {
-            "after": ["<Esc>"],
-            "before": ["down"]
+            "after": [
+                "<Esc>"
+            ],
+            "before": [
+                "down"
+            ]
         },
         {
-            "after": ["<Esc>"],
-            "before": ["right"]
+            "after": [
+                "<Esc>"
+            ],
+            "before": [
+                "right"
+            ]
         },
         {
-            "after": ["<Esc>"],
-            "before": ["left"]
+            "after": [
+                "<Esc>"
+            ],
+            "before": [
+                "left"
+            ]
         }
     ],
     "vim.leader": "<space>",
     "vim.normalModeKeyBindings": [
         {
-            "before": ["<leader>", "m"],
-            "commands": ["bookmarks.toggle"]
+            "before": [
+                "<leader>",
+                "m"
+            ],
+            "commands": [
+                "bookmarks.toggle"
+            ]
         },
         {
-            "before": ["<leader>", "b"],
-            "commands": ["bookmarks.list"]
+            "before": [
+                "<leader>",
+                "b"
+            ],
+            "commands": [
+                "bookmarks.list"
+            ]
         },
         {
-            "after": ["<Esc>"],
-            "before": ["up"]
+            "after": [
+                "<Esc>"
+            ],
+            "before": [
+                "up"
+            ]
         },
         {
-            "after": ["<Esc>"],
-            "before": ["down"]
+            "after": [
+                "<Esc>"
+            ],
+            "before": [
+                "down"
+            ]
         },
         {
-            "after": ["<Esc>"],
-            "before": ["right"]
+            "after": [
+                "<Esc>"
+            ],
+            "before": [
+                "right"
+            ]
         },
         {
-            "after": ["<Esc>"],
-            "before": ["left"]
+            "after": [
+                "<Esc>"
+            ],
+            "before": [
+                "left"
+            ]
         }
     ],
     "vim.overrideCopy": false,
@@ -355,28 +428,52 @@
     "vim.useSystemClipboard": true,
     "vim.visualModeKeyBindings": [
         {
-            "before": [">"],
-            "commands": ["editor.action.indentLines"]
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
         },
         {
-            "before": ["<"],
-            "commands": ["editor.action.outdentLines"]
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
         },
         {
-            "after": ["<Esc>"],
-            "before": ["up"]
+            "after": [
+                "<Esc>"
+            ],
+            "before": [
+                "up"
+            ]
         },
         {
-            "after": ["<Esc>"],
-            "before": ["down"]
+            "after": [
+                "<Esc>"
+            ],
+            "before": [
+                "down"
+            ]
         },
         {
-            "after": ["<Esc>"],
-            "before": ["right"]
+            "after": [
+                "<Esc>"
+            ],
+            "before": [
+                "right"
+            ]
         },
         {
-            "after": ["<Esc>"],
-            "before": ["left"]
+            "after": [
+                "<Esc>"
+            ],
+            "before": [
+                "left"
+            ]
         }
     ],
     "window.openFilesInNewWindow": "on",
@@ -384,8 +481,6 @@
         "*.ipynb": "jupyter-notebook",
         "*.pdf": "latex-workshop-pdf-hook"
     },
-    // "workbench.fontAliasing": "auto",
-    "workbench.iconTheme": "Monokai Pro Icons",
     "workbench.tree.indent": 15,
     "workspace.searchLimit": 100,
     "editor.accessibilitySupport": "off",
@@ -411,12 +506,10 @@
         "**/lib64/python/**",
         "/Users/sbarrios/code/personal/amazon-ynab/amazon_ynab/__main__.py"
     ],
-    "mypy.dmypyExecutable": "~/.pyenv/versions/base/bin/dmypy",
-    "editor.inlayHints.enabled": true,
+    "editor.inlayHints.enabled": "onUnlessPressed",
     "[sql]": {
         "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
     },
-    "workbench.colorTheme": "Monokai Pro",
     "workbench.editor.splitInGroupLayout": "vertical",
     "window.commandCenter": true,
     "window.dialogStyle": "custom",
@@ -426,5 +519,86 @@
     },
     "[ignore]": {
         "editor.defaultFormatter": "foxundermoon.shell-format"
-    }
+    },
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.env.osx": {
+        "FIG_NEW_SESSION": "1"
+    },
+    "settingsSync.ignoredSettings": [
+        "mypy.dmypyExecutable",
+        "configurationSync.store"
+    ],
+    "mypy.dmypyExecutable": "~/.pyenv/versions/base/bin/dmypy",
+    "editor.tokenColorCustomizations": {
+        "[Material Theme*]": {
+            "textMateRules": [
+                {
+                    "scope": [
+                        "variable.parameter"
+                    ],
+                    "settings": {
+                        "foreground": "#a9cbff"
+                    }
+                },
+                {
+                    "scope": [
+                        "variable.other*"
+                    ],
+                    "settings": {
+                        "foreground": "#ffe8a9"
+                    }
+                },
+                {
+                    "scope": [
+                        "entity.name.type.class"
+                    ],
+                    "settings": {
+                        "foreground": "#a9cbff"
+                        // "fontStyle": "underline"
+                    }
+                }
+            ]
+        }
+    },
+    "editor.semanticTokenColorCustomizations": {
+        "rules": {
+            "*.typeHint": {
+                "foreground": "#bdbdbd",
+                "fontStyle": "italic"
+            },
+            "class.typeHint.builtin": {
+                "foreground": "#bdbdbd",
+                "fontStyle": "italic"
+            }
+        }
+    },
+    "githubIssues.issueBranchTitle": "issue${issueNumber}/${sanitizedLowercaseIssueTitle}",
+    "go.toolsManagement.autoUpdate": true,
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml"
+    },
+    "githubPullRequests.fileListLayout": "flat",
+    "editor.fontWeight": "500",
+    "workbench.iconTheme": "file-icons",
+    "workbench.colorTheme": "Monokai Pro",
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "workbench.fontAliasing": "auto",
 }

@@ -2,11 +2,14 @@
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH=$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH
 
+# Dropbox
+export drive="/Users/seba/Dropbox"
+
+# app development fall 2022
+export APPDEV="$drive/MBA/Fall 2022/app-development"
+
 # poetry
 export PATH="$core/poetry/bin:$PATH"
-
-# Google  Drive
-export drive="/Users/seba/Dropbox"
 
 # Machine Learning Folder
 export ml="$drive/ML/"
@@ -51,7 +54,14 @@ export CPPFLAGS="-I/opt/homebrew/opt/lapack/include -I/opt/homebrew/opt/openblas
 # Go Paths
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
-export GOROOT=$(brew --prefix)/opt/go/libexec
+# export GOROOT=$(brew --prefix)/opt/go/libexec
 export PATH="$GOBIN:$PATH"
 # custom scripts
 export scripts="$core/scripts"
+
+
+# Init rbenv
+eval "$(rbenv init - zsh)"
+
+# pypher project
+export pypher=$GOPATH/src/github.com/sbarrios93/pypher
