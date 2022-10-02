@@ -100,7 +100,7 @@ else
         else
             echo "${BLUE}[localenv] xcode already installed -> skipped${NC}"
         fi
-         softwareupdate --install-rosetta
+        softwareupdate --install-rosetta
     else
         echo "Not Darwin env"
     fi
@@ -113,7 +113,7 @@ fi
 if ! command -v brew >/dev/null 2>&1; then
     echo "${BLUE}[localenv] Installing brew${NC}"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>$HOME/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)"
 else
     echo "${BLUE}[localenv] brew is already installed -> skipped${NC}"
@@ -163,6 +163,7 @@ chezmoi init "${chezmoi_init_args[@]}"
 # cd into dotfiles directory on local machine
 # because I set up the chezmoi dir in the home subfolder, we need to cd into the parent folder
 cd "$(chezmoi source-path)/.."
+echo "$(chezmoi source-path)"
 echo "${BLUE}[localenv] cd into dotfiles directory${NC}"
 
 # execute taskfile.yaml
