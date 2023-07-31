@@ -5,17 +5,14 @@ export PATH=$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH
 # Dropbox
 export drive="/Users/seba/Dropbox"
 
-# app development fall 2022
-export APPDEV="$drive/MBA/Fall 2022/app-development"
+# code folder
+export code="$drive/code"
 
-# poetry
-export PATH="$core/poetry/bin:$PATH"
+# core bins
+export PATH="$core/bin:$PATH"
 
 # Machine Learning Folder
 export ml="$drive/ML/"
-
-# MBA Folder
-export mba="$drive/MBA/"
 
 # Personal Site
 export site="$HOME/sebabarrios.com/"
@@ -59,9 +56,20 @@ export PATH="$GOBIN:$PATH"
 # custom scripts
 export scripts="$core/scripts"
 
-
 # Init rbenv
 eval "$(rbenv init - zsh)"
 
-# pypher project
-export pypher=$GOPATH/src/github.com/sbarrios93/pypher
+
+# JAVA HOME
+export JAVA_HOME="/opt/homebrew/opt/openjdk@11"
+
+# RUST PATHS
+export RUSTUP_HOME="$core/rustup"
+export CARGO_HOME="$core/cargo"
+
+# Rye (python)
+export PATH="$HOME/.rye/shims:$PATH"
+
+# T script 
+export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
+

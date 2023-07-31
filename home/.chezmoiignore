@@ -12,3 +12,7 @@ node_modules
 .core/poetry/**/*
 .core/zsh/plugins
 **/.git/**
+.core/cargo
+.core/rustup
+.core/cargo/**
+.core/rustup/**

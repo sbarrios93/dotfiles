@@ -1,24 +1,22 @@
+tap "azure/azd"
 tap "buo/cask-upgrade"
 tap "candid82/brew"
+tap "gcenx/wine"
 tap "go-task/tap"
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "homebrew/core"
 tap "homebrew/services"
 tap "jason0x43/neovim-nightly"
 tap "jez/formulae"
 tap "romkatv/powerlevel10k"
 tap "xwmx/taps"
 tap "yqrashawn/goku"
+# Run your GitHub Actions locally
+brew "act"
 # Core application library for C
 brew "glib"
-# Library for command-line editing
-brew "readline"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # GNOME accessibility toolkit
 brew "atk"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -33,14 +31,14 @@ brew "gmp"
 brew "coreutils"
 # Bash Automated Testing System
 brew "bats-core"
-# Google's own build tool
-brew "bazel"
-# Garbage collector for C and C++
-brew "bdw-gc"
 # Vector graphics library with cross-device output support
 brew "cairo"
 # OpenType text shaping engine
 brew "harfbuzz"
+# Google's own build tool
+brew "bazel"
+# Garbage collector for C and C++
+brew "bdw-gc"
 # Remove large files or passwords from Git history like git-filter-branch
 brew "bfg"
 # Collection of portable C++ source libraries
@@ -55,10 +53,10 @@ brew "glog"
 brew "openblas"
 # C++ library for large-scale optimization
 brew "ceres-solver"
-# Generate introspection data for GObject libraries
-brew "gobject-introspection"
 # Subtitle renderer for the ASS/SSA subtitle format
 brew "libass"
+# Framework for layout and rendering of i18n text
+brew "pango"
 # Compression/decompression library aiming for high speed
 brew "snappy"
 # Play, record, convert, and stream audio and video
@@ -75,6 +73,8 @@ brew "numpy"
 brew "protobuf"
 # Python bindings for v5 of Qt
 brew "pyqt@5"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
 # Toolkit for 3D computer graphics, image processing, and visualization
 brew "vtk"
 # Open source computer vision library
@@ -89,6 +89,8 @@ brew "cmake"
 brew "ruby"
 # Dependency manager for Cocoa projects
 brew "cocoapods"
+# Defines a standard way of committing rules and communicating it
+brew "commitizen"
 # Utility that creates projects from templates
 brew "cookiecutter"
 # Get a file from an HTTP, HTTPS or FTP server
@@ -109,6 +111,8 @@ brew "fd"
 brew "ffmpeg@4"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
+# Firebase command-line tools
+brew "firebase-cli"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Toolkit for image loading and pixel buffer manipulation
@@ -127,14 +131,14 @@ brew "gnu-sed"
 brew "gnu-tar"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
 # Fast linters runner for Go
 brew "golangci-lint"
 # Image manipulation
 brew "netpbm"
 # GNU triangulated surface library
 brew "gts"
-# Framework for layout and rendering of i18n text
-brew "pango"
 # Library to render SVG files using Cairo
 brew "librsvg"
 # Graph visualization software from AT&T and Bell Labs
@@ -149,6 +153,8 @@ brew "gtk+"
 brew "gtk+3"
 # Integrates GTK macOS applications with the Mac desktop
 brew "gtk-mac-integration"
+# Post-modern modal text editor
+brew "helix"
 # Convert source code to formatted text with syntax highlighting
 brew "highlight"
 # Command-line benchmarking tool
@@ -159,6 +165,8 @@ brew "libheif"
 brew "liblqr"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
+# Update of iperf: measures TCP, UDP, and SCTP bandwidth
+brew "iperf3"
 # CLI wrapper for basic network utilities on macOS - ip command
 brew "iproute2mac"
 # Lightweight and flexible command-line JSON processor
@@ -177,10 +185,6 @@ brew "libmagic"
 brew "make"
 # Mac App Store command-line interface
 brew "mas"
-# Safe, concurrent, practical language
-brew "rust"
-# Build and publish Rust crates as Python packages
-brew "maturin"
 # Show markdown documents on text terminals
 brew "mdcat"
 # Fast and user friendly build system
@@ -195,28 +199,28 @@ brew "ripgrep"
 brew "nb"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Platform built on V8 to build network applications
-brew "node"
 # Manage multiple Node.js versions
 brew "nvm"
 # C library to read whole-slide images (a.k.a. virtual slides)
 brew "openslide"
 # Render and include figures in Pandoc documents using many plotting toolkits
 brew "pandoc-plot"
+# Modern Python package and dependency manager supporting the latest PEP standards
+brew "pdm"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
-# Framework for managing multi-language pre-commit hooks
-brew "pre-commit"
-# Python version management
-brew "pyenv"
-# Pyenv plugin to manage virtualenv
-brew "pyenv-virtualenv"
-# Alternative to pyenv for managing virtualenvs
-brew "pyenv-virtualenvwrapper"
+# Object-relational database system
+brew "postgresql@15", link: true
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Cross-platform application and UI framework
 brew "qt"
+# Develop and deploy code with zero configuration
+brew "railway"
 # File browser
 brew "ranger"
+# Install various Ruby versions and implementations
+brew "ruby-build"
 # Ruby version manager
 brew "rbenv"
 # Rsync for cloud storage
@@ -233,8 +237,12 @@ brew "sk"
 brew "smartmontools"
 # Command-line interface for https://speedtest.net bandwidth tests
 brew "speedtest-cli"
-# Cross-shell prompt for astronauts
-brew "starship"
+# Strong open-source chess engine
+brew "stockfish"
+# Formatting tool for reformatting Swift code
+brew "swiftformat"
+# Tool to enforce Swift style and conventions
+brew "swiftlint"
 # Modernized, complete, self-contained TeX/LaTeX engine
 brew "tectonic"
 # Official documentation format of the GNU project
@@ -261,28 +269,28 @@ brew "wget"
 brew "xclip"
 # JavaScript package manager
 brew "yarn"
-# Tracks most-used directories to make cd smarter
-brew "z"
 # General-purpose lossless data-compression library
 brew "zlib"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
 # Zsh port of Fish shell's history search
 brew "zsh-history-substring-search"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
+# Azure Developer CLI
+brew "azure/azd/azd"
 # Task runner / simpler Make alternative written in Go
 brew "go-task/tap/go-task"
 # karabiner configurator
 brew "yqrashawn/goku/goku"
 # Password manager that keeps all passwords secure behind one password
-cask "1password-beta"
+cask "1password"
 # Command-line helper for the 1Password password manager
 cask "1password-cli-beta"
 # Collection of apps and services for photography, design, video, web, and UX
 cask "adobe-creative-cloud"
-# Toolset to implement parts of Android apps in native code
-cask "android-ndk"
 # Tools for building Android applications
 cask "android-studio"
 # Application uninstaller
@@ -311,11 +319,11 @@ cask "expressvpn"
 cask "fantastical"
 # Reimagine your terminal
 cask "fig"
+# Collaborative team software
+cask "figma"
 # Web browser
 cask "firefox"
-# UI toolkit for building applications for mobile, web and desktop
-cask "flutter"
-# Fork of the Cascadia Code typeface
+# Developer targeted fonts with a high number of glyphs
 cask "font-caskaydia-cove-nerd-font"
 # Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
@@ -327,63 +335,50 @@ cask "font-jetbrains-mono-nerd-font"
 cask "gitkraken"
 # Web browser
 cask "google-chrome"
-# Desktop automation application
-cask "hammerspoon"
-# Convert your caps lock key or any of your modifier keys to the hyper key
-cask "hyperkey"
 # Free and open-source media player
 cask "iina"
-# Vector graphics editor
-cask "inkscape"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Keyboard customizer
 cask "karabiner-elements"
-# Tool to show what is persistently installed on the computer
-cask "knockknock"
+# Interface for reading and syncing eBooks
+cask "kindle"
 # Update your Logitech wireless receivers and selected keyboards
 cask "logitech-firmwareupdatetool"
-# Utility for pairing devices with Unifying receivers
-cask "logitech-unifying"
-# Full TeX Live distribution with GUI applications
-cask "mactex"
 # Scanner app for math and science
 cask "mathpix-snipping-tool"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
 # Office suite
 cask "microsoft-office"
-# Native app email client for Gmail
-cask "mimestream"
+# Meet, chat, call, and collaborate in just one place
+cask "microsoft-teams"
 # Tool to control external monitor brightness & volume
 cask "monitorcontrol"
 # Smooths scrolling and set mouse scroll directions independently
 cask "mos"
-# App to write, plan, collaborate, and get organized
-cask "notion"
 # Desktop virtualization software
 cask "parallels"
-# IDE for professional Python development
-cask "pycharm"
-# Environment for statistical computing and graphics
-cask "r"
+# PDF reader, editor and annotator
+cask "pdf-expert"
+# App wrapper for Postgres
+cask "postgres-unofficial"
 # All-in-one bookmark manager
 cask "raindropio"
 # Control your tools with a few keystrokes
 cask "raycast"
-# Data science software focusing on R and Python
-cask "rstudio"
 # Collection of apps available by subscription
 cask "setapp"
 # Team communication and collaboration software
 cask "slack"
 # Music streaming service
 cask "spotify"
-cask "steelseries-exactmouse-tool"
 # Customize mouse buttons, wheels and cursor speed
 cask "steermouse"
-# Open-source BitTorrent client
-cask "transmission"
+# Unpacks archive files
+cask "the-unarchiver"
+# Utility to change the default backup interval of Time Machine
+cask "timemachineeditor"
 # File transfer application
 cask "transmit"
 # Open-source code editor
@@ -392,15 +387,7 @@ cask "visual-studio-code"
 cask "vnc-viewer"
 # Resources for Wacom tablets
 cask "wacom-tablet"
+# Porting tool, to make Windows programs/games into native apps
+cask "wineskin"
 # Video communication and virtual meeting platform
 cask "zoom"
-mas "1Blocker", id: 1365531024
-mas "1Password for Safari", id: 1569813296
-mas "Cubox", id: 1113361350
-mas "Grocery", id: 1195676848
-mas "HomeControl", id: 1547121417
-mas "Kindle", id: 405399194
-mas "Save to Raindrop.io", id: 1549370672
-mas "The Unarchiver", id: 425424353
-mas "WhatsApp", id: 1147396723
-mas "Xcode", id: 497799835

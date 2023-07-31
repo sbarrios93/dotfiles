@@ -172,3 +172,20 @@ function tre() {
 
 # git add and commit
 function gcaa() { git add --all && git commit -m "$*"}
+
+#go to dir
+go_to_dir() {
+    selected=$(find $drive/code ~ ~/.config/nvim ~/.core -mindepth 1 -maxdepth 1 -type d | fzf)
+
+    if [[ -z $selected ]]; then
+        echo "No directory selected."
+        return 1
+    fi
+
+    if [[ -d $selected ]]; then
+        cd "$selected"
+    else
+        echo "$selected is not a directory."
+        return 1
+    fi
+}

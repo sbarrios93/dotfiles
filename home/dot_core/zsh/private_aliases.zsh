@@ -10,7 +10,7 @@ alias debuck='$DOTFILES/debuck/debuck'
 alias vimsnips='$XDG_CONFIG_HOME/nvim/UltiSnips'
 
 # VIM Init
-alias vc='nvim $XDG_CONFIG_HOME/nvim/init.vim'
+alias vc='nvim $XDG_CONFIG_HOME/nvim/init.lua'
 
 # Draw.io
 alias draw.io='/Applications/draw.io.app/Contents/MacOS/draw.io'
@@ -33,9 +33,9 @@ alias ltttt=' ls --tree -D -L 5 -I ${TREE_IGNORE}'
 # cat
 alias cat=' bat'
 
-
-# fix brew doctor issue with config files outside directory (pyenv issue)
-alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
-
 # go github folder
 alias gogit='cd $GOPATH/src/github.com/sbarrios93/'
+
+# 
+alias grep='grep --color=auto'
+

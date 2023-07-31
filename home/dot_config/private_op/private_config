@@ -1,6 +1,15 @@
 {
-	"latest_signin": "",
+	"latest_signin": "my",
 	"device": "mor3tq5km6j4sdkgqp5v4ew53y",
-	"accounts": null,
+	"accounts": [
+		{
+			"shorthand": "my",
+			"accountUUID": "FIQGUPOEQ5GD5GG3HVGLIVIYBI",
+			"url": "https://my.1password.com",
+			"email": "sbarrios93@gmail.com",
+			"accountKey": "A3-7ZMG3Y-KQ8XDB-4RR5S-AVX9Q-BXG4R-ZGF3D",
+			"userUUID": "A5VKIUAXBNATBIKQTBDSGE6NRM"
+		}
+	],
 	"system_auth_latest_signin": "A5VKIUAXBNATBIKQTBDSGE6NRM"
 }
