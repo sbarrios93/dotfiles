@@ -14,22 +14,8 @@ vars:
   CHEZMOIROOT: "{{.SELF_DIR}}/$(cat .chezmoiroot)"
   BREWFILE_PATH: "{{.CHEZMOIROOT}}/dot_core/brew/Brewfile"
   TEMP_PATH: "{{.HOME}}/.core/temp"
-  POETRY_PATH: "{{.HOME}}/.core/poetry"
   ZSH_CUSTOM_PATH: "{{.HOME}}/.core/zsh"
   SCRIPTS_PATH: "{{.CHEZMOIROOT}}/dot_core/scripts"
-
-  # PYTHON
-  PYTHON_BASE_VERSION: "3.11.0"
-  PYTHON_BASE_ENV: "base"
-  PYTHON_JUPYTER_VERSION: "3.10.8"
-  PYTHON_JUPYTER_ENV: "jupyter"
-
-  # custom packages to install first through brew
-  BREW_CORE_INSTALLS: |-
-    python@3.9
-    python@3.10
-    pyenv
-    pyenv-virtualenv
 
 tasks:
   init:
@@ -40,13 +26,12 @@ tasks:
     - task: brew:tap
     - task: brew:install:core
     - task: oh-my-zsh-init
-    - task: python:base-env
-    - task: python:poetry-init
-    - task: python:jupyter-env:init
     - task: brew:install:formula
-    - task: lvim:install
+    - task: rye:install
+    - task: nvchad:install
     - task: brew:install:cask
     - task: chezmoi
+    - task: rust:install
     - task: vscode:install-extensions
     - task: macos:install-defaults
     - task: crontab:restore
@@ -81,8 +66,7 @@ tasks:
     desc: "Install brew core packages defined in BREW_CORE_INSTALLS variable"
     cmds:
       - brew install python@3.9
-      - brew install pyenv
-      - brew install pyenv-virtualenv
+      - brew install python@3.11
     env:
       HOMEBREW_UPDATE_PREINSTALL: 0
 
@@ -104,6 +88,21 @@ tasks:
     env:
       HOMEBREW_UPDATE_PREINSTALL: 0
 
+  rye:install:
+    desc: "Install Rye"
+    cmds:
+      - curl -sSf https://rye-up.com/get | RYE_VERSION="0.4.0" RYE_INSTALL_OPTION="--yes" bash
+
+  rust:install:
+    desc: "Install Rust"
+    cmds:
+      - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+  nvchad:install:
+    desc: "Install NvChad"
+    cmds:
+      - git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+
   oh-my-zsh-init:
     desc: "Initialize oh-my-zsh"
     cmds:
@@ -112,69 +111,10 @@ tasks:
           sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
         fi
 
-  python:base-env:
-    desc: "Create base python env for local machine through pyenv"
-    cmds:
-      - echo "{{.BLUE}} Creating pyenv base env {{.NC}}"
-      - cmd: '{{if eq OS "linux"}} brew uninstall readline --ignore-dependencies {{end}}' # see top comment
-        ignore_error: true
-      - cmd: '{{if eq OS "linux"}} brew uninstall zlib --ignore-dependencies {{end}}' # see top comment
-        ignore_error: true
-      - |
-        export PATH="$(brew --prefix pyenv-virtualenv)/bin:$(brew --prefix pyenv)/bin:$PATH"
-        eval "$(pyenv init -)"
-        eval "$(pyenv init --path)"
-        eval "$(pyenv virtualenv-init -)"
-        pyenv install {{.PYTHON_BASE_VERSION}} -s
-        pyenv virtualenv {{.PYTHON_BASE_VERSION}} {{.PYTHON_BASE_ENV}} || true
-        pyenv global {{.PYTHON_BASE_ENV}}
-        pyenv rehash
-      - defer: brew install readline zlib # do even if prev command fails
-
-  python:poetry-init:
-    desc: "Initialize poetry"
-    cmds:
-      - |
-        eval "$(pyenv init -)"
-        eval "$(pyenv virtualenv-init -)"
-        curl -sSL https://install.python-poetry.org | POETRY_HOME={{.POETRY_PATH}} {{.PYTHON_BASE_ENV_BIN}} -
-    vars:
-      PYTHON_BASE_ENV_BIN:
-        sh: echo "$(pyenv root)/versions/{{.PYTHON_BASE_ENV}}/bin/python"
-
-  python:jupyter-env:init:
-    desc: "Initialize jupyter environment with pyenv"
-    cmds:
-      - echo "{{.BLUE}} Creating pyenv jupyter env {{.NC}}"
-      - cmd: '{{if eq OS "linux"}} brew uninstall readline --ignore-dependencies {{end}}' # see top comment
-        ignore_error: true
-      - cmd: '{{if eq OS "linux"}} brew uninstall zlib --ignore-dependencies {{end}}' # see top comment
-        ignore_error: true
-      - |
-        export PATH="$HOME/.pyenv/bin:$PATH"
-        eval "$(pyenv init -)"
-        eval "$(pyenv init --path)"
-        eval "$(pyenv virtualenv-init -)"
-        pyenv install {{.PYTHON_JUPYTER_VERSION}} -s
-        pyenv virtualenv {{.PYTHON_JUPYTER_VERSION}} {{.PYTHON_JUPYTER_ENV}} || true
-        pyenv shell {{.PYTHON_JUPYTER_ENV}}
-        pyenv rehash
-        echo "$PYENV_VERSION"
-        if [[ "$PYENV_VERSION"  == "{{.PYTHON_JUPYTER_ENV}}" ]]; then
-          python -m pip install --upgrade pip
-          pip install jupyterlab black jupyter_contrib_nbextensions jupyter_nbextensions_configurator ipykernel
-        fi
-      - defer: brew install readline zlib # do even if prev command fails
-
   chezmoi:
     desc: Apply chezmoi dotfiles
     cmds:
       - chezmoi apply
-
-  lvim:install:
-    desc: "Install LunarVim"
-    cmds:
-      - bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh) -y
 
   vscode:install-extensions:
     desc: install extensions of vscode
